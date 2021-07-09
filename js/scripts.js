@@ -36,15 +36,10 @@ const choices = new Choices(element, {
 
 window.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.scroll__link').forEach(link => {
-
-
     link.addEventListener('click', function (e) {
       e.preventDefault();
-
       let href = this.getAttribute('href').substring(1);
-
       const scrollTarget = document.getElementById(href);
-
       //const topOffset = document.querySelector('.header').offsetHeight;
       const topOffset = 0;
       const elementPosition = scrollTarget.getBoundingClientRect().top;
