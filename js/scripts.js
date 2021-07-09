@@ -37,6 +37,7 @@ const choices = new Choices(element, {
 window.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.scroll__link').forEach(link => {
 
+
     link.addEventListener('click', function (e) {
       e.preventDefault();
 
