@@ -25,6 +25,21 @@ var swiper = new Swiper(".gallery-slider", {
   },
 });
 
+var swiper = new Swiper(".editions-slider", {
+  slidesPerView: 3,
+  slidesPerColumn: 1,
+  spaceBetween: 50,
+  pagination: {
+    el: ".gallery-swiper-pagination",
+    type: "fraction",
+    clickable: false,
+  },
+  navigation: {
+    nextEl: ".gallery-button-next",
+    prevEl: ".gallery-button-prev",
+  },
+});
+
 const element = document.querySelector('.js-choice');
 const choices = new Choices(element, {
   placeholder: false,
@@ -52,6 +67,18 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  allevents = document.querySelector('.allevents')
+  eventsrow = document.querySelector('.events-row')
+
+  allevents.addEventListener('click', (e) => {
+    e.preventDefault();
+    eventsrow.classList.toggle('fullrow');
+    if (eventsrow.classList.contains('fullrow')) {
+      allevents.innerHTML = 'Скрыть события';
+    } else {
+      allevents.innerHTML = 'Все события';
+    }
+  });
   //Toggle offcanvas menu
   /*document.querySelector('#burger').addEventListener('click', function () {
     document.querySelector('#offcanvas-menu').classList.toggle('is-active')

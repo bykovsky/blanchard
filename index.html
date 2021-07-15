@@ -144,8 +144,8 @@
             </select>
           </div>
           <div class="filter__description">
-            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a
-              href="#">авторизуйтесь</a>, либо воспользуйтесь лицензией.
+            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
+            <a class="content-link" href="#">авторизуйтесь</a>, либо воспользуйтесь лицензией.
           </div>
         </div>
         <div class="gallery__slider">
@@ -366,7 +366,7 @@
           </article>
         </div>
         <div class="more-events-row">
-          <a href="#" class="btn btn-outline-primary">Все события</a>
+          <a href="#" class="btn btn-outline-primary allevents">Все события</a>
         </div>
       </div>
 
@@ -374,12 +374,230 @@
 
     <section id="editions" class="section-editions">
       <div class="container editions__container">
+        <div class="editions__filter">
+          <div class="filter__block">
+            <h2 class="section-title section-title--white section-gallery__title">
+              Издания
+            </h2>
+            <div class="filter__title">Категории:</div>
+          </div>
+          <div class="editions__checkboxes">
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Бестселлеры</span>
+            </label>
 
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Искусство</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Архитектура</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox" checked>
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Дизайн</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Мода</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Детям</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Художественная литература</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Публицистика</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Путеводители</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Философия</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Учебная литература</span>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" class="custom-chekbox">
+              <span class="checkbox-indicator"></span>
+              <span class="checkbox-label">Журналы и газеты</span>
+            </label>
+          </div>
+          <div class="filter__description filter__prices">
+            <div class="filter__title">Цена:</div>
+            <div class="input-group">
+              <div class="price__text">От</div>
+              <input type="text" name="price-from" id="price-from" class="price__input" value="50">
+              <div class="price__text">до</div>
+              <input type="text" name="price-to" id="price-to" class="price__input" value="25 000">
+              <div class="price__text">руб.</div>
+            </div>
+          </div>
+        </div>
+        <div class="editions__slider">
+
+          <div class="swiper-container editions-slider">
+            <div class="gallery-controls">
+              <div class="gallery-control-button gallery-button-prev"></div>
+              <div class="gallery-swiper-pagination"></div>
+              <div class="gallery-control-button gallery-button-next"></div>
+            </div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide edition-slide">
+                <img src="/img/1920/edition-01.jpg" class="edition-slide__img">
+                <div class="edition-slide__info-row">
+                  <div class="edition-slide__info">
+                    <h3 class="edition-slide__title">Искусство цвета</h3>
+                    <div class="edition-slide__author">Иттен, Иоханнес </div>
+                  </div>
+                  <div class="edition-slide__price">
+                    620 руб
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary order-btn">Заказать</a>
+              </div>
+
+              <div class="swiper-slide edition-slide">
+                <img src="/img/1920/edition-02.jpg" class="edition-slide__img">
+                <div class="edition-slide__info-row">
+                  <div class="edition-slide__info">
+                    <h3 class="edition-slide__title">Типографика</h3>
+                    <div class="edition-slide__author">Рудер, Эмиль </div>
+                  </div>
+                  <div class="edition-slide__price">
+                    2 450 руб
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary order-btn">Заказать</a>
+              </div>
+
+              <div class="swiper-slide edition-slide">
+                <img src="/img/1920/edition-03.jpg" class="edition-slide__img">
+                <div class="edition-slide__info-row">
+                  <div class="edition-slide__info">
+                    <h3 class="edition-slide__title">Книга про буквы</h3>
+                    <div class="edition-slide__author">Гордон, Юрий </div>
+                  </div>
+                  <div class="edition-slide__price">
+                    2 200 руб
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary order-btn">Заказать</a>
+              </div>
+
+              <div class="swiper-slide edition-slide">
+                <img src="/img/1920/edition-04.jpg" class="edition-slide__img">
+                <div class="edition-slide__info-row">
+                  <div class="edition-slide__info">
+                    <h3 class="edition-slide__title">Николай Ильин</h3>
+                    <div class="edition-slide__author">Кричевский, Владимир </div>
+                  </div>
+                  <div class="edition-slide__price">
+                    1 100 руб
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary order-btn">Заказать</a>
+              </div>
+
+              <div class="swiper-slide edition-slide">
+                <img src="/img/1920/edition-05.jpg" class="edition-slide__img">
+                <div class="edition-slide__info-row">
+                  <div class="edition-slide__info">
+                    <h3 class="edition-slide__title">Модульные сетки в граф...</h3>
+                    <div class="edition-slide__author">Мюллер-Брокманн, Йозеф </div>
+                  </div>
+                  <div class="edition-slide__price">
+                    1 450 руб
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary order-btn">Заказать</a>
+              </div>
+
+              <div class="swiper-slide edition-slide">
+                <img src="/img/1920/edition-06.jpg" class="edition-slide__img">
+                <div class="edition-slide__info-row">
+                  <div class="edition-slide__info">
+                    <h3 class="edition-slide__title">Эволюция графических ст...</h3>
+                    <div class="edition-slide__author">Хеллер, Чваст</div>
+                  </div>
+                  <div class="edition-slide__price">
+                    3 200 руб
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary order-btn">Заказать</a>
+              </div>
+
+              <div class="swiper-slide edition-slide">
+                <img src="/img/1920/edition-07.jpg" class="edition-slide__img">
+                <div class="edition-slide__info-row">
+                  <div class="edition-slide__info">
+                    <h3 class="edition-slide__title">Искусство и визуальное в...</h3>
+                    <div class="edition-slide__author">Арнхейм, Рудольф </div>
+                  </div>
+                  <div class="edition-slide__price">
+                    2 200 руб
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary order-btn">Заказать</a>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="section-projects">
+      <div class="container container__projects">
+        <h2 class="section-title section-title--dark section-projects__title">Проекты</h2>
 
+        <div class="section-about__text">
+          <p>Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно
+            фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не
+            уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
+            Прежде всего, постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует
+            необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия
+            представителей
+            оппозиции могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Банальные,
+            но
+            неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым
+            свершениям,
+            которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости.
+            Подробнее: blanchard-art.ru/projects/about</p>
+        </div>
+      </div>
     </section>
 
     <section id="contacts">
