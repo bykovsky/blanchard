@@ -1,3 +1,4 @@
+/*SLIDERS*/
 var swiper = new Swiper(".site-slider", {
   direction: "horizontal",
   autoplay: {
@@ -20,8 +21,8 @@ var swiper = new Swiper(".gallery-slider", {
     clickable: false,
   },
   navigation: {
-    nextEl: ".gallery-button-next",
-    prevEl: ".gallery-button-prev",
+    nextEl: ".control-button-next--dark",
+    prevEl: ".control-button-prev--dark",
   },
 });
 
@@ -35,11 +36,35 @@ var swiper = new Swiper(".editions-slider", {
     clickable: false,
   },
   navigation: {
-    nextEl: ".gallery-button-next",
-    prevEl: ".gallery-button-prev",
+    nextEl: ".control-button-next--dark",
+    prevEl: ".control-button-prev--dark",
   },
 });
 
+var swiper = new Swiper(".partners-slider", {
+  slidesPerView: 3,
+  slidesPerColumn: 1,
+  spaceBetween: 50,
+  navigation: {
+    nextEl: ".control-button-next--light",
+    prevEl: ".control-button-prev--light",
+  },
+});
+
+/*var swiper = new Swiper(".partners-slider", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  slidesPerGroup: 3,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  navigation: {
+    nextEl: ".gallery-button-next",
+    prevEl: ".gallery-button-prev",
+  },
+});*/
+
+
+/*CUSTOM SELECT*/
 const element = document.querySelector('.js-choice');
 const choices = new Choices(element, {
   placeholder: false,
@@ -49,7 +74,10 @@ const choices = new Choices(element, {
   position: 'bottom',
 });
 
+
+
 window.addEventListener('DOMContentLoaded', function () {
+  /*SCROLL LINKS*/
   document.querySelectorAll('.scroll__link').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
@@ -67,6 +95,7 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /*MORE EVENTS*/
   allevents = document.querySelector('.allevents')
   eventsrow = document.querySelector('.events-row')
 
@@ -79,6 +108,14 @@ window.addEventListener('DOMContentLoaded', function () {
       allevents.innerHTML = 'Все события';
     }
   });
+
+  var blockLink = document.querySelectorAll(".false-link");
+  for (var i = 0; i < blockLink.length; i++) {
+    blockLink[i].addEventListener("click", function (e) {
+      e.preventDefault();
+    });
+  }
+
   //Toggle offcanvas menu
   /*document.querySelector('#burger').addEventListener('click', function () {
     document.querySelector('#offcanvas-menu').classList.toggle('is-active')
@@ -142,3 +179,13 @@ $(function () {
       animate: 200
     })
 });
+
+/*CUSTOM SELECT*/
+
+
+/*new SimpleBar(document.querySelectorAll('.custom-bar'), {
+  autoHide: false,
+  scrollbarMaxSize: 28,
+});
+
+$('.custom-bar').each(element, new SimpleBar());*/

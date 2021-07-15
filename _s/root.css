@@ -1,9 +1,13 @@
 :root{
   --white: #FFFFFF;
   --light-grey: #999999;
+  --sweet-gery: #ececec;
+  --hair-grey: #cacaca;
   --dark-grey: #333333;
   --primary-purple: #9D5CD0;
   --dark-purple: #7943A4;
   --light-purple: #C283F3;
   --soft-purple: #D1A9F0;
+  --muddy-pink: #d88f99;
+  --offset: 3px;
 }
