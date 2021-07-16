@@ -1,82 +1,132 @@
-/*SLIDERS*/
-var swiper = new Swiper(".site-slider", {
-  direction: "horizontal",
-  autoplay: {
-    delay: 15000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
-
-var swiper = new Swiper(".gallery-slider", {
-  slidesPerView: 3,
-  slidesPerColumn: 2,
-  spaceBetween: 50,
-  pagination: {
-    el: ".gallery-swiper-pagination",
-    type: "fraction",
-    clickable: false,
-  },
-  navigation: {
-    nextEl: ".control-button-next--dark",
-    prevEl: ".control-button-prev--dark",
-  },
-});
-
-var swiper = new Swiper(".editions-slider", {
-  slidesPerView: 3,
-  slidesPerColumn: 1,
-  spaceBetween: 50,
-  pagination: {
-    el: ".gallery-swiper-pagination",
-    type: "fraction",
-    clickable: false,
-  },
-  navigation: {
-    nextEl: ".control-button-next--dark",
-    prevEl: ".control-button-prev--dark",
-  },
-});
-
-var swiper = new Swiper(".partners-slider", {
-  slidesPerView: 3,
-  slidesPerColumn: 1,
-  spaceBetween: 50,
-  navigation: {
-    nextEl: ".control-button-next--light",
-    prevEl: ".control-button-prev--light",
-  },
-});
-
-/*var swiper = new Swiper(".partners-slider", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  slidesPerGroup: 3,
-  loop: true,
-  loopFillGroupWithBlank: true,
-  navigation: {
-    nextEl: ".gallery-button-next",
-    prevEl: ".gallery-button-prev",
-  },
-});*/
-
-
-/*CUSTOM SELECT*/
-const element = document.querySelector('.js-choice');
-const choices = new Choices(element, {
-  placeholder: false,
-  //placeholderValue: 'Материал',
-  searchEnabled: false,
-  itemSelectText: '',
-  position: 'bottom',
-});
-
-
-
 window.addEventListener('DOMContentLoaded', function () {
+  /*SLIDERS*/
+  var swiper = new Swiper(".site-slider", {
+    direction: "horizontal",
+    autoplay: {
+      delay: 15000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  var swiper = new Swiper(".gallery-slider", {
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    spaceBetween: 50,
+    pagination: {
+      el: ".gallery-swiper-pagination",
+      type: "fraction",
+      clickable: false,
+    },
+    navigation: {
+      nextEl: ".control-button-next--dark",
+      prevEl: ".control-button-prev--dark",
+    },
+  });
+
+  var swiper = new Swiper(".editions-slider", {
+    slidesPerView: 3,
+    slidesPerColumn: 1,
+    spaceBetween: 50,
+    pagination: {
+      el: ".gallery-swiper-pagination",
+      type: "fraction",
+      clickable: false,
+    },
+    navigation: {
+      nextEl: ".control-button-next--dark",
+      prevEl: ".control-button-prev--dark",
+    },
+  });
+
+  var swiper = new Swiper(".partners-slider", {
+    slidesPerView: 3,
+    slidesPerColumn: 1,
+    spaceBetween: 50,
+    navigation: {
+      nextEl: ".control-button-next--light",
+      prevEl: ".control-button-prev--light",
+    },
+  });
+
+  /*var swiper = new Swiper(".partners-slider", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: ".gallery-button-next",
+      prevEl: ".gallery-button-prev",
+    },
+  });*/
+
+  /*CUSTOM SELECT*/
+  const element = document.querySelector('.js-choice');
+  const choices = new Choices(element, {
+    placeholder: false,
+    //placeholderValue: 'Материал',
+    searchEnabled: false,
+    itemSelectText: '',
+    position: 'bottom',
+  });
+
+  ymaps.ready(init);
+  function init() {
+    var myMap = new ymaps.Map("map", {
+      center: [55.758468, 37.601088],
+      zoom: 15,
+    });
+
+    var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+      iconLayout: 'default#image',
+      iconImageHref: 'img/pin.svg',
+      iconImageSize: [20, 20],
+      iconImageOffset: [-3, -45]
+    });
+
+    myMap.geoObjects.add(myPlacemark);
+  }
+
+
+  var selector = document.querySelector("input[type='tel']");
+  var im = new Inputmask("+7 (999)-999-99-99");
+
+  im.mask(selector);
+
+  new JustValidate('.contact-form', {
+    colorWrong: '#D11616',
+    rules: {
+      name: {
+        required: true,
+        minLength: 3,
+        maxLenght: 10,
+      },
+      tel: {
+        required: true,
+        function: (name, value) => {
+          const phone = selector.inputmask.unmaskedvalue()
+          console.log(phone)
+          return Number(phone) && phone.length === 10
+        },
+      },
+    },
+    messages: {
+      name: {
+        required: 'Как вас зовут?',
+        minLength: 'Минимум 3 символа',
+        maxLenght: 'Максимум 10 символов',
+      },
+      tel: {
+        required: 'Укажите ваш телефон',
+        function: 'Только 10 цифр номера',
+      },
+    },
+  })
+
   /*SCROLL LINKS*/
   document.querySelectorAll('.scroll__link').forEach(link => {
     link.addEventListener('click', function (e) {
