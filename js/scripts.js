@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', function () {
   })
 
   /*SCROLL LINKS*/
-  document.querySelectorAll('.scroll__link').forEach(link => {
+  document.querySelectorAll('.scroll-link').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
       let href = this.getAttribute('href').substring(1);

@@ -68,7 +68,7 @@ a {
   top: 0;
 }
 
-.header__main-nav {
+.main-nav {
   padding-top: 30px;
   padding-bottom: 30px;
   background: #000;
@@ -163,7 +163,7 @@ a {
   background-image: url('/img/login-purple.svg');
 }
 
-.header__sub-nav {
+.sub-nav {
   padding-top: 21px;
   padding-bottom: 21px;
   background-color: rgba(0, 0, 0, .4);
@@ -298,18 +298,18 @@ a {
   background-color: var(--light-purple);
 }
 
-.search__block {
+.search-block {
   display: flex;
   align-items: center;
 }
 
-.search___form {
+.search-block___form {
   display: flex;
   align-items: center;
   min-width: 251px;
 }
 
-.search__icon {
+.search-block__icon {
   display: flex;
   width: 22px;
   height: 22px;
@@ -319,19 +319,19 @@ a {
   outline: none;
 }
 
-.search__icon:hover {
+.search-block__icon:hover {
   outline: none;
 }
 
-.search__icon:focus {
+.search-block__icon:focus {
   outline: none;
 }
 
-.search__icon:active {
+.search-block__icon:active {
   outline: none;
 }
 
-.search__input {
+.search-block__input {
   display: flex;
   flex: 1;
   padding: 3px 0;
@@ -343,29 +343,31 @@ a {
   transition: border-color .3s ease-in-out;
 }
 
-.search__input::placeholder {
+.search-block__input::placeholder {
   color: #fff;
 }
 
-.search___form:hover .search__input, .search__input:hover {
+.search-block___form:hover .search-block__input,
+.search-block__input:hover {
   border-color: var(--primary-purple);
 }
 
-.search__input:focus {
-  border-color: var(--primary-purple);
-  outline: none;
-}
-
-.search__input:active {
+.search-block__input:focus {
   border-color: var(--primary-purple);
   outline: none;
 }
 
-.search__input:focus::placeholder, .search__input:active::placeholder {
+.search-block__input:active {
+  border-color: var(--primary-purple);
+  outline: none;
+}
+
+.search-block__input:focus::placeholder,
+.search-block__input:active::placeholder {
   visibility: hidden;
 }
 
-.hero__slider {
+.hero {
   position: relative;
   margin-bottom: 80px;
   /*left: 0;
@@ -542,7 +544,7 @@ a {
   background-size: cover;
 }
 
-.gallery__container {
+.section-gallery__container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -550,7 +552,7 @@ a {
   overflow: hidden;
 }
 
-.gallery__filter {
+.section-gallery__filter {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -580,7 +582,7 @@ a {
   /*transform: translateY(10px);*/
 }
 
-.gallery__slider {
+.section-gallery__slider {
   display: flex;
   flex-direction: column;
   flex: 1;

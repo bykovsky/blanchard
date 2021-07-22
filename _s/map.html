@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .contacts {
+    overflow-x: hidden;
+    /* это нужно для того, чтоб не создавалось горизонтального скролла из-за скроллбара справа на десктопной версии, который не учитывается при задании измерений в vw */
+    padding-top: 40px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contacts__wrap {
+    border-top: 1px solid lightgray;
+  }
+
+  .contacts__container {
+    display: flex;
+  }
+
+  .contacts__contacts {
+    width: 40%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 40px;
+    border-right: 1px solid lightgray;
+    background-color: #fff;
+  }
+
+  .contacts__map {
+    min-height: 200px;
+    width: calc(60% + ((100vw - 100%) / 2));
+    /* 60% - в данном случае это ширина карты внутри контейнера, её можно менять */
+    margin-right: calc((-100vw + 100%) / 2);
+    margin-top: -1px;
+  }
+
+  [class*="ground-pane"] {
+    filter: grayscale(1);
+  }
+
+
+  .page-footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    background-color: #0e294b;
+  }
+
+  .page-footer__text {
+    text-align: center;
+  }
+</style>
+
+<body>
+  <section class="contacts">
+    <div class="container">
+      <h2 class="title contacts__title">Контакты</h2>
+    </div>
+    <div class="contacts__wrap">
+      <div class="container contacts__container">
+        <div class="contacts__contacts">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla non quod doloribus aperiam nisi tenetur
+            explicabo, perspiciatis reprehenderit nihil magni eius quo mollitia placeat deleniti! Impedit fuga aliquid
+            aperiam itaque.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla non quod doloribus aperiam nisi tenetur
+            explicabo, perspiciatis reprehenderit nihil magni eius quo mollitia placeat deleniti! Impedit fuga aliquid
+            aperiam itaque.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla non quod doloribus aperiam nisi tenetur
+            explicabo, perspiciatis reprehenderit nihil magni eius quo mollitia placeat deleniti! Impedit fuga aliquid
+            aperiam itaque.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla non quod doloribus aperiam nisi tenetur
+            explicabo, perspiciatis reprehenderit nihil magni eius quo mollitia placeat deleniti! Impedit fuga aliquid
+            aperiam itaque.</p>
+        </div>
+        <div class="contacts__map" id="map">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="page-footer">
+    <div class="container">
+      <p class="page-footer__text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+    </div>
+  </footer>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script>
+    ymaps.ready(init);
+    function init() {
+      const myMap = new ymaps.Map(
+        "map",
+        {
+          center: [55.75846806898367, 37.60108849999989],
+          zoom: 14,
+          controls: ['geolocationControl', 'zoomControl']
+        },
+        {
+          suppressMapOpenBlock: true,
+          geolocationControlSize: "large",
+          geolocationControlPosition: { top: "100px", right: "20px" },
+          geolocationControlFloat: 'none',
+          zoomControlSize: "small",
+          zoomControlFloat: "none",
+          zoomControlPosition: { top: "150px", right: "20px" }
+        }
+      );
+
+      const myPlacemark = new ymaps.Placemark(
+        [55.75846806898367, 37.60108849999989],
+        // {
+        //   iconLayout: "default#image",
+        //   iconImageHref: "img/map-dot.svg",
+        //   iconImageSize: [20, 20],
+        //   iconImageOffset: [-10, -20],
+        // }
+      );
+
+      myMap.geoObjects.add(myPlacemark);
+    }
+  </script>
+</body>
+
+</html>
