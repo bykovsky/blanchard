@@ -22,8 +22,8 @@ window.addEventListener('DOMContentLoaded', function () {
       clickable: false,
     },
     navigation: {
-      nextEl: ".control-button-next--dark",
-      prevEl: ".control-button-prev--dark",
+      nextEl: ".control-button-next-dark",
+      prevEl: ".control-button-prev-dark",
     },
   });
 
@@ -37,8 +37,8 @@ window.addEventListener('DOMContentLoaded', function () {
       clickable: false,
     },
     navigation: {
-      nextEl: ".control-button-next--dark",
-      prevEl: ".control-button-prev--dark",
+      nextEl: ".control-button-next-dark",
+      prevEl: ".control-button-prev-dark",
     },
   });
 
@@ -47,8 +47,8 @@ window.addEventListener('DOMContentLoaded', function () {
     slidesPerColumn: 1,
     spaceBetween: 50,
     navigation: {
-      nextEl: ".control-button-next--light",
-      prevEl: ".control-button-prev--light",
+      nextEl: ".control-button-next-light",
+      prevEl: ".control-button-prev-light",
     },
   });
 
@@ -79,7 +79,18 @@ window.addEventListener('DOMContentLoaded', function () {
     var myMap = new ymaps.Map("map", {
       center: [55.758468, 37.601088],
       zoom: 15,
-    });
+      controls: ['geolocationControl', 'zoomControl']
+    },
+      {
+        suppressMapOpenBlock: true,
+        geolocationControlSize: "large",
+        geolocationControlPosition: { top: "330px", right: "20px" },
+        geolocationControlFloat: 'none',
+        zoomControlSize: "small",
+        zoomControlFloat: "none",
+        zoomControlPosition: { top: "260px", right: "20px" }
+      }
+    );
 
     var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
       iconLayout: 'default#image',
@@ -145,9 +156,9 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /*MORE EVENTS*/
-  allevents = document.querySelector('.allevents')
-  eventsrow = document.querySelector('.events-row')
+  /*MORE EVENTS
+  var allevents = document.querySelector('.allevents')
+  var eventsrow = document.querySelector('.events-row')
 
   allevents.addEventListener('click', (e) => {
     e.preventDefault();
@@ -157,7 +168,7 @@ window.addEventListener('DOMContentLoaded', function () {
     } else {
       allevents.innerHTML = 'Все события';
     }
-  });
+  });*/
 
   var blockLink = document.querySelectorAll(".false-link");
   for (var i = 0; i < blockLink.length; i++) {
@@ -165,6 +176,7 @@ window.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
     });
   }
+
 
   //Toggle offcanvas menu
   /*document.querySelector('#burger').addEventListener('click', function () {
