@@ -170,6 +170,33 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   });*/
 
+  var allevents = document.querySelector('.allevents')
+  var eventsrow = document.querySelector('.events-row')
+  var eventblock = document.querySelectorAll(".event-block");
+
+  for (var i = 3; i < eventblock.length; i++) {
+    eventblock[i].classList.add('event-block--hidden')
+  }
+
+  allevents.addEventListener('click', (e) => {
+    e.preventDefault();
+    eventsrow.classList.toggle('fullrow');
+    allevents.closest("section").scrollIntoView({ block: "start", behavior: "smooth" })
+
+    if (eventsrow.classList.contains('fullrow')) {
+      allevents.innerHTML = 'Скрыть события';
+      for (var i = 0; i < eventblock.length; i++) {
+        eventblock[i].classList.remove('event-block--hidden')
+      }
+    } else {
+      allevents.innerHTML = 'Все события';
+      for (var i = 3; i < eventblock.length; i++) {
+        eventblock[i].classList.add('event-block--hidden')
+      }
+    }
+  });
+
+
   var blockLink = document.querySelectorAll(".false-link");
   for (var i = 0; i < blockLink.length; i++) {
     blockLink[i].addEventListener("click", function (e) {
