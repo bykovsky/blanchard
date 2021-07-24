@@ -698,7 +698,7 @@ background-image: url(/img/chevron-down-purple.svg);
 /*SECTION GALLERY*/
 
 .section-gallery {
-  margin-bottom: 98px;
+  margin-bottom: 80px;
   padding-top: 80px;
   padding-bottom: 70px;
   background: url('/img/1920/gallery-bg.jpg') center center no-repeat;
@@ -876,11 +876,11 @@ background-image: url(/img/chevron-down-purple.svg);
 
 /*SECTION CATALOG*/
 .section-catalog{
-  min-height: 1454px;
+  min-height: 1473px;
 }
 
 .section-catalog__container{
-  transform: translateX(15px);
+  transform: translateX(0);
 }
 
 .section-catalog__titlebox{
@@ -890,7 +890,7 @@ background-image: url(/img/chevron-down-purple.svg);
 }
 
 .section-catalog__title{
-  margin-right: 42px;
+  margin-right: 40px;
   max-width: 40%;
 }
 
@@ -1072,7 +1072,7 @@ background-image: url(/img/chevron-down-purple.svg);
 .artists-list__link{
   display: inline-block;
   padding-top: 7px;
-  padding-bottom: 7px;
+  padding-bottom: 6px;
   color: var(--dark-grey);
   border-bottom: 1px solid transparent;
   transition: color .3s ease-in-out, border-color .3s ease-in-out;
@@ -1579,6 +1579,7 @@ background-image: url(/img/chevron-down-purple.svg);
   margin: 0;
   padding: 0;
   text-align: right;
+  transform: translate(0, -3px);
 }
 
 .footer-socials__item {
@@ -1919,6 +1920,12 @@ form .form-row:not(:last-child) {
   border: 1px solid white;
   border-radius: 0;
   transition: border .3s ease-in-out, background-image .3s ease-in-out;
+}
+
+.custom-checkbox__label{
+  display: inline-block;
+  position: relative;
+  transform: translate(-1px,-2px);
 }
 
 .custom-checkbox__input:checked+.custom-checkbox {
