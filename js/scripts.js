@@ -144,8 +144,8 @@ window.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       let href = this.getAttribute('href').substring(1);
       const scrollTarget = document.getElementById(href);
-      //const topOffset = document.querySelector('.header').offsetHeight;
-      const topOffset = 0;
+      const topOffset = document.querySelector('.main-nav').offsetHeight;
+      //const topOffset = 0;
       const elementPosition = scrollTarget.getBoundingClientRect().top;
       const offsetPosition = elementPosition - topOffset;
 
@@ -219,37 +219,37 @@ window.addEventListener('DOMContentLoaded', function () {
 
   //Tabs v 1.0
 
-  document.querySelectorAll('.steps-tab__link').forEach(function (tabsBtn) {
+  /*document.querySelectorAll('.catalog-tabs__link').forEach(function (tabsBtn) {
     tabsBtn.addEventListener('click', function (event) {
       const path = event.currentTarget.dataset.path
       console.log(path)
 
-      document.querySelectorAll('.step-slider__item').forEach(function (tabContent) {
-        tabContent.classList.remove('step-slider__item--active')
+      document.querySelectorAll('.catalog-tab__item').forEach(function (tabContent) {
+        tabContent.classList.remove('catalog-tab__item--active')
       })
-      document.querySelector(`[data-target="${path}"]`).classList.add('step-slider__item--active')
+      document.querySelector(`[data-target="${path}"]`).classList.add('catalog-tab__item--active')
     })
-  })
+  })*/
 
   //Tabs v 2.0
-  var tabNavs = document.querySelectorAll(".steps-tab__link");
-  var tabPanes = document.querySelectorAll(".step-slider__item");
+  var tabNavs = document.querySelectorAll(".catalog-tabs__link");
+  var tabPanes = document.querySelectorAll(".catalog-tab__item");
 
   for (var i = 0; i < tabNavs.length; i++) {
 
     tabNavs[i].addEventListener("click", function (e) {
-      e.preventDefault();
+      //e.preventDefault();
       var activeTabAttr = e.target.getAttribute("data-path");
 
       for (var j = 0; j < tabNavs.length; j++) {
         var contentAttr = tabPanes[j].getAttribute("data-target");
 
         if (activeTabAttr === contentAttr) {
-          tabNavs[j].classList.add("steps-tab__link--active");
-          tabPanes[j].classList.add("step-slider__item--active");
+          tabNavs[j].classList.add("catalog-tabs__link--active");
+          tabPanes[j].classList.add("catalog-tab__item--active");
         } else {
-          tabNavs[j].classList.remove("steps-tab__link--active");
-          tabPanes[j].classList.remove("step-slider__item--active");
+          tabNavs[j].classList.remove("catalog-tabs__link--active");
+          tabPanes[j].classList.remove("catalog-tab__item--active");
         }
       };
     });
@@ -261,10 +261,10 @@ window.addEventListener('DOMContentLoaded', function () {
 $(function () {
   $("#accordion")
     .accordion({
-      header: "> li > .accordion__title",
+      header: "> li > .select-accordion__title",
       collapsible: true,
       heightStyle: "content",
-      active: -100,
+      active: 0,
       animate: 200
     })
 });
