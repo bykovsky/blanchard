@@ -231,7 +231,7 @@ window.addEventListener('DOMContentLoaded', function () {
     })
   })*/
 
-  //Tabs v 2.0
+  //Tabs for gellery
   var tabNavs = document.querySelectorAll(".catalog-tabs__link");
   var tabPanes = document.querySelectorAll(".catalog-tab__item");
 
@@ -250,6 +250,29 @@ window.addEventListener('DOMContentLoaded', function () {
         } else {
           tabNavs[j].classList.remove("catalog-tabs__link--active");
           tabPanes[j].classList.remove("catalog-tab__item--active");
+        }
+      };
+    });
+  }
+
+  //Tabs for artists
+  var artistTabNavs = document.querySelectorAll(".artists-list__link");
+  var artistTabPanes = document.querySelectorAll(".artist-block");
+
+  for (var i = 0; i < artistTabNavs.length; i++) {
+    artistTabNavs[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      var activeArtistTabAttr = e.target.getAttribute("data-artist-path");
+      for (var k = 0; k < artistTabNavs.length; k++) {
+        var contentArtistAttr = artistTabPanes[k].getAttribute("data-artist-target");
+        console.log(contentArtistAttr)
+
+        if (activeArtistTabAttr === contentArtistAttr) {
+          artistTabNavs[k].classList.add("artists-list__link--active");
+          artistTabPanes[k].classList.add("artist-block--active");
+        } else {
+          artistTabNavs[k].classList.remove("artists-list__link--active");
+          artistTabPanes[k].classList.remove("artist-block--active");
         }
       };
     });
