@@ -69,11 +69,13 @@ a {
   background-color: var(--primary-purple);
   border: none;
   text-decoration:none;
+  outline: none;
 }
 
 .content-link:active{
   color: var(--dark-purple);
   border-color: currentColor;
+  outline: none;
 }
 
 .container {
@@ -158,10 +160,12 @@ a {
 .main-nav__link:focus{
   color: white;
   background-color: var(--dark-purple);
+  outline: none;
 }
 
 .main-nav__link:active {
   color: var(--dark-purple);
+  outline: none;
 }
 
 .header__login-box {
@@ -209,10 +213,12 @@ a {
 
 .header__login-box:focus {
   color: var(--primary-purple);
+  outline: none;
 }
 
 .header__login-box:active {
   color: white;
+  outline: none;
 }
 
 .header__login-box:active::before {
@@ -305,19 +311,19 @@ a {
   transition: background-image 0s ease-in-out, transform .3s ease-in-out;
 }
 
-.sub-nav__item:hover .sub-nav__link {
+/*.sub-nav__item:hover .sub-nav__link {
   color: var(--primary-purple);
 }
 
-  /*.sub-nav__item:hover .sub-nav__link::after {
+.sub-nav__item:hover .sub-nav__link::after {
 background-image: url(/img/chevron-down-purple.svg);
   transform: translateY(0);
   transform: translateY(-40%) rotate(180deg);
-}*/
+}
 
 .sub-nav__item:hover{
   color: var(--primary-purple);
-}
+}*/
 
 .sub-nav__link:hover {
   color: var(--primary-purple);
@@ -328,6 +334,10 @@ background-image: url(/img/chevron-down-purple.svg);
   stroke:currentColor;
 }
 
+.sub-nav__link:focus{
+  outline: none;
+}
+
 .sub-nav__link:focus::before{
   opacity: 1;
   visibility: visible;
@@ -335,6 +345,7 @@ background-image: url(/img/chevron-down-purple.svg);
 
 .sub-nav__link:active {
   color: var(--dark-purple);
+  outline: none;
 }
 
 .sub-nav__link:active svg{
@@ -357,7 +368,14 @@ background-image: url(/img/chevron-down-purple.svg);
   transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
 }
 
-.sub-nav__item:hover .sub-nav__artists-block {
+/*.sub-nav__item:hover .sub-nav__artists-block,
+.sub-nav__item:focus .sub-nav__artists-block,
+.sub-nav__item:active .sub-nav__artists-block {
+  opacity: 1;
+  visibility: visible;
+}*/
+
+.sub-nav__artists-block.active {
   opacity: 1;
   visibility: visible;
 }
@@ -549,7 +567,7 @@ background-image: url(/img/chevron-down-purple.svg);
   color: #fff;
 }
 
-@keyframes move {
+/*@keyframes move {
   0% {
     transform-origin: center center;
     transform: scale(1.0);
@@ -562,6 +580,16 @@ background-image: url(/img/chevron-down-purple.svg);
   }
   100% {
     transform: scale(1.3);
+  }
+}*/
+
+@keyframes move {
+  0% {
+    transform-origin: center center;
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.2);
   }
 }
 
@@ -859,6 +887,7 @@ background-image: url(/img/chevron-down-purple.svg);
 .gallery-modal-link:hover::after {
   opacity: 1;
   visibility: visible;
+  outline: none;
 }
 
 .gallery-modal-link:focus::before {
@@ -866,12 +895,19 @@ background-image: url(/img/chevron-down-purple.svg);
   visibility: visible;
   background: none;
   border-color: var(--dark-purple);
+  outline: none;
 }
 
 .gallery-modal-link:active::before,
 .gallery-modal-link:active::after{
   opacity: 1;
   visibility: visible;
+  outline: none;
+}
+
+.gallery-modal-link:focus,
+.gallery-modal-link:active{
+  outline: none;
 }
 
 /*SECTION CATALOG*/
@@ -931,6 +967,7 @@ background-image: url(/img/chevron-down-purple.svg);
 
 .catalog-tabs__link:focus{
   box-shadow: 0px 0px 20px rgba(157, 92, 208, 0.7);
+  outline: none;
 }
 
 .catalog-tabs__link:active{
@@ -1130,11 +1167,13 @@ background-image: url(/img/chevron-down-purple.svg);
   color: white;
   background-color: var(--primary-purple);
   border-color: transparent;
+  outline: none;
 }
 
 .artists-list__link:active{
   color: var(--dark-purple);
   border-color: transparent;
+  outline: none;
 }
 
 .artists-list__link--active{
@@ -1175,6 +1214,14 @@ background-image: url(/img/chevron-down-purple.svg);
   font-size: 16px;
   line-height: 22px;
   color: var(--primary-purple);
+}
+
+.empty-years__link:focus{
+  outline: none;
+}
+
+.empty-years__link:active{
+  outline: none;
 }
 
 
@@ -1303,6 +1350,7 @@ background-image: url(/img/chevron-down-purple.svg);
   color: white;
   border-color: currentColor;
   z-index: 0;
+  outline: none;
 }
 
 .detail-link:focus::before {
@@ -1332,6 +1380,7 @@ background-image: url(/img/chevron-down-purple.svg);
 .detail-link:active {
   color: var(--dark-grey);
   border-color: currentColor;
+  outline: none;
 }
 
 /*EDITIONS*/
@@ -1609,11 +1658,13 @@ background-image: url(/img/chevron-down-purple.svg);
 .messendgers-list__link:focus {
   border-color: transparent;
   opacity: .5;
+  outline: none;
 }
 
 .messendgers-list__link:active {
   border-color: var(--primary-purple);
   opacity: 1;
+  outline: none;
 }
 
 .messendgers-list__link--whatsapp {
@@ -1695,12 +1746,14 @@ background-image: url(/img/chevron-down-purple.svg);
   text-decoration: none;
   color: white;
   border: none;
+  outline: none;
 }
 
 .footer-socials__link:active {
   text-decoration: none;
   color: var(--primary-purple);
   border: none;
+  outline: none;
 }
 
 /*.footer__vk {
@@ -1796,6 +1849,11 @@ form .form-row:not(:last-child) {
   border-radius: 100px;
   cursor: pointer;
   transition: background-color .3s ease-in-out, color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.btn:focus,
+.btn:active{
+  outline: none;
 }
 
 .btn-primary {
@@ -2250,6 +2308,11 @@ form .form-row:not(:last-child) {
   transition: background-color .3s ease-in-out, border .3s ease-in-out;
 }
 
+.control-button:focus,
+.control-button:active{
+  outline: none;
+}
+
 .control-button.swiper-button-disabled{
   opacity: .5;
   pointer-events: none;
@@ -2363,6 +2426,7 @@ form .form-row:not(:last-child) {
 
 .select-accordion__title:focus{
   color: white;
+  outline: none;
 }
 
 .select-accordion__title:focus span{

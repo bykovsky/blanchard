@@ -1,0 +1,122 @@
+<div class="row">
+  <div class="notes">
+    <p>Задача состоит в том, чтобы сделать Dropdown меню. Если элемент один, то включение просиходит правильно. Со
+      списком появляются ошибки. Логика такая:</p>
+    <ol>
+      <li>dropDownlinks - массив всех ссылок, клик о которым открывает свой dropdown</li>
+      <li>dropDownBlocks - массив всех блоков dropdown</li>
+      <li>По клику на ссылку переключаем ей класс active</li>
+      <li>Всем блокам dropdown убираем класс active (прячем их)</li>
+      <li>Если нажатая ссылка имеет класс active, то соседний для неё блок тоже становится видимым - active</li>
+    </ol>
+    <p>Проблема в том, что должна быть только одна ссылка в состоянии active, а toggle это решает только для текущей, а
+      не для ранее нажатых</p>
+    <p>Решение вижу таким: по клику на ссылку, проходим по массиву ссылок и удаляем у всех, кроме текущей (на которую
+      кликнули) класс active. А потом уже всё как в скрипте. Думал создать новый массив в цикле и в нём удалить текущий
+      элемент, а потом еще в одном цикле для всех удалить active. Но моих познаний пока не хватает. Может посоветуете
+      куда посмотреть? Спасибо</p>
+  </div>
+  <div class="sub-nav">
+    <ul class="sub-nav__list">
+      <li class="sub-nav__item">
+        <a href="#" class="sub-nav__link dropdown-link">
+          Реализм
+        </a>
+        <div class="sub-nav__artists-block dropdown-block">
+          <ul class="sub-nav__artist-list custom-bar">
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Тинторретто</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Фридрих</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Леонардо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Вероккьо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Тинторретто</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Фридрих</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Леонардо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Вероккьо</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="sub-nav__item">
+        <a href="#" class="sub-nav__link dropdown-link">
+          Импрессионизм
+        </a>
+        <div class="sub-nav__artists-block dropdown-block">
+          <ul class="sub-nav__artist-list custom-bar">
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Тинторретто</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Фридрих</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Леонардо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Вероккьо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Тинторретто</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Фридрих</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Леонардо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Вероккьо</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="sub-nav__item">
+        <a href="#" class="sub-nav__link dropdown-link">
+          Постимпрессионизм
+        </a>
+        <div class="sub-nav__artists-block dropdown-block">
+          <ul class="sub-nav__artist-list custom-bar">
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Тинторретто</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Фридрих</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Леонардо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Вероккьо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Тинторретто</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Фридрих</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Леонардо</a>
+            </li>
+            <li class="sub-nav__artist-item">
+              <a class="sub-nav__artist-link" href="#">Вероккьо</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

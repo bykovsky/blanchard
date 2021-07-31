@@ -204,6 +204,25 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var dropDownlink = document.querySelectorAll(".dropdown-link")
+  var dropDownBlock = document.querySelectorAll(".dropdown-block")
+
+  for (var i = 0; i < dropDownlink.length; i++) {
+    dropDownlink[i].addEventListener("click", function (e) {
+      var currentLink = e.target
+      console.log(currentLink)
+
+      currentLink.classList.toggle('active')
+      for(var j = 0; j < dropDownBlock.length; j++){
+        dropDownBlock[j].classList.remove('active')
+      }
+      if (currentLink.classList.contains('active')) {
+        var currentBlock = currentLink.nextElementSibling
+        currentBlock.classList.add('active')
+      }
+    });
+  }
+
 
   //Toggle offcanvas menu
   /*document.querySelector('#burger').addEventListener('click', function () {
