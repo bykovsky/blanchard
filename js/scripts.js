@@ -25,12 +25,30 @@ window.addEventListener('DOMContentLoaded', function () {
       nextEl: ".control-button-next-dark",
       prevEl: ".control-button-prev-dark",
     },
+    breakpoints: {
+      520: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 1,
+      },
+      1024: {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+        spaceBetween: 34,
+      },
+      1280: {
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        spaceBetween: 50,
+      },
+    },
   });
 
   var swiper = new Swiper(".editions-slider", {
-    slidesPerView: 3,
-    slidesPerColumn: 1,
-    spaceBetween: 50,
+    //slidesPerView: 3,
+    //slidesPerColumn: 1,
+    //spaceBetween: 50,
     pagination: {
       el: ".gallery-swiper-pagination",
       type: "fraction",
@@ -40,15 +58,47 @@ window.addEventListener('DOMContentLoaded', function () {
       nextEl: ".control-button-next-dark",
       prevEl: ".control-button-prev-dark",
     },
+    breakpoints: {
+      520: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 1,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+    },
   });
 
   var swiper = new Swiper(".partners-slider", {
-    slidesPerView: 3,
-    slidesPerColumn: 1,
-    spaceBetween: 50,
+    //slidesPerView: 3,
+    //slidesPerColumn: 1,
+    //spaceBetween: 50,
     navigation: {
       nextEl: ".control-button-next-light",
       prevEl: ".control-button-prev-light",
+    },
+    breakpoints: {
+      520: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
     },
   });
 
@@ -175,23 +225,23 @@ window.addEventListener('DOMContentLoaded', function () {
   var eventblock = document.querySelectorAll(".event-block");
 
   for (var i = 3; i < eventblock.length; i++) {
-    eventblock[i].classList.add('event-block--hidden')
+    eventblock[i].classList.add('event-block--hidden');
   }
 
   allevents.addEventListener('click', (e) => {
     e.preventDefault();
     eventsrow.classList.toggle('fullrow');
-    allevents.closest("section").scrollIntoView({ block: "start", behavior: "smooth" })
+    allevents.closest("section").scrollIntoView({ block: "start", behavior: "smooth" });
 
     if (eventsrow.classList.contains('fullrow')) {
       allevents.innerHTML = 'Скрыть события';
       for (var i = 0; i < eventblock.length; i++) {
-        eventblock[i].classList.remove('event-block--hidden')
+        eventblock[i].classList.remove('event-block--hidden');
       }
     } else {
       allevents.innerHTML = 'Все события';
       for (var i = 3; i < eventblock.length; i++) {
-        eventblock[i].classList.add('event-block--hidden')
+        eventblock[i].classList.add('event-block--hidden');
       }
     }
   });
@@ -204,21 +254,30 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  var dropDownlink = document.querySelectorAll(".dropdown-link")
-  var dropDownBlock = document.querySelectorAll(".dropdown-block")
+  var dropDownlink = document.querySelectorAll(".dropdown-link");
+  var dropDownBlock = document.querySelectorAll(".dropdown-block");
 
   for (var i = 0; i < dropDownlink.length; i++) {
     dropDownlink[i].addEventListener("click", function (e) {
-      var currentLink = e.target
-      console.log(currentLink)
+      var currentLink = e.target;
+      console.log(currentLink);
 
-      currentLink.classList.toggle('active')
-      for(var j = 0; j < dropDownBlock.length; j++){
-        dropDownBlock[j].classList.remove('active')
+      for (var link of dropDownlink) {
+        if (link !== currentLink) {
+          link.classList.remove('active');
+        }
+        currentLink.classList.toggle('active');
       }
+
+
+      for (var j = 0; j < dropDownBlock.length; j++) {
+        dropDownBlock[j].classList.remove('active');
+      }
+
+
       if (currentLink.classList.contains('active')) {
-        var currentBlock = currentLink.nextElementSibling
-        currentBlock.classList.add('active')
+        var currentBlock = currentLink.nextElementSibling;
+        currentBlock.classList.add('active');
       }
     });
   }
@@ -284,7 +343,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var activeArtistTabAttr = e.target.getAttribute("data-artist-path");
       for (var k = 0; k < artistTabNavs.length; k++) {
         var contentArtistAttr = artistTabPanes[k].getAttribute("data-artist-target");
-        console.log(contentArtistAttr)
+        console.log(contentArtistAttr);
 
         if (activeArtistTabAttr === contentArtistAttr) {
           artistTabNavs[k].classList.add("artists-list__link--active");

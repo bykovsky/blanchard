@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard. Картинная галерея</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  <!--link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" /-->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/base.min.css" /-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
@@ -42,12 +42,66 @@
   </section-->
 
   <header class="header" id="header">
-    <nav class="main-nav">
-      <div class="container main-nav__container">
+    <div class="top-nav">
+      <div class="container top-nav__container">
+        <button class="header__burger burger" aria-label="Открыть меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+
         <a href="/" class="header__logo">
           <img src="img/header-logo.svg" class="header__logo-img" alt="Blanchard. Картинная галерея">
         </a>
 
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__link scroll-link" href="#about">О нас</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link scroll-link" href="#gallery">Галерея</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link scroll-link" href="#catalog">Каталог</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link scroll-link" href="#events">События</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link scroll-link" href="#editions">Издания</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link scroll-link" href="#projects">Проекты</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link scroll-link" href="#contacts">Контакты</a>
+            </li>
+          </ul>
+
+          <a href="#" class="header__login-box">
+            <span class="header__login-icon"></span>
+            <span class="header__login-title">Войти</span>
+          </a>
+        </nav>
+
+        <button class="header__search-btn" aria-label="Открыть поиск по сайту">
+          <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="9.15446" height="2.28862"
+              transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)" fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z"
+              fill="white" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+    <!--nav class="main-nav">
+      <div class="container main-nav__container">
+        <a href="/" class="header__logo">
+          <img src="img/header-logo.svg" class="header__logo-img" alt="Blanchard. Картинная галерея">
+        </a>
         <ul class="main-nav__list">
           <li class="main-nav__item">
             <a class="main-nav__link scroll-link" href="#about">О нас</a>
@@ -77,7 +131,7 @@
           <span class="header__login-title">Войти</span>
         </a>
       </div>
-    </nav>
+    </nav-->
     <nav class="sub-nav">
       <div class="container sub-nav__container">
         <ul class="sub-nav__list">
@@ -118,7 +172,7 @@
             </div>
           </li>
           <li class="sub-nav__item">
-            <a href="#" class="sub-nav__link dropdown-link">
+            <a class="sub-nav__link dropdown-link" href="#">
               Импрессионизм
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -154,7 +208,7 @@
             </div>
           </li>
           <li class="sub-nav__item">
-            <a href="#" class="sub-nav__link dropdown-link">
+            <a class="sub-nav__link dropdown-link" href="#">
               Постимпрессионизм
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -190,7 +244,7 @@
             </div>
           </li>
           <li class="sub-nav__item">
-            <a href="#" class="sub-nav__link dropdown-link">
+            <a class="sub-nav__link dropdown-link" href="#">
               Авангард
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -226,7 +280,7 @@
             </div>
           </li>
           <li class="sub-nav__item">
-            <a href="#" class="sub-nav__link dropdown-link">
+            <a class="sub-nav__link dropdown-link" href="#">
               Футуризм
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -287,7 +341,7 @@
       <div class="container site-hero__container">
         <div class="site-hero__textblock">
           <h2 class="site-hero__caption">
-            Прикоснитесь к прекрасному
+            Прикоснитесь к&nbsp;прекрасному
           </h2>
           <div class="site-hero__text">
             Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых
@@ -346,100 +400,316 @@
             </div>
             <div class="swiper-wrapper">
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-01.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-01.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-01.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-01.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-01.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-01.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-01.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-01.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-02.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-02.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-02.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-02.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-02.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-02.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-02.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-02.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-03.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-03.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-03.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-03.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-03.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-03.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-03.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-03.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-04.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-04.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-04.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-04.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-04.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-04.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-04.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-04.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-05.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-05.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-05.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-05.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-05.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-05.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-05.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-05.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-06.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-06.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-06.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-06.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-06.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-06.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-06.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-06.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-07.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-07.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-07.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-07.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-07.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-07.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-07.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-07.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-08.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-08.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-08.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-08.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-08.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-08.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-08.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-08.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-09.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-09.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-09.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-09.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-09.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-09.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-09.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-09.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-10.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-10.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-10.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-10.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-10.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-10.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-10.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-10.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-11.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-11.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-11.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-11.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-11.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-11.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-11.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-11.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-12.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-12.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-12.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-12.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-12.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-12.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-12.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-12.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-13.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-13.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-13.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-13.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-13.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-13.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-13.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-13.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-14.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-14.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-14.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-14.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-14.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-14.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-14.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-14.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-15.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-15.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-15.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-15.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-15.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-15.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-15.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-15.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-16.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-16.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-16.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-16.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-16.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-16.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-16.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-16.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-17.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-17.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-17.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-17.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-17.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-17.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-17.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-17.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-18.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-18.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-18.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-18.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-18.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-18.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-18.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-18.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-19.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-19.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-19.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-19.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-19.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-19.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-19.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-19.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-20.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-20.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-20.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-20.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-20.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-20.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-20.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-20.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-21.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-21.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-21.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-21.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-21.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-21.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-21.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-21.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-22.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-22.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-22.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-22.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-22.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-22.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-22.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-22.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-23.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-23.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-23.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-23.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-23.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-23.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-23.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-23.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
               <div class="swiper-slide gallery-slide">
-                <a href="#" class="gallery-modal-link false-link"><img src="/img/1920/g-24.jpg"
-                    alt="Изображение текущего раздела"></a>
+                <a href="#" class="gallery-modal-link false-link">
+                  <picture class="gallery-slide__picture">
+                    <source srcset="/img/1920/g-24.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/g-24.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/g-24.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/g-24.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/g-24.jpg" media="(max-width: 575.98px)">
+                    <img class="gallery-slide__img" src="/img/1920/g-24.jpg" alt="Изображение галереи">
+                  </picture>
+                  <!-- <img src="/img/1920/g-24.jpg" alt="Изображение текущего раздела"> -->
+                </a>
               </div>
             </div>
           </div>
@@ -487,7 +757,9 @@
           <li class="catalog-tab__item" data-target="fr">
             <div class="catalog-tab__introtext">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat itaque iste, aut aspernatur doloribus quae, nihil voluptatum praesentium perferendis placeat ut dolore molestias. Nisi fugiat dicta earum fuga nulla dignissimos!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat itaque iste, aut aspernatur doloribus
+                quae, nihil voluptatum praesentium perferendis placeat ut dolore molestias. Nisi fugiat dicta earum fuga
+                nulla dignissimos!
               </p>
             </div>
             <div class="catalog-wrapper">
@@ -517,7 +789,9 @@
           <li class="catalog-tab__item" data-target="de">
             <div class="catalog-tab__introtext">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat itaque iste, aut aspernatur doloribus quae, nihil voluptatum praesentium perferendis placeat ut dolore molestias. Nisi fugiat dicta earum fuga nulla dignissimos!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat itaque iste, aut aspernatur doloribus
+                quae, nihil voluptatum praesentium perferendis placeat ut dolore molestias. Nisi fugiat dicta earum fuga
+                nulla dignissimos!
               </p>
             </div>
             <div class="catalog-wrapper">
@@ -818,7 +1092,8 @@
                           <a data-artist-path="6" href="" class="artists-list__link">Биссоло, Франческо</a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="7" href="" class="artists-list__link artists-list__link--active">Доменико Гирландайо</a>
+                          <a data-artist-path="7" href="" class="artists-list__link artists-list__link--active">Доменико
+                            Гирландайо</a>
                         </li>
                         <li class="artists-list__item">
                           <a data-artist-path="8" href="" class="artists-list__link">Пьетро Перуджино</a>
@@ -968,7 +1243,9 @@
           <li class="catalog-tab__item" data-target="ru">
             <div class="catalog-tab__introtext">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat itaque iste, aut aspernatur doloribus quae, nihil voluptatum praesentium perferendis placeat ut dolore molestias. Nisi fugiat dicta earum fuga nulla dignissimos!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat itaque iste, aut aspernatur doloribus
+                quae, nihil voluptatum praesentium perferendis placeat ut dolore molestias. Nisi fugiat dicta earum fuga
+                nulla dignissimos!
               </p>
             </div>
             <div class="catalog-wrapper">
@@ -998,7 +1275,9 @@
           <li class="catalog-tab__item" data-target="es">
             <div class="catalog-tab__introtext">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat itaque iste, aut aspernatur doloribus quae, nihil voluptatum praesentium perferendis placeat ut dolore molestias. Nisi fugiat dicta earum fuga nulla dignissimos!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat itaque iste, aut aspernatur doloribus
+                quae, nihil voluptatum praesentium perferendis placeat ut dolore molestias. Nisi fugiat dicta earum fuga
+                nulla dignissimos!
               </p>
             </div>
             <div class="catalog-wrapper">
@@ -1038,7 +1317,15 @@
         </h2>
         <div class="events-row">
           <article class="event-block">
-            <img src="/img/1920/events-01.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            <picture class="event-block__picture">
+              <source srcset="/img/1920/events-01.jpg" media="(min-width: 1200px)">
+              <source srcset="/img/1024/events-01.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+              <source srcset="/img/768/events-01.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+              <source srcset="/img/1920/events-01.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+              <source srcset="/img/320/events-01.jpg" media="(max-width: 575.98px)">
+              <img src="/img/1920/events-01.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            </picture>
+            <!--img src="/img/1920/events-01.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
             <div class="event-info">
               <div class="event-block__address">
                 <div class="event-block__location">
@@ -1062,7 +1349,15 @@
           </article>
 
           <article class="event-block">
-            <img src="/img/1920/events-02.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            <picture class="event-block__picture">
+              <source srcset="/img/1920/events-02.jpg" media="(min-width: 1200px)">
+              <source srcset="/img/1024/events-02.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+              <source srcset="/img/768/events-02.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+              <source srcset="/img/1920/events-02.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+              <source srcset="/img/320/events-02.jpg" media="(max-width: 575.98px)">
+              <img src="/img/1920/events-02.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            </picture>
+            <!--img src="/img/1920/events-02.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
             <div class="event-info">
               <div class="event-block__address">
                 <div class="event-block__location">
@@ -1086,7 +1381,15 @@
           </article>
 
           <article class="event-block">
-            <img src="/img/1920/events-03.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            <picture class="event-block__picture">
+              <source srcset="/img/1920/events-03.jpg" media="(min-width: 1200px)">
+              <source srcset="/img/1024/events-03.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+              <source srcset="/img/768/events-03.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+              <source srcset="/img/1920/events-03.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+              <source srcset="/img/320/events-03.jpg" media="(max-width: 575.98px)">
+              <img src="/img/1920/events-03.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            </picture>
+            <!--img src="/img/1920/events-03.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
             <div class="event-info">
               <div class="event-block__address">
                 <div class="event-block__location">
@@ -1110,7 +1413,15 @@
           </article>
 
           <article class="event-block">
-            <img src="/img/1920/events-04.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            <picture class="event-block__picture">
+              <source srcset="/img/1920/events-04.jpg" media="(min-width: 1200px)">
+              <source srcset="/img/1024/events-04.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+              <source srcset="/img/768/events-04.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+              <source srcset="/img/1920/events-04.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+              <source srcset="/img/320/events-04.jpg" media="(max-width: 575.98px)">
+              <img src="/img/1920/events-04.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            </picture>
+            <!--img src="/img/1920/events-04.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
             <div class="event-info">
               <div class="event-block__address">
                 <div class="event-block__location">
@@ -1134,7 +1445,15 @@
           </article>
 
           <article class="event-block">
-            <img src="/img/1920/events-05.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            <picture class="event-block__picture">
+              <source srcset="/img/1920/events-05.jpg" media="(min-width: 1200px)">
+              <source srcset="/img/1024/events-05.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+              <source srcset="/img/768/events-05.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+              <source srcset="/img/1920/events-05.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+              <source srcset="/img/320/events-05.jpg" media="(max-width: 575.98px)">
+              <img src="/img/1920/events-05.jpg" alt="Изображение текущего раздела" class="event-block__img">
+            </picture>
+            <!--img src="/img/1920/events-05.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
             <div class="event-info">
               <div class="event-block__address">
                 <div class="event-block__location">
@@ -1267,7 +1586,15 @@
             </div>
             <div class="swiper-wrapper">
               <div class="swiper-slide edition-slide">
-                <img src="/img/1920/edition-01.jpg" alt="Изображение текущего раздела" class="edition-slide__img">
+                <picture class="edition-slide__picture">
+                  <source srcset="/img/1920/edition-01.jpg" media="(min-width: 1200px)">
+                  <source srcset="/img/1024/edition-01.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                  <source srcset="/img/768/edition-01.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                  <source srcset="/img/1920/edition-01.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                  <source srcset="/img/320/edition-01.jpg" media="(max-width: 575.98px)">
+                  <img src="/img/1920/edition-01.jpg" alt="Изображение издания" class="edition-slide__img">
+                </picture>
+                <!-- <img src="/img/1920/edition-01.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
                   <div class="edition-slide__info">
                     <h3 class="edition-slide__title">Искусство цвета</h3>
@@ -1281,7 +1608,15 @@
               </div>
 
               <div class="swiper-slide edition-slide">
-                <img src="/img/1920/edition-02.jpg" alt="Изображение текущего раздела" class="edition-slide__img">
+                <picture class="edition-slide__picture">
+                  <source srcset="/img/1920/edition-02.jpg" media="(min-width: 1200px)">
+                  <source srcset="/img/1024/edition-02.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                  <source srcset="/img/768/edition-02.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                  <source srcset="/img/1920/edition-02.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                  <source srcset="/img/320/edition-02.jpg" media="(max-width: 575.98px)">
+                  <img src="/img/1920/edition-02.jpg" alt="Изображение издания" class="edition-slide__img">
+                </picture>
+                <!-- <img src="/img/1920/edition-02.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
                   <div class="edition-slide__info">
                     <h3 class="edition-slide__title">Типографика</h3>
@@ -1295,7 +1630,15 @@
               </div>
 
               <div class="swiper-slide edition-slide">
-                <img src="/img/1920/edition-03.jpg" alt="Изображение текущего раздела" class="edition-slide__img">
+                <picture class="edition-slide__picture">
+                  <source srcset="/img/1920/edition-03.jpg" media="(min-width: 1200px)">
+                  <source srcset="/img/1024/edition-03.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                  <source srcset="/img/768/edition-03.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                  <source srcset="/img/1920/edition-03.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                  <source srcset="/img/320/edition-03.jpg" media="(max-width: 575.98px)">
+                  <img src="/img/1920/edition-03.jpg" alt="Изображение издания" class="edition-slide__img">
+                </picture>
+                <!-- <img src="/img/1920/edition-03.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
                   <div class="edition-slide__info">
                     <h3 class="edition-slide__title">Книга про буквы</h3>
@@ -1309,7 +1652,15 @@
               </div>
 
               <div class="swiper-slide edition-slide">
-                <img src="/img/1920/edition-04.jpg" alt="Изображение текущего раздела" class="edition-slide__img">
+                <picture class="edition-slide__picture">
+                  <source srcset="/img/1920/edition-04.jpg" media="(min-width: 1200px)">
+                  <source srcset="/img/1024/edition-04.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                  <source srcset="/img/768/edition-04.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                  <source srcset="/img/1920/edition-04.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                  <source srcset="/img/320/edition-04.jpg" media="(max-width: 575.98px)">
+                  <img src="/img/1920/edition-04.jpg" alt="Изображение издания" class="edition-slide__img">
+                </picture>
+                <!-- <img src="/img/1920/edition-04.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
                   <div class="edition-slide__info">
                     <h3 class="edition-slide__title">Николай Ильин</h3>
@@ -1323,7 +1674,15 @@
               </div>
 
               <div class="swiper-slide edition-slide">
-                <img src="/img/1920/edition-05.jpg" alt="Изображение текущего раздела" class="edition-slide__img">
+                <picture class="edition-slide__picture">
+                  <source srcset="/img/1920/edition-05.jpg" media="(min-width: 1200px)">
+                  <source srcset="/img/1024/edition-05.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                  <source srcset="/img/768/edition-05.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                  <source srcset="/img/1920/edition-05.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                  <source srcset="/img/320/edition-05.jpg" media="(max-width: 575.98px)">
+                  <img src="/img/1920/edition-05.jpg" alt="Изображение издания" class="edition-slide__img">
+                </picture>
+                <!-- <img src="/img/1920/edition-05.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
                   <div class="edition-slide__info">
                     <h3 class="edition-slide__title">Модульные сетки в граф...</h3>
@@ -1337,7 +1696,15 @@
               </div>
 
               <div class="swiper-slide edition-slide">
-                <img src="/img/1920/edition-06.jpg" alt="Изображение текущего раздела" class="edition-slide__img">
+                <picture class="edition-slide__picture">
+                  <source srcset="/img/1920/edition-06.jpg" media="(min-width: 1200px)">
+                  <source srcset="/img/1024/edition-06.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                  <source srcset="/img/768/edition-06.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                  <source srcset="/img/1920/edition-06.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                  <source srcset="/img/320/edition-06.jpg" media="(max-width: 575.98px)">
+                  <img src="/img/1920/edition-06.jpg" alt="Изображение издания" class="edition-slide__img">
+                </picture>
+                <!-- <img src="/img/1920/edition-06.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
                   <div class="edition-slide__info">
                     <h3 class="edition-slide__title">Эволюция графических ст...</h3>
@@ -1351,7 +1718,15 @@
               </div>
 
               <div class="swiper-slide edition-slide">
-                <img src="/img/1920/edition-07.jpg" alt="Изображение текущего раздела" class="edition-slide__img">
+                <picture class="edition-slide__picture">
+                  <source srcset="/img/1920/edition-07.jpg" media="(min-width: 1200px)">
+                  <source srcset="/img/1024/edition-07.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                  <source srcset="/img/768/edition-07.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                  <source srcset="/img/1920/edition-07.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                  <source srcset="/img/320/edition-07.jpg" media="(max-width: 575.98px)">
+                  <img src="/img/1920/edition-07.jpg" alt="Изображение издания" class="edition-slide__img">
+                </picture>
+                <!-- <img src="/img/1920/edition-07.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
                   <div class="edition-slide__info">
                     <h3 class="edition-slide__title">Искусство и визуальное в...</h3>
@@ -1413,54 +1788,126 @@
             <div class="swiper-wrapper partners-slider__wrapper">
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block false-link">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-01.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-01.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-01.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-01.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-01.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/partner-01.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-01.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
 
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block false-link">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-02.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-02.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-02.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-02.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-02.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/patner-02.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-02.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
 
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block false-link">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-03.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-03.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-03.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-03.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-03.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/patner-03.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-03.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
 
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-04.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-04.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-04.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-04.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-04.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/patner-04.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-04.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
 
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block false-link">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-05.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-05.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-05.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-05.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-05.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/patner-05.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-05.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
 
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block false-link">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-06.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-06.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-06.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-06.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-06.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/patner-06.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-06.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
 
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block false-link">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-07.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-07.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-07.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-07.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-07.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/patner-07.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-07.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
 
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block false-link">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-08.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-08.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-08.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-08.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-08.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/patner-08.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-08.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
 
               <div class="swiper-slide partner-slide">
                 <a href="#" class="partner-slide__block false-link">
+                  <!-- <picture class="partner-slide__picture">
+                    <source srcset="/img/1920/partner-09.jpg" media="(min-width: 1200px)">
+                    <source srcset="/img/1024/partner-09.jpg" media="(min-width: 992px) and (max-width: 1199.98px)">
+                    <source srcset="/img/768/partner-09.jpg" media="(min-width: 768px) and (max-width: 991.98px)">
+                    <source srcset="/img/1920/partner-09.jpg" media="(min-width: 576px) and (max-width: 767.98px)">
+                    <source srcset="/img/320/partner-09.jpg" media="(max-width: 575.98px)">
+                    <img src="/img/1920/patner-09.jpg" alt="Партнер проекта" class="partner-slide__img">
+                  </picture> -->
                   <img src="/img/1920/partner-09.jpg" alt="Изображение текущего раздела">
                 </a>
               </div>
@@ -1478,7 +1925,7 @@
       <div class="container-full">
         <div class="contacts-block">
           <div class="contacts-block__inner">
-            <h3 class="contacts-block__title">Шоурум №4</h3>
+            <h3 class="contacts-block__title">Шоурум №2</h3>
             <address class="contacts-block__address">Леонтьевский переулок, дом 5/1</address>
             <h3 class="contacts-block__subtitle">Заказать обратный звонок</h3>
             <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="js-form contact-form">
