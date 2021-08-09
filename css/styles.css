@@ -387,17 +387,21 @@ background-image: url(/img/chevron-down-purple.svg);
   outline: none;
 }
 
-.sub-nav__link.active::before, .sub-nav__link:focus::before {
+/*.sub-nav__link.active::before,
+.sub-nav__link:focus::before {
   opacity: 1;
   visibility: visible;
-}
+}*/
 
-.sub-nav__link:active {
+.sub-nav__link:active,
+.sub-nav__link.active{
   color: var(--dark-purple);
   outline: none;
 }
 
-.sub-nav__link.active svg, .sub-nav__link:focus svg, .sub-nav__link:active svg {
+.sub-nav__link.active svg,
+.sub-nav__link:focus svg,
+.sub-nav__link:active svg {
   transform: translateY(-40%) rotate(180deg);
 }
 
