@@ -1,107 +1,164 @@
-/*SLIDERS*/
-var swiper = new Swiper(".site-slider", {
-  direction: "horizontal",
-  autoplay: {
-    delay: 15000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+function buildSlider() {
+  /*SLIDERS*/
+  var swiper = new Swiper(".site-slider", {
+    direction: "horizontal",
+    autoplay: {
+      delay: 15000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 
-var swiper = new Swiper(".gallery-slider", {
-  slidesPerView: 3,
-  slidesPerColumn: 2,
-  spaceBetween: 50,
-  pagination: {
-    el: ".gallery-swiper-pagination",
-    type: "fraction",
-    clickable: false,
-  },
-  navigation: {
-    nextEl: ".control-button-next-dark",
-    prevEl: ".control-button-prev-dark",
-  },
-  breakpoints: {
-    520: {
-      slidesPerView: 1,
+  var swiper = new Swiper(".gallery-slider", {
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    spaceBetween: 50,
+    pagination: {
+      el: ".gallery-swiper-pagination",
+      type: "fraction",
+      clickable: false,
     },
-    768: {
-      slidesPerView: 1,
+    navigation: {
+      nextEl: ".control-button-next-dark",
+      prevEl: ".control-button-prev-dark",
     },
-    1024: {
-      slidesPerView: 2,
-      slidesPerColumn: 2,
-      spaceBetween: 34,
+    breakpoints: {
+      520: {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+        spaceBetween: 34,
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+        spaceBetween: 34,
+      },
+      1024: {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+        spaceBetween: 34,
+      },
+      1280: {
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        spaceBetween: 50,
+      },
     },
-    1280: {
-      slidesPerView: 3,
-      slidesPerColumn: 2,
-      spaceBetween: 50,
-    },
-  },
-});
+  });
 
-var swiper = new Swiper(".editions-slider", {
-  //slidesPerView: 3,
-  //slidesPerColumn: 1,
-  //spaceBetween: 50,
-  pagination: {
-    el: ".gallery-swiper-pagination",
-    type: "fraction",
-    clickable: false,
-  },
-  navigation: {
-    nextEl: ".control-button-next-dark",
-    prevEl: ".control-button-prev-dark",
-  },
-  breakpoints: {
-    520: {
-      slidesPerView: 1,
+  var swiper = new Swiper(".editions-slider", {
+    //slidesPerView: 3,
+    //slidesPerColumn: 1,
+    //spaceBetween: 50,
+    pagination: {
+      el: ".gallery-swiper-pagination",
+      type: "fraction",
+      clickable: false,
     },
-    768: {
-      slidesPerView: 1,
+    navigation: {
+      nextEl: ".control-button-next-dark",
+      prevEl: ".control-button-prev-dark",
     },
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: 50,
+    breakpoints: {
+      520: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 34,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
     },
-    1280: {
-      slidesPerView: 3,
-      spaceBetween: 50,
-    },
-  },
-});
+  });
 
-var swiper = new Swiper(".partners-slider", {
-  //slidesPerView: 3,
-  //slidesPerColumn: 1,
-  //spaceBetween: 50,
-  navigation: {
-    nextEl: ".control-button-next-light",
-    prevEl: ".control-button-prev-light",
-  },
-  breakpoints: {
-    520: {
-      slidesPerView: 2,
+  var swiper = new Swiper(".partners-slider", {
+    //slidesPerView: 3,
+    //slidesPerColumn: 1,
+    //spaceBetween: 50,
+    navigation: {
+      nextEl: ".control-button-next-light",
+      prevEl: ".control-button-prev-light",
     },
-    768: {
-      slidesPerView: 2,
+    breakpoints: {
+      520: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 34,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
     },
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: 50,
-    },
-    1280: {
-      slidesPerView: 3,
-      spaceBetween: 50,
-    },
-  },
-});
+  });
+}
+
+function buildEvents(){
+  const allevents = document.querySelector('.allevents')
+  const eventsrow = document.querySelector('.events-row')
+  const eventblock = document.querySelectorAll(".event-block");
+
+  let ww = window.innerWidth;
+  console.log(ww);
+
+  let countEvents = 0;
+
+  if (ww <= 991,98 && ww > 576){
+    countEvents = 2;
+  } else if (ww > 768){
+    countEvents = 3;
+  }
+  console.log(countEvents);
+
+
+  for (var i = countEvents; i < eventblock.length; i++) {
+    eventblock[i].classList.add('event-block--hidden');
+  }
+
+  allevents.addEventListener('click', (e) => {
+    e.preventDefault();
+    eventsrow.classList.toggle('fullrow');
+    allevents.closest("section").scrollIntoView({ block: "start", behavior: "smooth" });
+
+    if (eventsrow.classList.contains('fullrow')) {
+      allevents.innerHTML = 'Скрыть события';
+      for (var i = 0; i < eventblock.length; i++) {
+        eventblock[i].classList.remove('event-block--hidden');
+      }
+    } else {
+      allevents.innerHTML = 'Все события';
+      for (var i = countEvents; i < eventblock.length; i++) {
+        eventblock[i].classList.add('event-block--hidden');
+      }
+    }
+  });
+}
+
+window.addEventListener('resize', function() {
+  buildSlider();
+  buildEvents();
+})
 
 window.addEventListener('DOMContentLoaded', function () {
+  buildSlider();
+  buildEvents();
+
   /*CUSTOM SELECT*/
   const element = document.querySelector('.js-choice');
   const choices = new Choices(element, {
@@ -113,6 +170,7 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   ymaps.ready(init);
+
   function init() {
     var myMap = new ymaps.Map("map", {
       center: [55.758468, 37.601088],
@@ -207,33 +265,6 @@ window.addEventListener('DOMContentLoaded', function () {
       allevents.innerHTML = 'Все события';
     }
   });*/
-
-  var allevents = document.querySelector('.allevents')
-  var eventsrow = document.querySelector('.events-row')
-  var eventblock = document.querySelectorAll(".event-block");
-
-  for (var i = 3; i < eventblock.length; i++) {
-    eventblock[i].classList.add('event-block--hidden');
-  }
-
-  allevents.addEventListener('click', (e) => {
-    e.preventDefault();
-    eventsrow.classList.toggle('fullrow');
-    allevents.closest("section").scrollIntoView({ block: "start", behavior: "smooth" });
-
-    if (eventsrow.classList.contains('fullrow')) {
-      allevents.innerHTML = 'Скрыть события';
-      for (var i = 0; i < eventblock.length; i++) {
-        eventblock[i].classList.remove('event-block--hidden');
-      }
-    } else {
-      allevents.innerHTML = 'Все события';
-      for (var i = 3; i < eventblock.length; i++) {
-        eventblock[i].classList.add('event-block--hidden');
-      }
-    }
-  });
-
 
   var blockLink = document.querySelectorAll(".false-link");
   for (var i = 0; i < blockLink.length; i++) {
