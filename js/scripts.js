@@ -163,6 +163,7 @@ function buildEvents(){
   });
 }
 
+
 window.addEventListener('resize', function() {
   buildSlider();
   buildEvents();
