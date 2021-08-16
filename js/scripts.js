@@ -1,6 +1,6 @@
 function buildSlider() {
   /*SLIDERS*/
-  var swiper = new Swiper(".site-slider", {
+  let heroSlider = new Swiper(".site-slider", {
     direction: "horizontal",
     autoplay: {
       delay: 15000,
@@ -12,44 +12,47 @@ function buildSlider() {
     },
   });
 
-  var swiper = new Swiper(".gallery-slider", {
-    slidesPerView: 3,
-    slidesPerColumn: 2,
-    spaceBetween: 50,
+  let gallerySliders = new Swiper(".gallery-slider", {
+    slidesPerColumnFill: "row",
+    slidesPerView: 1,
+    slidesPerColumn: 1,
+    spaceBetween: 20,
     pagination: {
       el: ".gallery-swiper-pagination",
-      type: "fraction",
-      clickable: false,
+      type: "fraction"
     },
     navigation: {
       nextEl: ".control-button-next-dark",
-      prevEl: ".control-button-prev-dark",
+      prevEl: ".control-button-prev-dark"
     },
+
     breakpoints: {
-      520: {
+      581: {
         slidesPerView: 2,
         slidesPerColumn: 2,
-        spaceBetween: 34,
+        spaceBetween: 30
       },
-      768: {
-        slidesPerView: 2,
-        slidesPerColumn: 2,
-        spaceBetween: 34,
-      },
-      1024: {
-        slidesPerView: 2,
-        slidesPerColumn: 2,
-        spaceBetween: 34,
-      },
-      1280: {
+
+      1200: {
         slidesPerView: 3,
         slidesPerColumn: 2,
-        spaceBetween: 50,
-      },
+        spaceBetween: 50
+      }
     },
+
+    a11y: false,
+
+    on: {
+      /* исправляет баг с margin-top остающимся при смене брейкпоинта */
+      beforeResize: function () {
+        this.slides.forEach((el) => {
+          el.style.marginTop = "";
+        });
+      }
+    }
   });
 
-  var swiper = new Swiper(".editions-slider", {
+  let editionsSlider = new Swiper(".editions-slider", {
     //slidesPerView: 3,
     //slidesPerColumn: 1,
     //spaceBetween: 50,
@@ -79,9 +82,19 @@ function buildSlider() {
         spaceBetween: 50,
       },
     },
+    a11y: false,
+
+    on: {
+      /* исправляет баг с margin-top остающимся при смене брейкпоинта */
+      beforeResize: function () {
+        this.slides.forEach((el) => {
+          el.style.marginTop = "";
+        });
+      }
+    }
   });
 
-  var swiper = new Swiper(".partners-slider", {
+  let partnerSlider = new Swiper(".partners-slider", {
     //slidesPerView: 3,
     //slidesPerColumn: 1,
     //spaceBetween: 50,
@@ -119,9 +132,9 @@ function buildEvents(){
 
   let countEvents = 0;
 
-  if (ww <= 991,98 && ww > 576){
+  if (ww < 992){
     countEvents = 2;
-  } else if (ww > 768){
+  } else if (ww > 992){
     countEvents = 3;
   }
   console.log(countEvents);

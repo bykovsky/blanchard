@@ -26,7 +26,7 @@
 html, body {
   position: relative;
   max-width: 100vw;
-  min-width: 100vw;
+  /*min-width: 100vw;*/
 }
 
 body {
@@ -80,11 +80,11 @@ a {
 
 .container {
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-top: 0;
   padding-bottom: 0;
-  max-width: 1630px;
+  max-width: 1700px;
   /*overflow: hidden;*/
 }
 
@@ -158,7 +158,9 @@ a {
 
 .header__logo {
   display: flex;
-  margin-right: 173px;
+  /* margin-right: 173px; */
+  width: calc(440 / 1600 * 100%);
+  margin-right: 0;
   border: none;
   /*display: flex;
   margin-right: 125px;
@@ -778,26 +780,31 @@ background-image: url(/img/chevron-down-purple.svg);
 .section-gallery {
   margin-bottom: 80px;
   padding-top: 80px;
-  padding-bottom: 70px;
+  padding-bottom: 74px;
   background: url('/img/1920/gallery-bg.jpg') center center no-repeat;
   background-size: cover;
 }
 
 .section-gallery__container {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: hidden; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .section-gallery__filter {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 400px;
+  /*width: 400px;
   min-width: 400px;
   max-width: 400px;
+  margin-right: 50px;*/
+  width: calc(400 / 1600 * 100%);
   margin-right: 50px;
 }
 
@@ -822,11 +829,13 @@ background-image: url(/img/chevron-down-purple.svg);
 }
 
 .section-gallery__slider {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   flex: 1;
   max-width: 1150px;
-  max-height: 845px;
+  max-height: 845px;*/
+  width: calc(1150 / 1600 * 100%);
+  margin-right: 0;
   padding-top: 25px;
   color: #fff;
 }
@@ -836,11 +845,11 @@ background-image: url(/img/chevron-down-purple.svg);
   justify-content: center;
   align-items: center;
   width: 350px !important;
-  height: 350px;*/
+  height: 350px;
   width: auto;
   height: auto;
   text-align: center;
-  font-size: 18px;
+  font-size: 18px;*/
   /*background: #fff;
   height: calc((100% - 50px) / 2);*/
 }
@@ -958,6 +967,22 @@ background-image: url(/img/chevron-down-purple.svg);
 
 .gallery-modal-link:focus, .gallery-modal-link:active {
   outline: none;
+}
+
+.last-block {
+  position: relative;
+  width: calc(400 / 1600 * 100%);
+}
+
+.last-block__content {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -4px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--white);
 }
 
 /*SECTION CATALOG*/
@@ -1442,7 +1467,7 @@ background-image: url(/img/chevron-down-purple.svg);
   /*max-height: 763px;*/
   margin-bottom: 80px;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 78px;
   background: url('/img/1920/editions-bg.jpg') no-repeat center center / cover;
 }
 
@@ -1453,27 +1478,30 @@ background-image: url(/img/chevron-down-purple.svg);
 .section-editions__container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 .section-editions__filter {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  /* width: 400px;
   min-width: 400px;
   max-width: 400px;
+  margin-right: 50px; */
+  width: calc(400 / 1600 * 100%);
   margin-right: 50px;
-  /*margin-right: auto;*/
 }
 
 .section-editions__slider {
   /*display: flex;
   flex-direction: column;
   flex: 1;*/
-  max-width: 1150px;
-  /*max-height: 845px;*/
+  /*max-height: 845px;
+  max-width: 1150px;*/
+  width: calc(1150 / 1600 * 100%);
+  margin-right: 0;
   padding-top: 33px;
   color: #fff;
 }
@@ -1489,7 +1517,7 @@ background-image: url(/img/chevron-down-purple.svg);
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-bottom: 13px;
+  margin-bottom: 15px;
 }
 
 .edition-slide__info {
@@ -1615,6 +1643,47 @@ background-image: url(/img/chevron-down-purple.svg);
 
 /*CONTACTS*/
 
+.contacts {
+  overflow-x: hidden;
+}
+
+/* .container {
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+} */
+
+.contacts__wrap {
+  border-top: 1px solid lightgray;
+}
+
+.contacts__container {
+  display: flex;
+}
+
+.contacts__contacts {
+  width: calc(522 / 1600 * 100%);
+  padding-top: 123px;
+  padding-bottom: 30px;
+  padding-right: 6.2vw;
+  border-right: 1px solid var(--hair-grey);
+  background-color: #fff;
+}
+
+.contacts__map {
+  height: 700px;
+  width: calc(1078 / 1600 * 100% + ((100vw - 100%) / 2)); /* 60% - в данном случае это ширина карты внутри контейнера, её можно менять */
+  margin-right: calc((-100vw + 100%) / 2);
+  margin-top: -1px;
+}
+
+.contacts__title {
+  margin-bottom: 16px;
+}
+
+/**/
 .section-contacts {
   min-height: 780px;
 }
@@ -1631,14 +1700,13 @@ background-image: url(/img/chevron-down-purple.svg);
   overflow-x: hidden;
 }
 
-.contacts-block {
+/* .contacts-block {
   display: flex;
-  /*align-items: center;*/
   justify-content: center;
   width: 35.5%;
   padding: 123px 40px 40px 80px;
   border: 1px solid var(--hair-grey);
-}
+} */
 
 .contacts-block__inner {
   min-width: 400px;
@@ -2086,7 +2154,7 @@ form .form-row:not(:last-child) {
 /*CHECKBOXES*/
 
 .section-editions__checkboxes {
-  margin-bottom: auto;
+  margin-bottom: 17px;
 }
 
 .custom-checkbox {
@@ -2538,15 +2606,17 @@ form .form-row:not(:last-child) {
 
 @media (max-width: 575.98px) {}
 
-@media (min-width: 576px) and (max-width: 767.98px) {}
+@media (min-width: 576px) and (max-width: 767px) {}
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 991px) {
   body {
     min-width: 100vw;
     overflow-x: hidden;
   }
   .container {
     max-width: 700px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .top-nav {
     padding: 0;
@@ -2690,13 +2760,15 @@ form .form-row:not(:last-child) {
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   body {
     min-width: 100vw;
     overflow-x: hidden;
   }
   .container {
     max-width: 955px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .top-nav {
     padding: 0;
@@ -2711,10 +2783,11 @@ form .form-row:not(:last-child) {
     display: flex;
   }
   .header__logo {
+    width: 190px;
     margin-right: auto;
   }
   .header__logo-img {
-    width: 188px;
+    width: 100%;
   }
   .main-nav__list {
     display: none;
@@ -2748,18 +2821,30 @@ form .form-row:not(:last-child) {
   .hero-slide.slide-03 {
     background-image: url(/img/1024/slider-03.jpg);
   }
+  .section-gallery {
+    padding-bottom: 84px;
+  }
   .section-gallery__filter {
-    width: 280px;
+    /* width: 280px;
     min-width: 280px;
-    max-width: 280px;
+    max-width: 280px; */
+    width: calc(280 / 925 * 100%);
     margin-right: 50px;
   }
   .section-gallery__slider {
-    max-width: 595px;
+    width: calc(595 / 925 * 100%);
+    /* max-width: 595px;
     min-height: auto;
-    max-height: 690px;
+    max-height: 690px; */
     /*min-height: 690px;*/
     color: #fff;
+  }
+  .last-block {
+    position: relative;
+    width: calc(280 / 925 * 100%);
+  }
+  .last-block__content {
+    transform: translate(0, 10px);
   }
   .gallery-slide {
     position: relative;
@@ -2808,17 +2893,22 @@ form .form-row:not(:last-child) {
   .event-block__address {
     transform: translate(7px, 0);
   }
+  .section-editions {
+    padding-bottom: 81px;
+  }
   .section-editions__filter {
-    width: 277px;
+    /* width: 277px;
     min-width: 277px;
-    max-width: 277px;
+    max-width: 277px; */
+    width: calc(277 / 925 *100%);
     margin-right: 18px;
   }
   .section-editions__checkboxes {
     margin-bottom: 14px;
   }
   .section-editions__slider {
-    max-width: 630px;
+    /* max-width: 630px; */
+    width: calc(630/ 925 * 100%);
   }
   .edition-slide__img {
     margin-bottom: 14px;
@@ -2833,13 +2923,21 @@ form .form-row:not(:last-child) {
     height: 128px;
     padding: 0 35px;
   }
-  .contacts-block {
+  /* .contacts-block {
     width: 47.5%;
     padding: 123px 130px 60px 80px
   }
   .contacts-block__inner {
     min-width: 335px;
     max-width: 335px;
+  } */
+  .contacts__contacts {
+    width: calc(437 / 925 * 100%);
+    padding-right: 10vw;
+  }
+
+  .contacts__map {
+    width: calc(487 / 925 * 100% + ((100vw - 100%) / 2));
   }
   .messendgers-list .messendgers-list__item:not(:last-child) {
     margin-right: 28px;

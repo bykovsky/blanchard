@@ -385,10 +385,6 @@
               <option value="Скульптура">Скульптура</option>
             </select>
           </div>
-          <div class="filter__description">
-            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
-            <a class="content-link" href="#">авторизуйтесь</a>, либо воспользуйтесь лицензией.
-          </div>
         </div>
         <div class="section-gallery__slider">
 
@@ -712,6 +708,12 @@
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="section-gallery__description last-block">
+          <div class="last-block__content">
+            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
+            <a class="content-link" href="#">авторизуйтесь</a>, либо воспользуйтесь лицензией.
           </div>
         </div>
       </div>
@@ -1917,8 +1919,47 @@
 
       </div>
     </section>
+    <section id="contacts" class="contacts">
+      <div class="container">
+        <h2 class="section-title section-title--dark contacts__title">Контакты</h2>
+      </div>
+      <div class="contacts__wrap">
+        <div class="container contacts__container">
+          <div class="contacts__contacts contacts-block">
+            <h3 class="contacts-block__title">Шоурум №2</h3>
+            <address class="contacts-block__address">Леонтьевский переулок, дом 5/1</address>
+            <h3 class="contacts-block__subtitle">Заказать обратный звонок</h3>
+            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="js-form contact-form">
+              <div class="form-row">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Имя*" autocomplete="off"
+                  data-validate-field="name">
+              </div>
+              <div class="form-row">
+                <input type="tel" name="tel" id="tel" class="form-control" placeholder="Телефон*" autocomplete="off"
+                  data-validate-field="tel" data-validate-rules="tel">
+              </div>
+              <div class="form-row">
+                <button type="submit" name="submit" id="submit"
+                  class="btn btn-outline-primary form-btn">Заказать</button>
+              </div>
+            </form>
+            <h3 class="contacts-block__subtitle">Связаться в один клик</h3>
+            <ul class="messendgers-list">
+              <li class="messendgers-list__item">
+                <a href="" class="messendgers-list__link messendgers-list__link--whatsapp false-link"></a>
+              </li>
+              <li class="messendgers-list__item">
+                <a href="" class="messendgers-list__link messendgers-list__link--telegram false-link"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="contacts__map" id="map">
 
-    <section id="contacts" class="section-contacts">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="contacts" class="section-contacts">
       <div class="container">
         <h2 class="section-title section-title--dark section-contacts__title">Контакты</h2>
       </div>
@@ -1957,7 +1998,7 @@
           <div id="map" style="width: 100%; height: 700px"></div>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
   <footer class="footer">
     <div class="container footer__container">
