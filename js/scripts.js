@@ -1,6 +1,6 @@
 function buildSlider() {
   /*SLIDERS*/
-  let heroSlider = new Swiper(".site-slider", {
+  var heroSlider = new Swiper(".site-slider", {
     direction: "horizontal",
     autoplay: {
       delay: 15000,
@@ -12,7 +12,7 @@ function buildSlider() {
     },
   });
 
-  let gallerySliders = new Swiper(".gallery-slider", {
+  var gallerySliders = new Swiper(".gallery-slider", {
     slidesPerColumnFill: "row",
     slidesPerView: 1,
     slidesPerColumn: 1,
@@ -52,7 +52,7 @@ function buildSlider() {
     }
   });
 
-  let editionsSlider = new Swiper(".editions-slider", {
+  var editionsSlider = new Swiper(".editions-slider", {
     //slidesPerView: 3,
     //slidesPerColumn: 1,
     //spaceBetween: 50,
@@ -94,7 +94,7 @@ function buildSlider() {
     }
   });
 
-  let partnerSlider = new Swiper(".partners-slider", {
+  var partnerSlider = new Swiper(".partners-slider", {
     //slidesPerView: 3,
     //slidesPerColumn: 1,
     //spaceBetween: 50,
@@ -120,23 +120,65 @@ function buildSlider() {
       },
     },
   });
+
+  let wp = window.innerWidth;
+  if (wp < 500){
+    editionsSlider.destroy({
+      deleteInstance: false,
+      cleanStyles: false,
+    });
+
+    document.querySelector('.editions-wrapper').classList.remove('swiper-wrapper');
+    document.querySelector('.events-row').classList.add('events-wrapper');
+    document.querySelector('.events-row').classList.add('swiper-wrapper');
+    document.querySelector('.events-wrapper').classList.remove('events-row');
+
+    var eventSlider = new Swiper(".events-slider", {
+      pagination: {
+        el: ".events-pagination",
+      },
+      breakpoints: {
+        520: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 34,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      },
+      slideClass: 'event-block',
+    });
+  }
 }
 
 function buildEvents(){
-  const allevents = document.querySelector('.allevents')
-  const eventsrow = document.querySelector('.events-row')
-  const eventblock = document.querySelectorAll(".event-block");
-
-  let ww = window.innerWidth;
+  var ww = window.innerWidth;
   console.log(ww);
 
-  let countEvents = 0;
+  var allevents = document.querySelector('.allevents')
+  var eventsrow = document.querySelector('.events-row')
+  var eventblock = document.querySelectorAll(".event-block");
 
-  if (ww < 992){
+
+  var countEvents = 3;
+
+  if (ww < 992 && ww > 578){
     countEvents = 2;
   } else if (ww > 992){
     countEvents = 3;
+  } else if (ww < 577){
+    countEvents = 10000;
   }
+
+
   console.log(countEvents);
 
 
@@ -165,13 +207,15 @@ function buildEvents(){
 
 
 window.addEventListener('resize', function() {
-  buildSlider();
   buildEvents();
+  buildSlider();
+
 })
 
 window.addEventListener('DOMContentLoaded', function () {
-  buildSlider();
   buildEvents();
+  buildSlider();
+
 
   /*CUSTOM SELECT*/
   const element = document.querySelector('.js-choice');
