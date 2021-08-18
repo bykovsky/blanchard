@@ -2707,6 +2707,11 @@ form .form-row:not(:last-child) {
   transform: translateY(-13px) rotate(-45deg);
 }
 
+.burger.is-active .burger__line,
+.toggle-search.is-active .toggle-search__line{
+  background-color: var(--primary-purple);
+}
+
 .toggle-search.is-active svg {
   display: none;
   visibility: hidden;
