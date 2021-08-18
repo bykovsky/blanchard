@@ -365,12 +365,25 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  //Toggle search-popup
+  document.querySelector('.header__search-btn').addEventListener('click', function () {
+    this.classList.toggle('is-active');
+    document.querySelector('.search-popup').classList.toggle('is-active');
+    document.querySelector('.search-popup__input').focus();
+
+    document.querySelector('.burger').classList.remove('is-active');
+    document.querySelector('.main-nav').classList.remove('is-active');
+    document.querySelector('.body').classList.remove('body-hidden');
+  });
 
   //Toggle offcanvas menu
   document.querySelector('.burger').addEventListener('click', function () {
     this.classList.toggle('is-active');
     document.querySelector('.main-nav').classList.toggle('is-active');
     document.querySelector('.body').classList.toggle('body-hidden');
+
+    document.querySelector('.search-popup').classList.remove('is-active');
+    document.querySelector('.header__search-btn').classList.remove('is-active');
   });
 
   //close button
