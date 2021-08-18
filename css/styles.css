@@ -2237,6 +2237,7 @@ form .form-row:not(:last-child) {
 }
 .custom-checkbox:hover .custom-checkbox__indicator {
   border: 1px solid var(--primary-purple);
+}
 
 /*INPUTGROUP*/
 
