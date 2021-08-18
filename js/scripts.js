@@ -299,8 +299,8 @@ window.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       let href = this.getAttribute('href').substring(1);
       const scrollTarget = document.getElementById(href);
-      const topOffset = document.querySelector('.main-nav').offsetHeight;
-      //const topOffset = 0;
+      const topOffset = document.querySelector('.header').offsetHeight;
+      //const topOffset = 50;
       const elementPosition = scrollTarget.getBoundingClientRect().top;
       const offsetPosition = elementPosition - topOffset;
 
@@ -308,6 +308,11 @@ window.addEventListener('DOMContentLoaded', function () {
         top: offsetPosition,
         behavior: 'smooth'
       });
+
+      document.querySelector('.burger').classList.remove('is-active');
+      document.querySelector('.main-nav').classList.remove('is-active');
+      document.querySelector('.body').classList.remove('body-hidden');
+
     });
   });
 
@@ -362,16 +367,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
   //Toggle offcanvas menu
-  /*document.querySelector('#burger').addEventListener('click', function () {
-    document.querySelector('#offcanvas-menu').classList.toggle('is-active')
-    document.querySelector('.body').classList.toggle('body-hidden')
-  });*/
+  document.querySelector('.burger').addEventListener('click', function () {
+    this.classList.toggle('is-active');
+    document.querySelector('.main-nav').classList.toggle('is-active');
+    document.querySelector('.body').classList.toggle('body-hidden');
+  });
 
   //close button
-  /*document.querySelector('.menu-close-btn').addEventListener('click', function () {
-    document.querySelector('#offcanvas-menu').classList.toggle('is-active')
-    document.querySelector('.body').classList.toggle('body-hidden')
-  });*/
+  // document.querySelector('.menu-close-btn').addEventListener('click', function () {
+  //   document.querySelector('.main-nav').classList.toggle('is-active');
+  //   document.querySelector('.body').classList.toggle('body-hidden');
+  // });
 
   //Tabs v 1.0
 
