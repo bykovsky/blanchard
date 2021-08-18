@@ -2618,7 +2618,18 @@ form .form-row:not(:last-child) {
 
 /*BREAKPOINTS*/
 
-@media (min-width: 1200px) {}
+@media (min-width: 1440px) {
+
+}
+
+@media (max-width: 1439px) and (min-width: 1200px){
+  .main-nav__list .main-nav__item:not(:last-child) {
+    margin-right: 15px;
+  }
+  .sub-nav__list .sub-nav__item:not(:last-child) {
+    margin-right: 43px;
+  }
+}
 
 @media (max-width: 1199px) and (min-width: 992px) {
   body {

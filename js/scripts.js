@@ -140,6 +140,7 @@ function buildSlider() {
       breakpoints: {
         520: {
           slidesPerView: 1,
+          spaceBetween: 34,
         },
         768: {
           slidesPerView: 2,
