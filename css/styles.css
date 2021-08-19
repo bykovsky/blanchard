@@ -210,6 +210,10 @@ a {
   transition: color .3s ease-in-out, background-color .3s ease-in-out;
 }
 
+.main-nav__link.is-active {
+  color: var(--primary-purple);
+}
+
 .main-nav__link:hover {
   color: var(--light-purple);
 }
@@ -2707,8 +2711,7 @@ form .form-row:not(:last-child) {
   transform: translateY(-13px) rotate(-45deg);
 }
 
-.burger.is-active .burger__line,
-.toggle-search.is-active .toggle-search__line{
+.burger.is-active .burger__line, .toggle-search.is-active .toggle-search__line {
   background-color: var(--primary-purple);
 }
 
@@ -3778,7 +3781,7 @@ form .form-row:not(:last-child) {
   /*SEARCH POPUP*/
   .search-popup {
     padding: 30px 15px;
-   }
+  }
   .search-popup.is-active {
     visibility: visible;
     opacity: 1;

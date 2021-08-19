@@ -122,7 +122,7 @@ function buildSlider() {
   });
 
   let wp = window.innerWidth;
-  if (wp < 500){
+  if (wp < 500) {
     editionsSlider.destroy({
       deleteInstance: false,
       cleanStyles: false,
@@ -160,7 +160,7 @@ function buildSlider() {
   }
 }
 
-function buildEvents(){
+function buildEvents() {
   var ww = window.innerWidth;
   console.log(ww);
 
@@ -171,11 +171,11 @@ function buildEvents(){
 
   var countEvents = 3;
 
-  if (ww < 992 && ww > 578){
+  if (ww < 992 && ww > 578) {
     countEvents = 2;
-  } else if (ww > 992){
+  } else if (ww > 992) {
     countEvents = 3;
-  } else if (ww < 577){
+  } else if (ww < 577) {
     countEvents = 10000;
   }
 
@@ -207,7 +207,7 @@ function buildEvents(){
 }
 
 
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
   buildEvents();
   buildSlider();
 
@@ -303,6 +303,17 @@ window.addEventListener('DOMContentLoaded', function () {
       //const topOffset = 50;
       const elementPosition = scrollTarget.getBoundingClientRect().top;
       const offsetPosition = elementPosition - topOffset;
+
+      var burgerlink = document.querySelectorAll('.main-nav__link')
+      for (var i = 0; i < burgerlink.length; i++) {
+        var currentLink = e.target;
+        for (var link of burgerlink) {
+          if (link !== currentLink) {
+            link.classList.remove('is-active');
+          }
+          currentLink.classList.toggle('is-active');
+        }
+      }
 
       window.scrollBy({
         top: offsetPosition,
