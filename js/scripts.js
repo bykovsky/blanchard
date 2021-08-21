@@ -304,7 +304,7 @@ window.addEventListener('DOMContentLoaded', function () {
       const elementPosition = scrollTarget.getBoundingClientRect().top;
       const offsetPosition = elementPosition - topOffset;
 
-      var burgerlink = document.querySelectorAll('.main-nav__link')
+      var burgerlink = document.querySelectorAll('.main-nav__link');
       for (var i = 0; i < burgerlink.length; i++) {
         var currentLink = e.target;
         for (var link of burgerlink) {
@@ -326,6 +326,19 @@ window.addEventListener('DOMContentLoaded', function () {
 
     });
   });
+
+
+  /* CHECKBOXES */
+  var checkboxes = document.querySelectorAll('.custom-checkbox__input');
+  for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].addEventListener("click", function (e) {
+      var currentCheckbox = e.target;
+      // console.log(currentCheckbox);
+      currentCheckbox.parentNode.classList.toggle('custom-checkbox--active');
+      var activeCheckboxes = document.querySelectorAll('.custom-checkbox--active');
+      console.log(activeCheckboxes.length);
+    });
+  }
 
   /*MORE EVENTS
   var allevents = document.querySelector('.allevents')

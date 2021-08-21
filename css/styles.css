@@ -1426,6 +1426,7 @@ background-image: url(/img/chevron-down-purple.svg);
   position: relative;
   padding: 5px 0;
   text-decoration: none;
+  color: var(--primary-purple);
   border-bottom: 1px solid;
   border-color: currentColor;
   transition: color .3s ease-in-out/*, border-color .3s ease-in-out, background-color .3s ease-in-out*/
@@ -2554,27 +2555,11 @@ form .form-row:not(:last-child) {
   font-weight: 600;
   font-size: 24px;
   line-height: 1;
+  color: var(--dark-grey);
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: var(--hair-grey);
   transition: color .1s ease-in;
-}
-
-.select-accordion__title:hover {
-  color: var(--primary-purple);
-}
-
-.select-accordion__title:focus {
-  color: white;
-  outline: none;
-}
-
-.select-accordion__title:focus span {
-  background: var(--primary-purple);
-}
-
-.select-accordion__title:active {
-  color: var(--dark-purple);
 }
 
 .select-accordion__title::before {
@@ -2606,7 +2591,25 @@ form .form-row:not(:last-child) {
 }
 
 .select-accordion__title[aria-expanded="true"] {
+  color: var(--dark-purple);
   border-color: var(--dark-purple);
+}
+
+.select-accordion__title:hover {
+  color: var(--primary-purple);
+}
+
+.select-accordion__title:focus {
+  color: white;
+  outline: none;
+}
+
+.select-accordion__title:focus span {
+  background: var(--primary-purple);
+}
+
+.select-accordion__title:active {
+  color: var(--dark-purple);
 }
 
 .select-accordion__content {
@@ -3648,7 +3651,7 @@ form .form-row:not(:last-child) {
   .custom-checkbox {
     display: none;
   }
-  .custom-checkbox.active {
+  .custom-checkbox--active {
     display: block;
   }
   .section-editions__title {
@@ -3791,6 +3794,7 @@ form .form-row:not(:last-child) {
     width: 18px;
     height: 18px;
     margin-right: 10px;
+    background-size: contain;
   }
   .search-popup__input {
     font-size: 16px;
