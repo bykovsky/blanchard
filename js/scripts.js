@@ -30,7 +30,7 @@ function buildSlider() {
       581: {
         slidesPerView: 2,
         slidesPerColumn: 2,
-        spaceBetween: 30
+        spaceBetween: 33
       },
 
       1200: {

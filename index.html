@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard. Картинная галерея</title>
-  <!--link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" /-->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+  <link rel="stylesheet" href="/vendor/swiper/swiper-bundle.min.css">
   <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/base.min.css" /-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
@@ -1705,19 +1705,19 @@
             фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не
             уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
             Прежде всего, постоянное информационно-пропагандистское
-            <span class="tooltip">
+            <button class="tooltip">
               <span class="tooltip__data">Пример современных тенденций -
                 современная&nbsp;методология&nbsp;разработки</span>
-            </span> обеспечение нашей деятельности однозначно фиксирует
+            </button> обеспечение нашей деятельности однозначно фиксирует
             необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия
             представителей оппозиции могут быть рассмотрены
-            <span class="tooltip">
+            <button class="tooltip">
               <span class="tooltip__data">Приятно, граждане, наблюдать, как сделанные на базе аналитики&nbsp;выводы
                 вызывают у вас эмоции </span>
-            </span> исключительно в разрезе маркетинговых и финансовых
-            <span class="tooltip">
+            </button> исключительно в разрезе маркетинговых и финансовых
+            <button class="tooltip">
               <span class="tooltip__data">В стремлении повысить качество</span>
-            </span> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных
+            </button> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных
             резервов призывают нас к новым
             свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной
             неузнаваемости.
@@ -1873,9 +1873,15 @@
       </div>
       <div class="contacts__wrap">
         <div class="container contacts__container">
-          <div class="contacts__contacts contacts-block">
+          <div class="visible-mobile">
             <h3 class="contacts-block__title">Шоурум №2</h3>
             <address class="contacts-block__address">Леонтьевский переулок, дом 5/1</address>
+          </div>
+          <div class="contacts__contacts contacts-block">
+            <div class="hidden-mobile">
+              <h3 class="contacts-block__title">Шоурум №2</h3>
+              <address class="contacts-block__address">Леонтьевский переулок, дом 5/1</address>
+            </div>
             <h3 class="contacts-block__subtitle">Заказать обратный звонок</h3>
             <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="js-form contact-form">
               <div class="form-row">
@@ -1901,9 +1907,7 @@
               </li>
             </ul>
           </div>
-          <div class="contacts__map" id="map">
-
-          </div>
+          <div class="contacts__map" id="map"> </div>
         </div>
       </div>
     </section>
@@ -1965,8 +1969,8 @@
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script> -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
