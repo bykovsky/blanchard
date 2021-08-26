@@ -3593,6 +3593,14 @@ form .form-row:not(:last-child) {
     min-height: 367px;
     max-height: 400px;
   }
+  .choices {
+    position: relative;
+    z-index: 2;
+  }
+  .choices__list--dropdown .choices__item,
+  .choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: rgba(0, 0, 0, .85);
+  }
   .section-catalog {
     min-height: auto;
     margin-bottom: 52px;
