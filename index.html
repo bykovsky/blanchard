@@ -322,7 +322,9 @@
             <h2 class="section-title section-title--white section-gallery__title">
               Галерея
             </h2>
-            <div class="filter__title"><label for="select-type">Фильтр:</label></div>
+            <div class="filter__title section-gallery__filter-title">
+              <label for="select-type">Фильтр:</label>
+            </div>
             <select name="select" id="select-type" class="js-choice">
               <option value="Живопись">Живопись</option>
               <option value="Рисунок">Рисунок</option>
@@ -1440,8 +1442,14 @@
             <h2 class="section-title section-title--white section-editions__title">
               Издания
             </h2>
-            <div class="filter__title">Категории</div>
+            <div class="filter__title section-editions__filter-title">Категории</div>
           </div>
+          <button class="editions-expand">
+            <span class="editions-expand__title">Категории</span>
+            <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 1L6 6L1 1" stroke="currentColor" />
+            </svg>
+          </button>
           <div class="section-editions__checkboxes">
             <label class="custom-checkbox">
               <input type="checkbox" class="custom-checkbox__input">
@@ -1874,8 +1882,8 @@
       <div class="contacts__wrap">
         <div class="container contacts__container">
           <div class="visible-mobile">
-            <h3 class="contacts-block__title">Шоурум №2</h3>
-            <address class="contacts-block__address">Леонтьевский переулок, дом 5/1</address>
+            <h3 class="contacts-block-title">Шоурум №2</h3>
+            <address class="contacts-block-address">Леонтьевский переулок, дом 5/1</address>
           </div>
           <div class="contacts__contacts contacts-block">
             <div class="hidden-mobile">

@@ -340,6 +340,11 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var editionsExpand = document.querySelector('.editions-expand');
+  editionsExpand.addEventListener("click", function (e) {
+    this.classList.toggle('is-active');
+    document.querySelector('.section-editions__checkboxes').classList.toggle('is-open');
+  });
   /*MORE EVENTS
   var allevents = document.querySelector('.allevents')
   var eventsrow = document.querySelector('.events-row')
