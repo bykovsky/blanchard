@@ -210,7 +210,6 @@ function buildEvents() {
 window.addEventListener('resize', function () {
   buildEvents();
   buildSlider();
-
 })
 
 window.addEventListener('DOMContentLoaded', function () {
