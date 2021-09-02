@@ -4164,7 +4164,7 @@ form .form-row:not(:last-child) {
     margin-bottom: 5px;
     padding-right: 0;
     font-size: 12px;
-    overflow-x: hidden;
+    overflow: hidden;
   }
   .edition-slide__title {
     margin: 0;

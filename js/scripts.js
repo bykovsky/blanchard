@@ -91,7 +91,8 @@ const editionsSlider = new Swiper(".editions-slider", {
   },
   a11y: false,
 });
-const editionsSliderObj = document.querySelector('.editions-slider').swiper;
+editionsSliderObj = document.querySelector('.editions-slider').swiper;
+
 
 
 const partnerSlider = new Swiper(".partners-slider", {
@@ -123,7 +124,7 @@ const partnerSliderObj = document.querySelector('.partners-slider').swiper;
 const MOBILE_WIDTH = 577;
 const eventsrow = document.querySelector('.events-row');
 const allevents = document.querySelector('.allevents');
-const eventblock = document.querySelectorAll(".event-block");ы
+const eventblock = document.querySelectorAll(".event-block");
 
 function getWindowWidth() {
   return Math.max(
@@ -141,6 +142,12 @@ const eventsSliderParams = {
   cardsContainerName: 'events-slider',
   cardsWrapName: 'events-row-wrap',
   card: 'event-block'
+};
+
+const editionsSliderParams = {
+  editionsContainerName: 'editions-slider',
+  editionsWrapName: 'editions-wrapper',
+  editionsCard: 'edition-slide'
 };
 
 
@@ -189,20 +196,10 @@ function destroyEventsSlider(params) {
   params.cardsWrap.classList.add("events-row");
 }
 
-// function destroyEditionsSlider(params) {
-//   params.eventsCardsSlider.destroy();
-//   params.cardsContainer.classList.remove("swiper");
-//   params.cardsWrap.classList.remove("swiper-wrapper");
-//   params.cardsWrap.removeAttribute("aria-live");
-//   params.cardsWrap.removeAttribute("id");
-//   params.cardsWrap.classList.add("events-row");
-// }
-
 function checkWindowWidth(params) {
   const currentWidth = getWindowWidth();
   params.cardsContainer = document.querySelector(`.${params.cardsContainerName}`);
   params.cardsWrap = document.querySelector(`.${params.cardsWrapName}`);
-
   if (currentWidth <= MOBILE_WIDTH && (!params.eventsCardsSlider || params.eventsCardsSlider.destroyed)) {
     activateEventsSlider(params);
   } else if (currentWidth >= MOBILE_WIDTH && params.eventsCardsSlider) {
@@ -242,8 +239,7 @@ function buildEvents() {
 window.addEventListener('resize', function () {
   buildEvents();
   checkWindowWidth(eventsSliderParams);
-  gallerySliderObj.update();
-  gallerySliderObj.updateSize();
+  console.log(editionsSliderObj);
 })
 
 window.addEventListener('DOMContentLoaded', function () {
