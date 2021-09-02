@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 
+<!-- with swiper 6.x -->
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard. Картинная галерея</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+  <link rel="stylesheet" href="/vendor/swiper/swiper-bundle.min.css">
+  <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/base.min.css" /-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
   <link rel="stylesheet" href="css/normalize.css">
@@ -280,7 +284,7 @@
   <main class="main" id="main">
     <section class="site-hero">
 
-      <div class="swiper site-slider">
+      <div class="swiper-container site-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide hero-slide slide-01"> </div>
           <div class="swiper-slide hero-slide slide-02"> </div>
@@ -340,7 +344,7 @@
         </div>
         <div class="section-gallery__slider">
 
-          <div class="swiper gallery-slider">
+          <div class="swiper-container gallery-slider">
             <div class="gallery-controls">
               <div class="control-button control-button-dark control-button-prev-dark"></div>
               <div class="gallery-swiper-pagination"></div>
@@ -1270,7 +1274,7 @@
           События
         </h2>
         <div class="events-slider">
-          <div class="events-row events-row-wrap">
+          <div class="events-row">
             <article class="event-block">
               <picture class="event-block__picture">
                 <source srcset="/img/1920/events-01.jpg" media="(min-width: 1200px)">
@@ -1542,7 +1546,7 @@
         </div>
         <div class="section-editions__slider">
 
-          <div class="swiper editions-slider">
+          <div class="swiper-container editions-slider">
             <div class="gallery-controls">
               <div class="control-button control-button-dark control-button-prev-dark"></div>
               <div class="gallery-swiper-pagination"></div>
@@ -1746,7 +1750,7 @@
             <div class="control-button control-button-light control-button-prev-light"></div>
             <div class="control-button control-button-light control-button-next-light"></div>
           </div>
-          <div class="partners-slider swiper">
+          <div class="partners-slider swiper-container">
 
 
             <div class="swiper-wrapper partners-slider__wrapper">
@@ -1981,9 +1985,10 @@
     </div>
   </section>
 
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
