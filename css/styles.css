@@ -1534,6 +1534,7 @@ sub-nav__link:active svg { */{
   /* width: calc(400 / 1600 * 100%);
   margin-right: 50px; */
   width: calc(277 / 1600 * 100%);
+  min-width: 277px;
   margin-right: 168px;
 }
 
@@ -2951,6 +2952,9 @@ form .form-row:not(:last-child) {
   .section-catalog {
     min-height: 1570px;
   }
+  .section-catalog__titlebox {
+    margin-bottom: 15px;
+}
   .section-catalog__title {
     margin-right: 43px;
   }
@@ -2970,7 +2974,7 @@ form .form-row:not(:last-child) {
     margin-bottom: 78px;
   }
   .events-row {
-    margin-bottom: 23px;
+    margin-bottom: 21px;
   }
   .event-block {
     margin-bottom: 27px;
@@ -3012,7 +3016,7 @@ form .form-row:not(:last-child) {
     margin-bottom: 14px;
   }
   .edition-slide__info-row {
-    margin-bottom: 15px;
+    margin-bottom: 17px;
   }
   .partners-slider-container {
     padding: 0 53px;
@@ -3061,6 +3065,11 @@ form .form-row:not(:last-child) {
   /**/
   .select-accordion__title::before {
     right: 3px;
+  }
+  .select-accordion__title:active::before,
+  .select-accordion__title[aria-expanded="true"]::before {
+    right: 1px;
+    top: calc(50% - 25px);
   }
 }
 
