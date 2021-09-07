@@ -1,3 +1,15 @@
+/*Accordion*/
+$(function () {
+  $("#accordion")
+    .accordion({
+      header: "> li > .select-accordion__title",
+      collapsible: true,
+      heightStyle: "content",
+      active: 0,
+      animate: 200
+    })
+});
+
 const heroSlider = new Swiper(".site-slider", {
   direction: "horizontal",
   autoplay: {
@@ -30,7 +42,7 @@ const gallerySlider = new Swiper(".gallery-slider", {
   },
 
   breakpoints: {
-    576: {
+    566: {
       slidesPerView: 1,
       spaceBetween: 0,
     },
@@ -51,7 +63,8 @@ const gallerySlider = new Swiper(".gallery-slider", {
       spaceBetween: 50
     }
   },
-  a11y: false
+  a11y: false,
+  freeMode: false,
 });
 const gallerySliderObj = document.querySelector('.gallery-slider').swiper;
 
@@ -101,6 +114,8 @@ const partnerSlider = new Swiper(".partners-slider", {
     nextEl: ".control-button-next-light",
     prevEl: ".control-button-prev-light",
   },
+  a11y: false,
+  freeMode: false,
   breakpoints: {
     520: {
       slidesPerView: 1,
@@ -123,7 +138,7 @@ const partnerSlider = new Swiper(".partners-slider", {
 const partnerSliderObj = document.querySelector('.partners-slider').swiper;
 
 
-const MOBILE_WIDTH = 577;
+const MOBILE_WIDTH = 566;
 const eventsrow = document.querySelector('.events-row');
 const allevents = document.querySelector('.allevents');
 const eventblock = document.querySelectorAll(".event-block");
@@ -158,7 +173,8 @@ function activateEventsSlider(params) {
     pagination: {
       el: `.${params.cardsContainerName} .${params.paginationClassName}`
     },
-
+    a11y: false,
+    freeMode: false,
     on: {
       beforeInit() {
         document
@@ -229,8 +245,10 @@ function activateEditionsSlider(sets) {
       nextEl: ".control-button-next-dark",
       prevEl: ".control-button-prev-dark",
     },
+    a11y: false,
+    freeMode: false,
     breakpoints: {
-      576: {
+      566: {
         slidesPerView: 1,
       },
       577: {
@@ -306,7 +324,7 @@ function buildEvents() {
     countEvents = 2;
   } else if (ww > 992) {
     countEvents = 3;
-  } else if (ww < 577) {
+  } else if (ww < 567) {
     countEvents = Infinity;
   }
 
@@ -321,8 +339,6 @@ function buildEvents() {
     eventblock[i].classList.add('event-block--hidden');
   }
 }
-
-
 
 
 window.addEventListener('resize', function () {
@@ -519,19 +535,21 @@ window.addEventListener('DOMContentLoaded', function () {
   //Toggle search-popup
   document.querySelector('.header__search-btn').addEventListener('click', function () {
     this.classList.toggle('is-active');
-    document.querySelector('.search-popup').classList.toggle('is-active');
-    document.querySelector('.search-popup__input').focus();
+    document.querySelector('.header-search').classList.toggle('is-active');
+    document.querySelector('.search-form__input').focus();
+    // document.querySelector('.search-popup').classList.toggle('is-active');
+    // document.querySelector('.search-popup__input').focus();
 
     document.querySelector('.burger').classList.remove('is-active');
     document.querySelector('.main-nav').classList.remove('is-active');
-    document.querySelector('.body').classList.remove('body-hidden');
+    //document.querySelector('.body').classList.remove('body-hidden');
   });
 
   //Toggle offcanvas menu
   document.querySelector('.burger').addEventListener('click', function () {
     this.classList.toggle('is-active');
     document.querySelector('.main-nav').classList.toggle('is-active');
-    document.querySelector('.body').classList.toggle('body-hidden');
+    //document.querySelector('.body').classList.toggle('body-hidden');
 
     document.querySelector('.search-popup').classList.remove('is-active');
     document.querySelector('.header__search-btn').classList.remove('is-active');
@@ -584,16 +602,17 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-})
+  let accorditions = document.querySelectorAll(".select-accordion__title");
+  var tabindex = 1;
+  accorditions.forEach((el) => {
+    // el.setAttribute("tabindex", tabindex);
+    // tabindex++;
+    el.removeAttribute("tabindex", tabindex);
+  });
 
-/*Accordion*/
-$(function () {
-  $("#accordion")
-    .accordion({
-      header: "> li > .select-accordion__title",
-      collapsible: true,
-      heightStyle: "content",
-      active: 0,
-      animate: 200
-    })
+  tippy('.tooltip', {
+    theme: 'blanchard',
+    animation: 'scale',
+  });
+
 });

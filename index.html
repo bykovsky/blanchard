@@ -24,9 +24,11 @@
           <span class="burger__line"></span>
         </button>
 
-        <a href="/" class="header__logo" title="Blanchard. Картинная галерея">
-          <img loading="lazy" src="img/header-logo.svg" class="header__logo-img" alt="Blanchard. Картинная галерея">
-        </a>
+        <div class="header__logo">
+          <a class="header__logo-link" href="/" title="Blanchard. Картинная галерея">
+            <img loading="lazy" src="img/header-logo.svg" class="header__logo-img" alt="Blanchard. Картинная галерея">
+          </a>
+        </div>
 
         <nav class="main-nav">
           <ul class="main-nav__list" title="Основное меню сайта">
@@ -70,6 +72,11 @@
           <span class="toggle-search__line"></span>
           <span class="toggle-search__line"></span>
         </button>
+
+        <form class="header-search search-form">
+          <input class="search-form__input" type="search"  name="query" id="query" placeholder="Поиск по сайту" aria-label="Введите поисковый запрос" autocomplete="off">
+          <button class="search-form__icon" aria-label="Искать"></button>
+        </form>
 
       </div>
     </div>
@@ -267,12 +274,17 @@
           </li>
         </ul>
 
-        <div class="search-block">
+        <form class="search-form" aria-label="Форма поиска по сайту">
+          <input class="search-form__input" type="search"  name="query" id="query" placeholder="Поиск по сайту" aria-label="Введите поисковый запрос" autocomplete="off">
+          <button class="search-form__icon" aria-label="Искать"></button>
+        </form>
+
+        <!-- <div class="search-block">
           <form class="search-block___form">
-            <button class="search-block__icon" aria-label="ИСкать"></button>
-            <input type="search" class="search-block__input" name="query" id="query" placeholder="Поиск по сайту">
+            <input class="search-block__input" type="search"  name="query" id="query" placeholder="Поиск по сайту" aria-label="Введите поисковый запрос">
+            <button class="search-block__icon" aria-label="Искать"></button>
           </form>
-        </div>
+        </div> -->
       </div>
     </nav>
   </header>
@@ -301,7 +313,7 @@
         </div>
       </div>
     </section>
-    <section id="about" class="section-about">
+    <section id="about" class="section-about" aria-label="Информация о картинной галерее Blanchard">
       <div class="container">
         <h2 class="section-title section-title--dark section-about__title">
           О нас
@@ -321,7 +333,7 @@
       </div>
     </section>
 
-    <section id="gallery" class="section-gallery">
+    <section id="gallery" class="section-gallery" aria-label="Онлайн галерея Blanchard">
       <div class="container section-gallery__container">
         <div class="section-gallery__filter filter">
           <div class="filter__block">
@@ -329,22 +341,22 @@
               Галерея
             </h2>
             <div class="filter__title section-gallery__filter-title">
-              <label for="select-type" aria-label="Выберите тип искусства">Фильтр:</label>
+              <label for="select-type" aria-label="Выберите тип искусства" tabindex="2">Фильтр:</label>
             </div>
-            <select name="select" id="select-type" class="js-choice">
+            <select name="select" id="select-type" class="js-choice" tabindex="2">
               <option value="Живопись">Живопись</option>
               <option value="Рисунок">Рисунок</option>
               <option value="Скульптура">Скульптура</option>
             </select>
           </div>
         </div>
-        <div class="section-gallery__slider">
+        <div class="section-gallery__slider" aria-label="Сладер галереи">
 
           <div class="swiper gallery-slider">
             <div class="gallery-controls">
-              <div class="control-button control-button-dark control-button-prev-dark"></div>
+              <button class="control-button control-button-dark control-button-prev-dark" aria-label="Переключиться на предыдущие слайды"></button>
               <div class="gallery-swiper-pagination"></div>
-              <div class="control-button control-button-dark control-button-next-dark"></div>
+              <button class="control-button control-button-dark control-button-next-dark" aria-label="Переключиться на следующие слайды"></button>
             </div>
             <div class="swiper-wrapper gallery-slider__wrapper">
               <div class="swiper-slide gallery-slide">
@@ -665,13 +677,13 @@
         <div class="section-gallery__description last-block">
           <div class="last-block__content">
             Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
-            <a class="content-link" href="#">авторизуйтесь</a>, либо воспользуйтесь лицензией.
+            <a class="content-link" href="#" tabindex="+1">авторизуйтесь</a>, либо воспользуйтесь лицензией.
           </div>
         </div>
       </div>
     </section>
 
-    <section id="catalog" class="section-catalog">
+    <section id="catalog" class="section-catalog" aria-label="Каталог художников по странам и годам">
       <div class="container section-catalog__container">
         <div class="section-catalog__titlebox">
           <h2 class="section-title section-title--dark section-catalog__title">
@@ -723,7 +735,7 @@
                 <div class="artist-block__years">-</div>
                 <div class="artist-block__info">
                   <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
-                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
+                  <a href="#gallery" class="scroll-link artist-block__link" tabindex="-1">В галлерею</a>
                 </div>
               </article>
               <div class="catalog-wrapper__select">
@@ -734,7 +746,7 @@
                   <div class="empty-years__block">
                     <h4 class="empty-years__heading">Здесь пока пусто</h4>
                     <p class="empty-years__text">А в галерее вы всегда можете найти что-то интересное для себя</p>
-                    <a href="#gallery" class="empty-years__link scroll-link">В галерею</a>
+                    <a href="#gallery" class="empty-years__link scroll-link" tabindex="-1">В галерею</a>
                   </div>
                 </div>
               </div>
@@ -755,7 +767,7 @@
                 <div class="artist-block__years">-</div>
                 <div class="artist-block__info">
                   <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
-                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
+                  <a href="#gallery" class="scroll-link artist-block__link" tabindex="-1">В галлерею</a>
                 </div>
               </article>
               <div class="catalog-wrapper__select">
@@ -766,7 +778,7 @@
                   <div class="empty-years__block">
                     <h4 class="empty-years__heading">Здесь пока пусто</h4>
                     <p class="empty-years__text">А в галерее вы всегда можете найти что-то интересное для себя</p>
-                    <a href="#gallery" class="empty-years__link scroll-link">В галерею</a>
+                    <a href="#gallery" class="empty-years__link scroll-link" tabindex="-1">В галерею</a>
                   </div>
                 </div>
               </div>
@@ -1031,7 +1043,7 @@
               <div class="catalog-wrapper__select">
                 <ul class="select-accordion" id="accordion">
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#"><span>C 1400 по 1499 гг.</span></a>
+                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1400 по 1499 гг.</span></a>
                     <div class="select-accordion__content">
                       <ul class="artists-list">
                         <li class="artists-list__item">
@@ -1110,7 +1122,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#"><span>C 1500 по 1599 гг.</span></a>
+                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1500 по 1599 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1125,7 +1137,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#"><span>C 1600 по 1699 гг.</span></a>
+                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1600 по 1699 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1140,7 +1152,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#"><span>C 1700 по 1799 гг.</span></a>
+                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1700 по 1799 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1155,7 +1167,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#"><span>C 1800 по 1899 гг.</span></a>
+                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1800 по 1899 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1170,7 +1182,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#"><span>C 1900 по 1999 гг.</span></a>
+                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1900 по 1999 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1185,7 +1197,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#"><span>C 2000 г.</span></a>
+                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 2000 г.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1218,7 +1230,7 @@
                 <div class="artist-block__years">-</div>
                 <div class="artist-block__info">
                   <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
-                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
+                  <a href="#gallery" class="scroll-link artist-block__link" tabindex="-1">В галлерею</a>
                 </div>
               </article>
               <div class="catalog-wrapper__select">
@@ -1229,7 +1241,7 @@
                   <div class="empty-years__block">
                     <h4 class="empty-years__heading">Здесь пока пусто</h4>
                     <p class="empty-years__text">А в галерее вы всегда можете найти что-то интересное для себя</p>
-                    <a href="#gallery" class="empty-years__link scroll-link">В галерею</a>
+                    <a href="#gallery" class="empty-years__link scroll-link" tabindex="-1">В галерею</a>
                   </div>
                 </div>
               </div>
@@ -1250,7 +1262,7 @@
                 <div class="artist-block__years">-</div>
                 <div class="artist-block__info">
                   <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
-                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
+                  <a href="#gallery" class="scroll-link artist-block__link" tabindex="-1">В галлерею</a>
                 </div>
               </article>
               <div class="catalog-wrapper__select">
@@ -1261,7 +1273,7 @@
                   <div class="empty-years__block">
                     <h4 class="empty-years__heading">Здесь пока пусто</h4>
                     <p class="empty-years__text">А в галерее вы всегда можете найти что-то интересное для себя</p>
-                    <a href="#gallery" class="empty-years__link scroll-link">В галерею</a>
+                    <a href="#gallery" class="empty-years__link scroll-link" tabindex="-1">В галерею</a>
                   </div>
                 </div>
               </div>
@@ -1273,12 +1285,12 @@
       </div>
     </section>
 
-    <section id="events" class="section-events">
+    <section id="events" class="section-events" aria-label="События картинной галереи Blanchard">
       <div class="container">
         <h2 class="section-title section-title--dark section-events__title">
           События
         </h2>
-        <div class="events-slider">
+        <div class="events-slider" aria-label="Слайдер событий">
           <div class="events-row events-row-wrap">
             <article class="event-block">
               <picture class="event-block__picture">
@@ -1450,7 +1462,7 @@
 
     </section>
 
-    <section id="editions" class="section-editions">
+    <section id="editions" class="section-editions" aria-label="Каталог изданий">
       <div class="container section-editions__container">
         <div class="section-editions__filter filter">
           <div class="filter__block">
@@ -1459,7 +1471,7 @@
             </h2>
             <div class="filter__title section-editions__filter-title">Категории</div>
           </div>
-          <button class="editions-expand">
+          <button class="editions-expand" aria-label="Расскрыть список категорий изданий">
             <span class="editions-expand__title">Категории</span>
             <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -1543,7 +1555,7 @@
             <div class="input-group price-group" title="Выбор ценового диапозона">
               <div class="price-group__text"><label for="price-from" aria-label="Выберите минимальную цену">От</label></div>
               <input type="text" name="price-from" id="price-from" class="price-group__input" placeholder="50">
-              <div class="price-group__text"><label for="price-to" aria-label="Выберите макимальную цену">до</label></div>
+              <div class="price-group__text"><label for="price-to" aria-label="Выберите максимальную цену">до</label></div>
               <input type="text" name="price-to" id="price-to" class="price-group__input" placeholder="25 000">
               <div class="price-group__text">руб.</div>
             </div>
@@ -1551,11 +1563,11 @@
         </div>
         <div class="section-editions__slider">
 
-          <div class="swiper editions-slider">
+          <div class="swiper editions-slider" aria-label="Слайдер изданий">
             <div class="gallery-controls">
-              <div class="control-button control-button-dark control-button-prev-dark"></div>
+              <button class="control-button control-button-dark control-button-prev-dark" aria-label="Переключиться на предыдущий слайд"></button>
               <div class="gallery-swiper-pagination"></div>
-              <div class="control-button control-button-dark control-button-next-dark"></div>
+              <button class="control-button control-button-dark control-button-next-dark" aria-label="Переключиться на следующий слайд"></button>
             </div>
             <div class="swiper-wrapper editions-wrapper">
               <div class="swiper-slide edition-slide">
@@ -1719,12 +1731,37 @@
       </div>
     </section>
 
-    <section id="projects" class="section-projects">
+    <section id="projects" class="section-projects" aria-label="Парнтнёры проекта Blanchard">
       <div class="container section-projects__container">
         <h2 class="section-title section-title--dark section-projects__title">Проекты</h2>
 
         <div class="section-text section-projects__text">
           <p>Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно
+            фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не
+            уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
+            Прежде всего, постоянное информационно-пропагандистское
+            <button
+              class="tooltip"
+              aria-label="Открыть подсказку-примечание"
+              data-tippy-content="Пример современных тенденций - современная&nbsp;методология&nbsp;разработки">
+            </button> обеспечение нашей деятельности однозначно фиксирует
+            необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия
+            представителей оппозиции могут быть рассмотрены
+            <button class="tooltip"
+              aria-label="Открыть подсказку-примечание"
+              data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики&nbsp;выводы вызывают у вас эмоции">
+            </button> исключительно в разрезе маркетинговых и финансовых
+            <button
+              class="tooltip"
+              aria-label="Открыть подсказку-примечание"
+              data-tippy-content="В стремлении повысить качество">
+            </button> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных
+            резервов призывают нас к новым
+            свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной
+            неузнаваемости.
+            Подробнее: <a href="#" class="content-link">blanchard-art.ru/projects/about</a>
+          </p>
+          <!-- <p>Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно
             фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не
             уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
             Прежде всего, постоянное информационно-пропагандистское
@@ -1745,15 +1782,15 @@
             свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной
             неузнаваемости.
             Подробнее: <a href="#" class="content-link">blanchard-art.ru/projects/about</a>
-          </p>
+          </p> -->
         </div>
         <h3 class="section-projects__partners-title">Партнеры проектов:</h3>
 
 
-        <div class="partners-slider-container" title="Слайдер Партнеры">
+        <div class="partners-slider-container" aria-label="Слайдер Партнеры">
           <div class="partners-slider-control">
-            <div class="control-button control-button-light control-button-prev-light" aria-label="Предыдущий слайд"></div>
-            <div class="control-button control-button-light control-button-next-light" aria-label="Следующий слайд"></div>
+            <button class="control-button control-button-light control-button-prev-light" aria-label="Предыдущий слайд"></button>
+            <button class="control-button control-button-light control-button-next-light" aria-label="Следующий слайд"></button>
           </div>
           <div class="partners-slider swiper">
 
@@ -1769,7 +1806,7 @@
                     <source srcset="/img/320/partner-01.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/partner-01.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-01.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-01.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
 
@@ -1783,7 +1820,7 @@
                     <source srcset="/img/320/partner-02.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/patner-02.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-02.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-02.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
 
@@ -1797,7 +1834,7 @@
                     <source srcset="/img/320/partner-03.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/patner-03.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-03.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-03.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
 
@@ -1811,7 +1848,7 @@
                     <source srcset="/img/320/partner-04.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/patner-04.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-04.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-04.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
 
@@ -1825,7 +1862,7 @@
                     <source srcset="/img/320/partner-05.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/patner-05.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-05.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-05.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
 
@@ -1839,7 +1876,7 @@
                     <source srcset="/img/320/partner-06.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/patner-06.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-06.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-06.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
 
@@ -1853,7 +1890,7 @@
                     <source srcset="/img/320/partner-07.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/patner-07.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-07.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-07.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
 
@@ -1867,7 +1904,7 @@
                     <source srcset="/img/320/partner-08.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/patner-08.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-08.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-08.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
 
@@ -1881,7 +1918,7 @@
                     <source srcset="/img/320/partner-09.jpg" media="(max-width: 575px)">
                     <img loading="lazy" src="/img/1920/patner-09.jpg" alt="Партнер проекта" class="partner-slide__img">
                   </picture> -->
-                  <img loading="lazy" src="/img/1920/partner-09.jpg" alt="Изображение текущего раздела">
+                  <img loading="lazy" src="/img/1920/partner-09.jpg" alt="Логотип партнёра проекта">
                 </a>
               </div>
             </div>
@@ -1890,7 +1927,7 @@
 
       </div>
     </section>
-    <section id="contacts" class="contacts">
+    <section id="contacts" class="contacts" aria-label="Раздел с контактной информацией">
       <div class="container">
         <h2 class="section-title section-title--dark contacts__title">Контакты</h2>
       </div>
@@ -1935,11 +1972,11 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" aria-label="Последний раздел сайта. Ссылки на социальные сети">
     <div class="container footer__container">
       <div class="footer-logo">
         <a href="#main" class="scroll-link" title="Переход к началу страницы">
-          <img loading="lazy" src="/img/header-logo.svg" class="footer-logo__img" alt="Blanchard. Картинная галерея">
+          <img loading="lazy" src="/img/header-logo.svg" class="footer-logo__img" alt="Blanchard. Картинная галерея" data-tippy-content="Tooltip">
         </a>
       </div>
       <ul class="footer-socials" title="Blanchard в социальных сетях">
@@ -1999,6 +2036,8 @@
   <script src="/vendor/validate/dist/js/just-validate.min.js"></script>
   <script src="/vendor/Inputmask/dist/inputmask.min.js"></script>
   <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="js/scripts.js"></script>
 </body>
 
