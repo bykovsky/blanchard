@@ -320,7 +320,7 @@ function fixGallery(){
 
 function buildEvents() {
   const ww = getWindowWidth();
-  if (ww < 992 && ww > 578) {
+  if (ww < 992 && ww > 567) {
     countEvents = 2;
   } else if (ww > 992) {
     countEvents = 3;

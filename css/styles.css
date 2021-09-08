@@ -1523,6 +1523,17 @@ sub-nav__link:active svg { */
   outline: none;
 }
 
+.ui-accordion-content-active .empty-years, .catalog-tab__item--active .empty-years {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
 /*EVENTS*/
 
 .section-events {
@@ -2615,6 +2626,7 @@ form .form-row:not(:last-child) {
   position: relative;
   width: 16px;
   height: 16px;
+  padding: 0;
   content: " ";
   background-color: white;
   background-image: url(/img/info-sign-black.svg);
@@ -2678,6 +2690,7 @@ form .form-row:not(:last-child) {
   display: inline-block;
   width: 30px;
   height: 30px;
+  padding: 0;
   background-position: center center;
   background-repeat: no-repeat;
   border: 2px solid;
@@ -3233,6 +3246,18 @@ form .form-row:not(:last-child) {
   .select-accordion__content {
     max-width: 100%;
   }
+  .ui-accordion-content-active .empty-years, .catalog-tab__item--active .empty-years {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .empty-years__img-block {
+    margin-right: 0;
+    margin-bottom: 30px;
+    width: 92%;
+  }
+  .empty-years__img{
+    min-width: 100%;
+  }
   .section-events {
     margin-bottom: 78px;
   }
@@ -3552,6 +3577,16 @@ form .form-row:not(:last-child) {
   .artist-block--active, .artist-block--visible {
     width: 100%;
   }
+  .ui-accordion-content-active .empty-years, .catalog-tab__item--active .empty-years {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: auto;
+    visibility: visible;
+    opacity: 1;
+  }
   .catalog-wrapper__select {
     width: 100%;
     margin-bottom: 50px;
@@ -3743,7 +3778,7 @@ form .form-row:not(:last-child) {
     padding: 0;
   }
   .top-nav__container {
-    height: 100px;
+    height: 60px;
   }
   .main-nav {
     position: fixed;
@@ -3764,7 +3799,7 @@ form .form-row:not(:last-child) {
     top: 0;
     visibility: visible;
     opacity: 1;
-    transform: translateY(100px);
+    transform: translateY(60px);
   }
   .main-nav .main-nav__list {
     flex-direction: row;
@@ -3828,18 +3863,23 @@ form .form-row:not(:last-child) {
     display: none;
   }
   .site-hero {
-    padding-top: 213px;
-    padding-bottom: 115px;
-    min-height: 700px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    min-height: unset;
   }
   .site-hero__textblock {
-    max-width: 700px;
+    max-width: 100%;
+    text-align: center;
   }
   .site-hero__caption {
-    margin: 0 0 14px 0;
+    margin: 0 0 13px 0;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    text-align: center;
   }
   .site-hero__text {
-    margin: 0 0 132px 0;
+    margin: 0 0 30px 0;
   }
   .hero-slide.slide-01 {
     background-image: url(/img/768/slider-01.jpg);
@@ -3905,8 +3945,22 @@ form .form-row:not(:last-child) {
   .section-catalog__title {
     margin-right: 41px;
   }
+  .artists-list {
+    column-count: 2;
+    column-gap: 30px;
+  }
   .artist-block--active, .artist-block--visible {
     width: 100%;
+  }
+  .ui-accordion-content-active .empty-years, .catalog-tab__item--active .empty-years {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: auto;
+    visibility: visible;
+    opacity: 1;
   }
   .catalog-wrapper__select {
     width: 100%;
@@ -3944,6 +3998,9 @@ form .form-row:not(:last-child) {
   }
   .events-row .event-block:nth-child(odd) {
     margin-right: 34px;
+  }
+  .events-row .event-block:nth-child(even) {
+    margin-right: 0;
   }
   .event-block {
     flex: 0 0 calc(50% - 17.5px);
@@ -4355,6 +4412,16 @@ form .form-row:not(:last-child) {
     margin-bottom: 50px;
     width: 100%;
     order: -1;
+  }
+  .ui-accordion-content-active .empty-years, .catalog-tab__item--active .empty-years {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: auto;
+    visibility: visible;
+    opacity: 1;
   }
   .select-accordion__content {
     max-width: 100%;
@@ -4776,7 +4843,7 @@ form .form-row:not(:last-child) {
   .header__search-btn {
     z-index: +1;
   }
-  .header-search{
+  .header-search {
     position: fixed;
     left: 0;
     right: 0;
@@ -4809,7 +4876,7 @@ form .form-row:not(:last-child) {
     height: 16px;
     order: -1;
     margin-right: 11px;
-    background-size: cover;
+    background-size: 100% 100%;
     visibility: visible;
     opacity: 1;
   }
@@ -4817,6 +4884,7 @@ form .form-row:not(:last-child) {
     background-color: rgba(255, 255, 255, 1);
   }
 }
+
 @media (max-width: 992px) and (orientation: landscape) {
   .main-nav .main-nav__list {
     flex-direction: row;
