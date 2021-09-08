@@ -349,6 +349,7 @@ window.addEventListener('resize', function () {
 })
 
 window.addEventListener('DOMContentLoaded', function () {
+  fixGallery();
   buildEvents();
 
   /* EVENTS */
@@ -379,6 +380,7 @@ window.addEventListener('DOMContentLoaded', function () {
     position: 'bottom',
   });
 
+  /* YandexMap */
   ymaps.ready(init);
 
   function init() {
@@ -408,12 +410,13 @@ window.addEventListener('DOMContentLoaded', function () {
     myMap.geoObjects.add(myPlacemark);
   }
 
-
+  /* Masked Inputs*/
   var selector = document.querySelector("input[type='tel']");
   var im = new Inputmask("+7 (999)-999-99-99");
 
   im.mask(selector);
 
+  /* Validator */
   new JustValidate('.contact-form', {
     colorWrong: '#D11616',
     rules: {
@@ -473,7 +476,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
       document.querySelector('.burger').classList.remove('is-active');
       document.querySelector('.main-nav').classList.remove('is-active');
-      document.querySelector('.body').classList.remove('body-hidden');
+      // document.querySelector('.body').classList.remove('body-hidden');
 
     });
   });
