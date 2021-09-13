@@ -31,34 +31,36 @@
         </div>
 
         <nav class="main-nav">
-          <ul class="main-nav__list" title="Основное меню сайта">
-            <li class="main-nav__item">
-              <a class="main-nav__link scroll-link" href="#about">О нас</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link scroll-link" href="#gallery">Галерея</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link scroll-link" href="#catalog">Каталог</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link scroll-link" href="#events">События</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link scroll-link" href="#editions">Издания</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link scroll-link" href="#projects">Проекты</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link scroll-link" href="#contact-form">Контакты</a>
-            </li>
-          </ul>
+          <div class="main-nav__container">
+            <ul class="main-nav__list" title="Основное меню сайта">
+              <li class="main-nav__item">
+                <a class="main-nav__link scroll-link" href="#about">О нас</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link scroll-link" href="#gallery">Галерея</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link scroll-link" href="#catalog">Каталог</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link scroll-link" href="#events">События</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link scroll-link" href="#editions">Издания</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link scroll-link" href="#projects">Проекты</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link scroll-link" href="#contact-form">Контакты</a>
+              </li>
+            </ul>
 
-          <a href="#" class="header__login-box" aria-label="Войти в личный кабинет">
-            <span class="header__login-icon"></span>
-            <span class="header__login-title">Войти</span>
-          </a>
+            <a href="#" class="header__login-box" aria-label="Войти в личный кабинет">
+              <span class="header__login-icon"></span>
+              <span class="header__login-title">Войти</span>
+            </a>
+          </div>
         </nav>
 
         <button class="header__search-btn toggle-search" aria-label="Открыть поиск по сайту">
@@ -74,8 +76,17 @@
         </button>
 
         <form class="header-search search-form">
-          <input class="search-form__input" type="search"  name="query" id="query" placeholder="Поиск по сайту" aria-label="Введите поисковый запрос" autocomplete="off">
-          <button class="search-form__icon" aria-label="Искать"></button>
+          <input class="search-form__input" type="search" name="query" id="query" placeholder="Поиск по сайту"
+            aria-label="Введите поисковый запрос" autocomplete="off">
+          <button class="search-form__icon" type="submit" aria-label="Искать">
+            <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="6.8678" height="1.71695"
+                transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
+                fill="white" />
+            </svg>
+          </button>
         </form>
 
       </div>
@@ -85,7 +96,8 @@
       <div class="container sub-nav__container">
         <ul class="sub-nav__list" title="Жанры живописи">
           <li class="sub-nav__item">
-            <a href="#" class="sub-nav__link dropdown-link" data-path="one" title="Открыть список художников в жанре Реализм">
+            <a href="#" class="sub-nav__link dropdown-link" data-path="one"
+              title="Открыть список художников в жанре Реализм">
               Реализм
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -93,37 +105,38 @@
             </a>
             <div class="sub-nav__artists-block dropdown-block" data-target="one">
               <div class="sub-nav__artist-wrap custom-bar" data-simplebar data-simplebar-scrollbar-max-size="28">
-              <ul class="sub-nav__artist-list">
-                <li class="sub-nav__artist-item" style="background-image: url('/img/tintoretto.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Тинторретто</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/friedrich.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Фридрих</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/leonardo.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Леонардо</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/verocchio.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Вероккьо</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/tintoretto.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Тинторретто</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/friedrich.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Фридрих</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/leonardo.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Леонардо</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/verocchio.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Вероккьо</a>
-                </li>
-              </ul>
+                <ul class="sub-nav__artist-list">
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/tintoretto.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Тинторретто</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/friedrich.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Фридрих</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/leonardo.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Леонардо</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/verocchio.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Вероккьо</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/tintoretto.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Тинторретто</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/friedrich.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Фридрих</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/leonardo.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Леонардо</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/verocchio.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Вероккьо</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </li>
           <li class="sub-nav__item">
-            <a class="sub-nav__link dropdown-link" href="#" data-path="two" title="Открыть список художников в жанре Импрессионизм">
+            <a class="sub-nav__link dropdown-link" href="#" data-path="two"
+              title="Открыть список художников в жанре Импрессионизм">
               Импрессионизм
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -159,7 +172,8 @@
             </div>
           </li>
           <li class="sub-nav__item">
-            <a class="sub-nav__link dropdown-link" href="#" data-path="three" title="Открыть список художников в жанре Постимпрессионизм">
+            <a class="sub-nav__link dropdown-link" href="#" data-path="three"
+              title="Открыть список художников в жанре Постимпрессионизм">
               Постимпрессионизм
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -167,37 +181,38 @@
             </a>
             <div class="sub-nav__artists-block dropdown-block" data-target="three">
               <div class="sub-nav__artist-wrap custom-bar" data-simplebar data-simplebar-scrollbar-max-size="28">
-              <ul class="sub-nav__artist-list">
-                <li class="sub-nav__artist-item" style="background-image: url('/img/vangog.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Ван Гог</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/sezann.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Сезанн</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/gogen.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Гоген</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/syora.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Сёра</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/vangog.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Ван Гог</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/sezann.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Сезанн</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/gogen.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Гоген</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/syora.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Сёра</a>
-                </li>
-              </ul>
-            </div>
+                <ul class="sub-nav__artist-list">
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/vangog.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Ван Гог</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/sezann.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Сезанн</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/gogen.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Гоген</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/syora.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Сёра</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/vangog.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Ван Гог</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/sezann.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Сезанн</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/gogen.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Гоген</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/syora.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Сёра</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
           <li class="sub-nav__item">
-            <a class="sub-nav__link dropdown-link" href="#" data-path="four" title="Открыть список художников в жанре Авангард">
+            <a class="sub-nav__link dropdown-link" href="#" data-path="four"
+              title="Открыть список художников в жанре Авангард">
               Авангард
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -205,37 +220,38 @@
             </a>
             <div class="sub-nav__artists-block dropdown-block" data-target="four">
               <div class="sub-nav__artist-wrap custom-bar" data-simplebar data-simplebar-scrollbar-max-size="28">
-              <ul class="sub-nav__artist-list">
-                <li class="sub-nav__artist-item" style="background-image: url('/img/kandinsky.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Кандинский</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/marinetti.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Маринетти</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/malevich.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Малевич</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/picasso.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Пикассо</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/kandinsky.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Кандинский</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/marinetti.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Маринетти</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/malevich.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Малевич</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/picasso.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Пикассо</a>
-                </li>
-              </ul>
+                <ul class="sub-nav__artist-list">
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/kandinsky.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Кандинский</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/marinetti.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Маринетти</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/malevich.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Малевич</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/picasso.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Пикассо</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/kandinsky.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Кандинский</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/marinetti.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Маринетти</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/malevich.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Малевич</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/picasso.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Пикассо</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </li>
           <li class="sub-nav__item">
-            <a class="sub-nav__link dropdown-link" href="#" data-path="five" title="Открыть список художников в жанре Футуризм">
+            <a class="sub-nav__link dropdown-link" href="#" data-path="five"
+              title="Открыть список художников в жанре Футуризм">
               Футуризм
               <svg width="12" height="7" viewbox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1L6 6L1 1" stroke="currentColor" />
@@ -243,40 +259,49 @@
             </a>
             <div class="sub-nav__artists-block dropdown-block" data-target="five">
               <div class="sub-nav__artist-wrap custom-bar" data-simplebar data-simplebar-scrollbar-max-size="28">
-              <ul class="sub-nav__artist-list">
-                <li class="sub-nav__artist-item" style="background-image: url('/img/karra.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Карра</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/pratella.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Прателла</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/severini.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Северини</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/balla.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Балла</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/karra.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Карра</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/pratella.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Прателла</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/severini.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Северини</a>
-                </li>
-                <li class="sub-nav__artist-item" style="background-image: url('/img/balla.jpg');">
-                  <a class="sub-nav__artist-link" href="#">Балла</a>
-                </li>
-              </ul>
+                <ul class="sub-nav__artist-list">
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/karra.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Карра</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/pratella.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Прателла</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/severini.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Северини</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/balla.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Балла</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/karra.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Карра</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/pratella.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Прателла</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/severini.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Северини</a>
+                  </li>
+                  <li class="sub-nav__artist-item" style="background-image: url('/img/balla.jpg');">
+                    <a class="sub-nav__artist-link" href="#">Балла</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </li>
         </ul>
 
         <form class="search-form" aria-label="Форма поиска по сайту">
-          <input class="search-form__input" type="search"  name="query" id="query" placeholder="Поиск по сайту" aria-label="Введите поисковый запрос" autocomplete="off">
-          <button class="search-form__icon" aria-label="Искать"></button>
+          <input class="search-form__input" type="search" name="query" id="query" placeholder="Поиск по сайту"
+            aria-label="Введите поисковый запрос" autocomplete="off">
+          <button class="search-form__icon" type="submit" aria-label="Искать">
+            <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="6.8678" height="1.71695"
+                transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
+                fill="white" />
+            </svg>
+          </button>
         </form>
 
         <!-- <div class="search-block">
@@ -341,9 +366,9 @@
               Галерея
             </h2>
             <div class="filter__title section-gallery__filter-title">
-              <label for="select-type" aria-label="Выберите тип искусства" tabindex="2">Фильтр:</label>
+              <label for="select-type" aria-label="Выберите тип искусства">Фильтр:</label>
             </div>
-            <select name="select" id="select-type" class="js-choice" tabindex="2">
+            <select name="select" id="select-type" class="js-choice">
               <option value="Живопись">Живопись</option>
               <option value="Рисунок">Рисунок</option>
               <option value="Скульптура">Скульптура</option>
@@ -351,13 +376,14 @@
           </div>
         </div>
         <div class="section-gallery__slider" aria-label="Сладер галереи">
-
+          <div class="gallery-controls">
+            <button class="control-button control-button-dark control-button-prev-dark"
+              aria-label="Переключиться на предыдущие слайды"></button>
+            <div class="gallery-swiper-pagination"></div>
+            <button class="control-button control-button-dark control-button-next-dark"
+              aria-label="Переключиться на следующие слайды"></button>
+          </div>
           <div class="swiper gallery-slider">
-            <div class="gallery-controls">
-              <button class="control-button control-button-dark control-button-prev-dark" aria-label="Переключиться на предыдущие слайды"></button>
-              <div class="gallery-swiper-pagination"></div>
-              <button class="control-button control-button-dark control-button-next-dark" aria-label="Переключиться на следующие слайды"></button>
-            </div>
             <div class="swiper-wrapper gallery-slider__wrapper">
               <div class="swiper-slide gallery-slide">
                 <a href="#" class="gallery-modal-link false-link">
@@ -677,7 +703,7 @@
         <div class="section-gallery__description last-block">
           <div class="last-block__content">
             Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
-            <a class="content-link" href="#" tabindex="+1">авторизуйтесь</a>, либо воспользуйтесь лицензией.
+            <a class="content-link" href="#">авторизуйтесь</a>, либо воспользуйтесь лицензией.
           </div>
         </div>
       </div>
@@ -702,7 +728,8 @@
                 </button>
               </li>
               <li class="catalog-tabs__item">
-                <button class="catalog-tabs__link catalog-tabs__link--active" data-path="it" aria-label="Показать художников Италии">
+                <button class="catalog-tabs__link catalog-tabs__link--active" data-path="it"
+                  aria-label="Показать художников Италии">
                   <img loading="lazy" src="/img/it.svg" alt="Италия">
                 </button>
               </li>
@@ -795,7 +822,7 @@
             </div>
             <div class="catalog-wrapper">
               <!-- Artists info block-->
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="0">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="0">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -805,7 +832,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="1">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="1">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -815,7 +842,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="2">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="2">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -825,7 +852,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="3">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="3">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -835,7 +862,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="4">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="4">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -845,7 +872,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="5">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="5">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -855,7 +882,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="6">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="6">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -865,7 +892,48 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block artist-block--active" data-artist-target="7">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="7">
+                <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
+                <h3 class="artist-block__title">Что мы о нём знаем?</h3>
+                <div class="artist-block__years">-</div>
+                <div class="artist-block__info">
+                  <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
+                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
+                </div>
+              </article>
+
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="8">
+                <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
+                <h3 class="artist-block__title">Что мы о нём знаем?</h3>
+                <div class="artist-block__years">-</div>
+                <div class="artist-block__info">
+                  <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
+                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
+                </div>
+              </article>
+
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="9">
+                <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
+                <h3 class="artist-block__title">Что мы о нём знаем?</h3>
+                <div class="artist-block__years">-</div>
+                <div class="artist-block__info">
+                  <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
+                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
+                </div>
+              </article>
+
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="10">
+                <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
+                <h3 class="artist-block__title">Что мы о нём знаем?</h3>
+                <div class="artist-block__years">-</div>
+                <div class="artist-block__info">
+                  <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
+                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
+                </div>
+              </article>
+
+              <article class="catalog-wrapper__artist artist-block artist-tab artist-block--active"
+                data-artist-target="11">
                 <img loading="lazy" src="img/1920/artist-01.jpg" alt="Художник" class="artist-block__img">
                 <h3 class="artist-block__title">Доменико Гирландайо</h3>
                 <div class="artist-block__years">2 июня 1448 — 11 января 1494.</div>
@@ -880,7 +948,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="8">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="12">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -890,7 +958,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="9">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="13">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -900,7 +968,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="10">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="14">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -910,7 +978,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="11">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="15">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -920,7 +988,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="12">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="16">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -930,7 +998,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="13">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="17">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -940,7 +1008,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="14">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="18">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -950,7 +1018,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="15">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="19">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -960,7 +1028,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="16">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="20">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -970,7 +1038,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="17">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="21">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -980,7 +1048,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="18">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="22">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -990,47 +1058,7 @@
                 </div>
               </article>
 
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="19">
-                <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
-                <h3 class="artist-block__title">Что мы о нём знаем?</h3>
-                <div class="artist-block__years">-</div>
-                <div class="artist-block__info">
-                  <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
-                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
-                </div>
-              </article>
-
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="20">
-                <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
-                <h3 class="artist-block__title">Что мы о нём знаем?</h3>
-                <div class="artist-block__years">-</div>
-                <div class="artist-block__info">
-                  <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
-                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
-                </div>
-              </article>
-
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="21">
-                <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
-                <h3 class="artist-block__title">Что мы о нём знаем?</h3>
-                <div class="artist-block__years">-</div>
-                <div class="artist-block__info">
-                  <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
-                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
-                </div>
-              </article>
-
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="22">
-                <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
-                <h3 class="artist-block__title">Что мы о нём знаем?</h3>
-                <div class="artist-block__years">-</div>
-                <div class="artist-block__info">
-                  <p>Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
-                  <a href="#gallery" class="scroll-link artist-block__link">В галлерею</a>
-                </div>
-              </article>
-
-              <article class="catalog-wrapper__artist artist-block" data-artist-target="23">
+              <article class="catalog-wrapper__artist artist-block artist-tab" data-artist-target="23">
                 <img loading="lazy" src="/img/artistframe.jpg" alt="Здесь пусто" class="artist-block__img">
                 <h3 class="artist-block__title">Что мы о нём знаем?</h3>
                 <div class="artist-block__years">-</div>
@@ -1043,86 +1071,134 @@
               <div class="catalog-wrapper__select">
                 <ul class="select-accordion" id="accordion">
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1400 по 1499 гг.</span></a>
+                    <a class="select-accordion__title" href="#"><span>С 1400 по 1499 гг.</span></a>
                     <div class="select-accordion__content">
                       <ul class="artists-list">
                         <li class="artists-list__item">
-                          <a data-artist-path="0" href="" class="artists-list__link">Бенедетто ди Биндо</a>
+                          <a class="artists-list__link" href="#" data-artist-path="0">
+                            Бенедетто ди Биндо
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="1" href="" class="artists-list__link">Веккьетта</a>
+                          <a class="artists-list__link" href="#" data-artist-path="1">
+                            Бергоньоне, Амброджо
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="2" href="" class="artists-list__link">Парентино, Бернардо</a>
+                          <a class="artists-list__link" href="#" data-artist-path="2">
+                            Биссоло, Франческо
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="3" href="" class="artists-list__link">Бергоньоне, Амбродж</a>
+                          <a class="artists-list__link" href="#" data-artist-path="3">
+                            Больтраффио, Джованни
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="4" href="" class="artists-list__link">Андреа Верроккьо</a>
+                          <a class="artists-list__link" href="#" data-artist-path="4">
+                            Бонсиньори, Франческо
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="5" href="" class="artists-list__link">Пезеллино</a>
+                          <a class="artists-list__link" href="#" data-artist-path="5">
+                            Боттичини, Рафаэлло
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="6" href="" class="artists-list__link">Биссоло, Франческо</a>
+                          <a class="artists-list__link" href="#" data-artist-path="6">
+                            Брамантино
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="7" href="" class="artists-list__link artists-list__link--active">Доменико Гирландайо</a>
+                          <a class="artists-list__link" href="#" data-artist-path="7">
+                            Бреа, Людовико
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="8" href="" class="artists-list__link">Пьетро Перуджино</a>
+                          <a class="artists-list__link" href="#" data-artist-path="8">
+                            Бьяджо д’Антонио Туччи
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="9" href="" class="artists-list__link">Больтраффио, Джованни</a>
+                          <a class="artists-list__link" href="#" data-artist-path="9">
+                            Веккьетта
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="10" href="" class="artists-list__link">Беноццо Гоццоли</a>
+                          <a class="artists-list__link" href="#" data-artist-path="10">
+                            Андреа Верроккьо
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="11" href="" class="artists-list__link">Перуцци, Бальдассаре</a>
+                          <a class="artists-list__link artists-list__link--active" href="#" data-artist-path="11">
+                            Доменико Гирландайо
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="12" href="" class="artists-list__link">Бонсиньори, Франческо</a>
+                          <a class="artists-list__link" href="#" data-artist-path="12">
+                            Беноццо Гоццоли
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="13" href="" class="artists-list__link">Граначчи, Франческо</a>
+                          <a class="artists-list__link" href="#" data-artist-path="13">
+                            Граначчи, Франческо
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="14" href="" class="artists-list__link">Пизанелло</a>
+                          <a class="artists-list__link" href="#" data-artist-path="14">
+                            Грегорио ди Чекко
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="15" href="" class="artists-list__link">Боттичини, Рафаэлло</a>
+                          <a class="artists-list__link" href="#" data-artist-path="15">
+                            Джованни да Удине
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="16" href="" class="artists-list__link">Грегорио ди Чекко</a>
+                          <a class="artists-list__link" href="#" data-artist-path="16">
+                            Джованни ди Паоло
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="17" href="" class="artists-list__link">Пинтуриккьо</a>
+                          <a class="artists-list__link" href="#" data-artist-path="17">
+                            Джорджоне
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="18" href="" class="artists-list__link">Брамантино</a>
+                          <a class="artists-list__link" href="#" data-artist-path="18">
+                            Парентино, Бернардо
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="19" href="" class="artists-list__link">Джованни да Удине</a>
+                          <a class="artists-list__link" href="#" data-artist-path="19">
+                            Пезеллино
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="20" href="" class="artists-list__link">Бреа, Людовико</a>
+                          <a class="artists-list__link" href="#" data-artist-path="20">
+                            Пьетро Перуджино
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="21" href="" class="artists-list__link">Джованни ди Паоло</a>
+                          <a class="artists-list__link" href="#" data-artist-path="21">
+                            Перуцци, Бальдассаре
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="20" href="" class="artists-list__link">Бьяджо д’Антонио Туччи</a>
+                          <a class="artists-list__link" href="#" data-artist-path="22">
+                            Пизанелло
+                          </a>
                         </li>
                         <li class="artists-list__item">
-                          <a data-artist-path="21" href="" class="artists-list__link">Джорджоне</a>
+                          <a class="artists-list__link" href="#" data-artist-path="23">
+                            Пинтуриккьо
+                          </a>
                         </li>
                       </ul>
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1500 по 1599 гг.</span></a>
+                    <a class="select-accordion__title" href="#"><span>С 1500 по 1599 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1137,7 +1213,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1600 по 1699 гг.</span></a>
+                    <a class="select-accordion__title" href="#"><span>С 1600 по 1699 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1152,7 +1228,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1700 по 1799 гг.</span></a>
+                    <a class="select-accordion__title" href="#"><span>С 1700 по 1799 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1167,7 +1243,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1800 по 1899 гг.</span></a>
+                    <a class="select-accordion__title" href="#"><span>С 1800 по 1899 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1182,7 +1258,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 1900 по 1999 гг.</span></a>
+                    <a class="select-accordion__title" href="#"><span>С 1900 по 1999 гг.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1197,7 +1273,7 @@
                     </div>
                   </li>
                   <li class="select-accordion__item">
-                    <a class="select-accordion__title" href="#" tabindex="1"><span>С 2000 г.</span></a>
+                    <a class="select-accordion__title" href="#"><span>С 2000 г.</span></a>
                     <div class="select-accordion__content">
                       <div class="empty-years">
                         <div class="empty-years__img-block">
@@ -1299,7 +1375,8 @@
                 <source srcset="/img/768/events-01.jpg" media="(min-width: 768px) and (max-width: 991px)">
                 <source srcset="/img/1920/events-01.jpg" media="(min-width: 576px) and (max-width: 767px)">
                 <source srcset="/img/320/events-01.jpg" media="(max-width: 575px)">
-                <img loading="lazy" src="/img/1920/events-01.jpg" alt="Изображение текущего раздела" class="event-block__img">
+                <img loading="lazy" src="/img/1920/events-01.jpg" alt="Изображение текущего раздела"
+                  class="event-block__img">
               </picture>
               <!--img loading="lazy" src="/img/1920/events-01.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
               <div class="event-info">
@@ -1331,7 +1408,8 @@
                 <source srcset="/img/768/events-02.jpg" media="(min-width: 768px) and (max-width: 991px)">
                 <source srcset="/img/1920/events-02.jpg" media="(min-width: 576px) and (max-width: 767px)">
                 <source srcset="/img/320/events-02.jpg" media="(max-width: 575px)">
-                <img loading="lazy" src="/img/1920/events-02.jpg" alt="Изображение текущего раздела" class="event-block__img">
+                <img loading="lazy" src="/img/1920/events-02.jpg" alt="Изображение текущего раздела"
+                  class="event-block__img">
               </picture>
               <!--img loading="lazy" src="/img/1920/events-02.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
               <div class="event-info">
@@ -1364,7 +1442,8 @@
                 <source srcset="/img/768/events-03.jpg" media="(min-width: 768px) and (max-width: 991px)">
                 <source srcset="/img/1920/events-03.jpg" media="(min-width: 576px) and (max-width: 767px)">
                 <source srcset="/img/320/events-03.jpg" media="(max-width: 575px)">
-                <img loading="lazy" src="/img/1920/events-03.jpg" alt="Изображение текущего раздела" class="event-block__img">
+                <img loading="lazy" src="/img/1920/events-03.jpg" alt="Изображение текущего раздела"
+                  class="event-block__img">
               </picture>
               <!--img loading="lazy" src="/img/1920/events-03.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
               <div class="event-info">
@@ -1396,7 +1475,8 @@
                 <source srcset="/img/768/events-04.jpg" media="(min-width: 768px) and (max-width: 991px)">
                 <source srcset="/img/1920/events-04.jpg" media="(min-width: 576px) and (max-width: 767px)">
                 <source srcset="/img/320/events-04.jpg" media="(max-width: 575px)">
-                <img loading="lazy" src="/img/1920/events-04.jpg" alt="Изображение текущего раздела" class="event-block__img">
+                <img loading="lazy" src="/img/1920/events-04.jpg" alt="Изображение текущего раздела"
+                  class="event-block__img">
               </picture>
               <!--img loading="lazy" src="/img/1920/events-04.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
               <div class="event-info">
@@ -1428,7 +1508,8 @@
                 <source srcset="/img/768/events-05.jpg" media="(min-width: 768px) and (max-width: 991px)">
                 <source srcset="/img/1920/events-05.jpg" media="(min-width: 576px) and (max-width: 767px)">
                 <source srcset="/img/320/events-05.jpg" media="(max-width: 575px)">
-                <img loading="lazy" src="/img/1920/events-05.jpg" alt="Изображение текущего раздела" class="event-block__img">
+                <img loading="lazy" src="/img/1920/events-05.jpg" alt="Изображение текущего раздела"
+                  class="event-block__img">
               </picture>
               <!--img loading="lazy" src="/img/1920/events-05.jpg" alt="Изображение текущего раздела" class="event-block__img"-->
               <div class="event-info">
@@ -1553,22 +1634,25 @@
           <div class="filter__description filter__prices">
             <div class="filter__title">Цена:</div>
             <div class="input-group price-group" title="Выбор ценового диапозона">
-              <div class="price-group__text"><label for="price-from" aria-label="Выберите минимальную цену">От</label></div>
+              <div class="price-group__text"><label for="price-from" aria-label="Выберите минимальную цену">От</label>
+              </div>
               <input type="text" name="price-from" id="price-from" class="price-group__input" placeholder="50">
-              <div class="price-group__text"><label for="price-to" aria-label="Выберите максимальную цену">до</label></div>
+              <div class="price-group__text"><label for="price-to" aria-label="Выберите максимальную цену">до</label>
+              </div>
               <input type="text" name="price-to" id="price-to" class="price-group__input" placeholder="25 000">
               <div class="price-group__text">руб.</div>
             </div>
           </div>
         </div>
         <div class="section-editions__slider">
-
+          <div class="gallery-controls">
+            <button class="control-button control-button-dark control-button-prev-dark"
+              aria-label="Переключиться на предыдущий слайд"></button>
+            <div class="gallery-swiper-pagination"></div>
+            <button class="control-button control-button-dark control-button-next-dark"
+              aria-label="Переключиться на следующий слайд"></button>
+          </div>
           <div class="swiper editions-slider" aria-label="Слайдер изданий">
-            <div class="gallery-controls">
-              <button class="control-button control-button-dark control-button-prev-dark" aria-label="Переключиться на предыдущий слайд"></button>
-              <div class="gallery-swiper-pagination"></div>
-              <button class="control-button control-button-dark control-button-next-dark" aria-label="Переключиться на следующий слайд"></button>
-            </div>
             <div class="swiper-wrapper editions-wrapper">
               <div class="swiper-slide edition-slide">
                 <picture class="edition-slide__picture">
@@ -1577,7 +1661,8 @@
                   <source srcset="/img/768/edition-01.jpg" media="(min-width: 768px) and (max-width: 991px)">
                   <source srcset="/img/1920/edition-01.jpg" media="(min-width: 576px) and (max-width: 767px)">
                   <source srcset="/img/320/edition-01.jpg" media="(max-width: 575px)">
-                  <img loading="lazy" src="/img/1920/edition-01.jpg" alt="Изображение издания" class="edition-slide__img">
+                  <img loading="lazy" src="/img/1920/edition-01.jpg" alt="Изображение издания"
+                    class="edition-slide__img">
                 </picture>
                 <!-- <img loading="lazy" src="/img/1920/edition-01.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
@@ -1589,7 +1674,8 @@
                     620 руб
                   </div>
                 </div>
-                <button href="#" class="btn btn-sm btn-outline-primary order-btn" aria-label="Заказать это издание">Заказать</button>
+                <button href="#" class="btn btn-sm btn-outline-primary order-btn"
+                  aria-label="Заказать это издание">Заказать</button>
               </div>
 
               <div class="swiper-slide edition-slide">
@@ -1599,7 +1685,8 @@
                   <source srcset="/img/768/edition-02.jpg" media="(min-width: 768px) and (max-width: 991px)">
                   <source srcset="/img/1920/edition-02.jpg" media="(min-width: 576px) and (max-width: 767px)">
                   <source srcset="/img/320/edition-02.jpg" media="(max-width: 575px)">
-                  <img loading="lazy" src="/img/1920/edition-02.jpg" alt="Изображение издания" class="edition-slide__img">
+                  <img loading="lazy" src="/img/1920/edition-02.jpg" alt="Изображение издания"
+                    class="edition-slide__img">
                 </picture>
                 <!-- <img loading="lazy" src="/img/1920/edition-02.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
@@ -1611,7 +1698,8 @@
                     2 450 руб
                   </div>
                 </div>
-                <button href="#" class="btn btn-sm btn-outline-primary order-btn" aria-label="Заказать это издание">Заказать</button>
+                <button href="#" class="btn btn-sm btn-outline-primary order-btn"
+                  aria-label="Заказать это издание">Заказать</button>
               </div>
 
               <div class="swiper-slide edition-slide">
@@ -1621,7 +1709,8 @@
                   <source srcset="/img/768/edition-03.jpg" media="(min-width: 768px) and (max-width: 991px)">
                   <source srcset="/img/1920/edition-03.jpg" media="(min-width: 576px) and (max-width: 767px)">
                   <source srcset="/img/320/edition-03.jpg" media="(max-width: 575px)">
-                  <img loading="lazy" src="/img/1920/edition-03.jpg" alt="Изображение издания" class="edition-slide__img">
+                  <img loading="lazy" src="/img/1920/edition-03.jpg" alt="Изображение издания"
+                    class="edition-slide__img">
                 </picture>
                 <!-- <img loading="lazy" src="/img/1920/edition-03.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
@@ -1633,7 +1722,8 @@
                     2 200 руб
                   </div>
                 </div>
-                <button href="#" class="btn btn-sm btn-outline-primary order-btn" aria-label="Заказать это издание">Заказать</button>
+                <button href="#" class="btn btn-sm btn-outline-primary order-btn"
+                  aria-label="Заказать это издание">Заказать</button>
               </div>
 
               <div class="swiper-slide edition-slide">
@@ -1643,7 +1733,8 @@
                   <source srcset="/img/768/edition-04.jpg" media="(min-width: 768px) and (max-width: 991px)">
                   <source srcset="/img/1920/edition-04.jpg" media="(min-width: 576px) and (max-width: 767px)">
                   <source srcset="/img/320/edition-04.jpg" media="(max-width: 575px)">
-                  <img loading="lazy" src="/img/1920/edition-04.jpg" alt="Изображение издания" class="edition-slide__img">
+                  <img loading="lazy" src="/img/1920/edition-04.jpg" alt="Изображение издания"
+                    class="edition-slide__img">
                 </picture>
                 <!-- <img loading="lazy" src="/img/1920/edition-04.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
@@ -1655,7 +1746,8 @@
                     1 100 руб
                   </div>
                 </div>
-                <button href="#" class="btn btn-sm btn-outline-primary order-btn" aria-label="Заказать это издание">Заказать</button>
+                <button href="#" class="btn btn-sm btn-outline-primary order-btn"
+                  aria-label="Заказать это издание">Заказать</button>
               </div>
 
               <div class="swiper-slide edition-slide">
@@ -1665,7 +1757,8 @@
                   <source srcset="/img/768/edition-05.jpg" media="(min-width: 768px) and (max-width: 991px)">
                   <source srcset="/img/1920/edition-05.jpg" media="(min-width: 576px) and (max-width: 767px)">
                   <source srcset="/img/320/edition-05.jpg" media="(max-width: 575px)">
-                  <img loading="lazy" src="/img/1920/edition-05.jpg" alt="Изображение издания" class="edition-slide__img">
+                  <img loading="lazy" src="/img/1920/edition-05.jpg" alt="Изображение издания"
+                    class="edition-slide__img">
                 </picture>
                 <!-- <img loading="lazy" src="/img/1920/edition-05.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
@@ -1677,7 +1770,8 @@
                     1 450 руб
                   </div>
                 </div>
-                <button href="#" class="btn btn-sm btn-outline-primary order-btn" aria-label="Заказать это издание">Заказать</button>
+                <button href="#" class="btn btn-sm btn-outline-primary order-btn"
+                  aria-label="Заказать это издание">Заказать</button>
               </div>
 
               <div class="swiper-slide edition-slide">
@@ -1687,7 +1781,8 @@
                   <source srcset="/img/768/edition-06.jpg" media="(min-width: 768px) and (max-width: 991px)">
                   <source srcset="/img/1920/edition-06.jpg" media="(min-width: 576px) and (max-width: 767px)">
                   <source srcset="/img/320/edition-06.jpg" media="(max-width: 575px)">
-                  <img loading="lazy" src="/img/1920/edition-06.jpg" alt="Изображение издания" class="edition-slide__img">
+                  <img loading="lazy" src="/img/1920/edition-06.jpg" alt="Изображение издания"
+                    class="edition-slide__img">
                 </picture>
                 <!-- <img loading="lazy" src="/img/1920/edition-06.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
@@ -1699,7 +1794,8 @@
                     3 200 руб
                   </div>
                 </div>
-                <button href="#" class="btn btn-sm btn-outline-primary order-btn" aria-label="Заказать это издание">Заказать</button>
+                <button href="#" class="btn btn-sm btn-outline-primary order-btn"
+                  aria-label="Заказать это издание">Заказать</button>
               </div>
 
               <div class="swiper-slide edition-slide">
@@ -1709,7 +1805,8 @@
                   <source srcset="/img/768/edition-07.jpg" media="(min-width: 768px) and (max-width: 991px)">
                   <source srcset="/img/1920/edition-07.jpg" media="(min-width: 576px) and (max-width: 767px)">
                   <source srcset="/img/320/edition-07.jpg" media="(max-width: 575px)">
-                  <img loading="lazy" src="/img/1920/edition-07.jpg" alt="Изображение издания" class="edition-slide__img">
+                  <img loading="lazy" src="/img/1920/edition-07.jpg" alt="Изображение издания"
+                    class="edition-slide__img">
                 </picture>
                 <!-- <img loading="lazy" src="/img/1920/edition-07.jpg" alt="Изображение текущего раздела" class="edition-slide__img"> -->
                 <div class="edition-slide__info-row">
@@ -1721,7 +1818,8 @@
                     2 200 руб
                   </div>
                 </div>
-                <button href="#" class="btn btn-sm btn-outline-primary order-btn" aria-label="Заказать это издание">Заказать</button>
+                <button href="#" class="btn btn-sm btn-outline-primary order-btn"
+                  aria-label="Заказать это издание">Заказать</button>
               </div>
 
 
@@ -1740,20 +1838,15 @@
             фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не
             уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
             Прежде всего, постоянное информационно-пропагандистское
-            <button
-              class="tooltip"
-              aria-label="Открыть подсказку-примечание"
+            <button class="tooltip" aria-label="Открыть подсказку-примечание"
               data-tippy-content="Пример современных тенденций - современная&nbsp;методология&nbsp;разработки">
             </button> обеспечение нашей деятельности однозначно фиксирует
             необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия
             представителей оппозиции могут быть рассмотрены
-            <button class="tooltip"
-              aria-label="Открыть подсказку-примечание"
+            <button class="tooltip" aria-label="Открыть подсказку-примечание"
               data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики&nbsp;выводы вызывают у вас эмоции">
             </button> исключительно в разрезе маркетинговых и финансовых
-            <button
-              class="tooltip"
-              aria-label="Открыть подсказку-примечание"
+            <button class="tooltip" aria-label="Открыть подсказку-примечание"
               data-tippy-content="В стремлении повысить качество">
             </button> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных
             резервов призывают нас к новым
@@ -1789,8 +1882,10 @@
 
         <div class="partners-slider-container" aria-label="Слайдер Партнеры">
           <div class="partners-slider-control">
-            <button class="control-button control-button-light control-button-prev-light" aria-label="Предыдущий слайд"></button>
-            <button class="control-button control-button-light control-button-next-light" aria-label="Следующий слайд"></button>
+            <button class="control-button control-button-light control-button-prev-light"
+              aria-label="Предыдущий слайд"></button>
+            <button class="control-button control-button-light control-button-next-light"
+              aria-label="Следующий слайд"></button>
           </div>
           <div class="partners-slider swiper">
 
@@ -1939,11 +2034,12 @@
           </div>
           <div class="contacts__contacts contacts-block">
             <div class="hidden-mobile">
-              <h3 class="contacts-block__title">Шоурум №2</h3>
+              <h3 class="contacts-block__title">Шоурум №4</h3>
               <address class="contacts-block__address">Леонтьевский переулок, дом 5/1</address>
             </div>
             <h3 class="contacts-block__subtitle">Заказать обратный звонок</h3>
-            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="js-form contact-form" id="contact-form">
+            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="js-form contact-form"
+              id="contact-form">
               <div class="form-row">
                 <input type="text" name="name" id="name" class="form-control" placeholder="Имя*" autocomplete="off"
                   data-validate-field="name">
@@ -1953,16 +2049,19 @@
                   data-validate-field="tel" data-validate-rules="tel">
               </div>
               <div class="form-row">
-                <button type="submit" name="submit" id="submit" class="btn btn-outline-primary form-btn" aria-label="Заказать обратный звонок">Заказать</button>
+                <button type="submit" name="submit" id="submit" class="btn btn-outline-primary form-btn"
+                  aria-label="Заказать обратный звонок">Заказать</button>
               </div>
             </form>
             <h3 class="contacts-block__subtitle">Связаться в один клик</h3>
             <ul class="messendgers-list" title="Список мессенджеров">
               <li class="messendgers-list__item">
-                <a href="" class="messendgers-list__link messendgers-list__link--whatsapp false-link" title="Связаться по вотсапп"></a>
+                <a href="" class="messendgers-list__link messendgers-list__link--whatsapp false-link"
+                  title="Связаться по вотсапп"></a>
               </li>
               <li class="messendgers-list__item">
-                <a href="" class="messendgers-list__link messendgers-list__link--telegram false-link" title="Связаться по телеграм"></a>
+                <a href="" class="messendgers-list__link messendgers-list__link--telegram false-link"
+                  title="Связаться по телеграм"></a>
               </li>
             </ul>
           </div>
@@ -1976,7 +2075,8 @@
     <div class="container footer__container">
       <div class="footer-logo">
         <a href="#main" class="scroll-link" title="Переход к началу страницы">
-          <img loading="lazy" src="/img/header-logo.svg" class="footer-logo__img" alt="Blanchard. Картинная галерея" data-tippy-content="Tooltip">
+          <img loading="lazy" src="/img/header-logo.svg" class="footer-logo__img" alt="Blanchard. Картинная галерея"
+            data-tippy-content="Tooltip">
         </a>
       </div>
       <ul class="footer-socials" title="Blanchard в социальных сетях">

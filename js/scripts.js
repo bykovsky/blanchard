@@ -33,25 +33,30 @@ const gallerySlider = new Swiper(".gallery-slider", {
   spaceBetween: 20,
 
   pagination: {
-    el: ".gallery-swiper-pagination",
-    type: "fraction"
+    el: ".section-gallery .gallery-swiper-pagination",
+    type: "fraction",
+    clickable: false,
   },
   navigation: {
-    nextEl: ".control-button-next-dark",
-    prevEl: ".control-button-prev-dark"
+    nextEl: ".section-gallery .control-button-next-dark",
+    prevEl: ".section-gallery .control-button-prev-dark"
   },
 
   breakpoints: {
-    566: {
-      slidesPerView: 1,
-      spaceBetween: 0,
-    },
+    // 450: {
+    //   slidesPerView: 1,
+    //   spaceBetween: 20,
+    //   grid: {
+    //     rows: 1
+    //   },
+    // },
 
-    768: {
+    481: {
       slidesPerView: 2,
       grid: {
         rows: 2
       },
+      slidesPerGroup: 2,
       spaceBetween: 34
     },
 
@@ -60,6 +65,7 @@ const gallerySlider = new Swiper(".gallery-slider", {
       grid: {
         rows: 2
       },
+      slidesPerGroup: 3,
       spaceBetween: 50
     }
   },
@@ -117,7 +123,7 @@ const partnerSlider = new Swiper(".partners-slider", {
   a11y: false,
   freeMode: false,
   breakpoints: {
-    520: {
+    480: {
       slidesPerView: 1,
       spaceBetween: 0,
     },
@@ -138,7 +144,8 @@ const partnerSlider = new Swiper(".partners-slider", {
 const partnerSliderObj = document.querySelector('.partners-slider').swiper;
 
 
-const MOBILE_WIDTH = 566;
+const MOBILE_WIDTH = 480;
+// const MOBILE_WIDTH = 425;
 const eventsrow = document.querySelector('.events-row');
 const allevents = document.querySelector('.allevents');
 const eventblock = document.querySelectorAll(".event-block");
@@ -229,7 +236,7 @@ const editionsSlidersets = {
 function activateEditionsSlider(sets) {
   sets.cardsContainer.classList.add("swiper");
   sets.cardsWrap.classList.add("swiper-wrapper");
-  sets.cardsWrap.classList.remove("events-row");
+  //sets.cardsWrap.classList.remove("events-row");
 
 
   sets.editionsCardsSlider = new Swiper(`.${sets.cardsContainerName}`, {
@@ -237,34 +244,30 @@ function activateEditionsSlider(sets) {
     slidesPerColumn: 1,
     spaceBetween: 50,
     pagination: {
-      el: ".gallery-swiper-pagination",
+      el: ".section-editions .gallery-swiper-pagination",
       type: "fraction",
-      clickable: false,
+      // clickable: false,
     },
     navigation: {
-      nextEl: ".control-button-next-dark",
-      prevEl: ".control-button-prev-dark",
+      nextEl: ".section-editions .control-button-next-dark",
+      prevEl: ".section-editions .control-button-prev-dark",
     },
     a11y: false,
     freeMode: false,
     breakpoints: {
-      566: {
-        slidesPerView: 1,
-      },
-      577: {
+      567: {
         slidesPerView: 2,
-        spaceBetween: 34,
-      },
-      768: {
-        slidesPerView: 2,
+        slidesPerGroup: 2,
         spaceBetween: 34,
       },
       1024: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
         spaceBetween: 50,
       },
       1280: {
         slidesPerView: 3,
+        slidesPerGroup: 3,
         spaceBetween: 50,
       },
     },
@@ -295,7 +298,7 @@ function destroyEditionsSlider(sets) {
   sets.cardsWrap.classList.remove("swiper-wrapper");
   sets.cardsWrap.removeAttribute("aria-live");
   sets.cardsWrap.removeAttribute("id");
-  sets.cardsWrap.classList.add("events-row");
+  // sets.cardsWrap.classList.add("events-row");
 }
 
 function checkWindowWidthEditions(sets) {
@@ -311,20 +314,32 @@ function checkWindowWidthEditions(sets) {
 
 checkWindowWidthEditions(editionsSlidersets);
 
-function fixGallery(){
+function fixGallery() {
   var wrapper = document.querySelector('.gallery-slider__wrapper');
   wrapper.style.width = null;
-  console.log(wrapper);
+  // console.log(wrapper);
 }
 
 
 function buildEvents() {
   const ww = getWindowWidth();
-  if (ww < 992 && ww > 567) {
-    countEvents = 2;
-  } else if (ww > 992) {
+  // if (ww < 992 && ww > 567) {
+
+  // if (ww < 992 && ww > 425) {
+  //   countEvents = 2;
+  // } else if (ww > 992) {
+  //   countEvents = 3;
+  // } else if (ww < 426) {
+  //   countEvents = Infinity;
+  // }
+
+  if (ww > 992){
     countEvents = 3;
-  } else if (ww < 567) {
+  }else if (ww < 992 && ww > 767){
+    countEvents = 2;
+  }else if (ww < 767 && ww >= 481){
+    countEvents = 1;
+  }else if (ww <= 480){
     countEvents = Infinity;
   }
 
@@ -332,8 +347,8 @@ function buildEvents() {
     el.classList.remove("event-block--hidden");
   });
 
-  console.log(ww);
-  console.log(countEvents);
+  console.log('Ширина экрана: ' + ww + 'px');
+  console.log('Кол-во событий в ряд: ' + countEvents);
 
   for (var i = countEvents; i < eventblock.length; i++) {
     eventblock[i].classList.add('event-block--hidden');
@@ -342,6 +357,8 @@ function buildEvents() {
 
 
 window.addEventListener('resize', function () {
+  // document.location.reload();
+  // window.location.reload(false);
   fixGallery();
   buildEvents();
   checkWindowWidth(eventsSliderParams);
@@ -552,7 +569,7 @@ window.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.burger').addEventListener('click', function () {
     this.classList.toggle('is-active');
     document.querySelector('.main-nav').classList.toggle('is-active');
-    //document.querySelector('.body').classList.toggle('body-hidden');
+    document.querySelector('.body').classList.toggle('body-hidden');
 
     document.querySelector('.search-popup').classList.remove('is-active');
     document.querySelector('.header__search-btn').classList.remove('is-active');
@@ -584,7 +601,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
   //Tabs for artists
   var artistTabNavs = document.querySelectorAll(".artists-list__link");
-  var artistTabPanes = document.querySelectorAll(".artist-block");
+  var artistTabPanes = document.querySelectorAll(".artist-tab");
+  console.log('Художников: ' + artistTabNavs.length);
+  console.log('Блоков: ' + artistTabPanes.length);
 
   for (var i = 0; i < artistTabNavs.length; i++) {
     artistTabNavs[i].addEventListener("click", function (e) {
@@ -592,7 +611,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var activeArtistTabAttr = e.target.getAttribute("data-artist-path");
       for (var k = 0; k < artistTabNavs.length; k++) {
         var contentArtistAttr = artistTabPanes[k].getAttribute("data-artist-target");
-        console.log(contentArtistAttr);
+        //console.log(contentArtistAttr);
 
         if (activeArtistTabAttr === contentArtistAttr) {
           artistTabNavs[k].classList.add("artists-list__link--active");
@@ -608,7 +627,7 @@ window.addEventListener('DOMContentLoaded', function () {
   let accorditions = document.querySelectorAll(".select-accordion__title");
   var tabindex = 1;
   accorditions.forEach((el) => {
-    // el.setAttribute("tabindex", tabindex);
+    //el.setAttribute("tabindex", tabindex);
     // tabindex++;
     el.removeAttribute("tabindex", tabindex);
   });
@@ -619,3 +638,21 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+// $(function () {
+//   $.fn.sortList = function () {
+//     var mylist = $(this);
+//     var listitems = $('li', mylist).get();
+//     listitems.sort(function (a, b) {
+//       var compA = $(a).text().toUpperCase();
+//       var compB = $(b).text().toUpperCase();
+//       return (compA < compB) ? -1 : 1;
+//     });
+//     $.each(listitems, function (i, itm) {
+//       mylist.append(itm);
+//     });
+//   }
+
+//   $("ul#artists").sortList();
+
+// });
