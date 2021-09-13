@@ -60,7 +60,7 @@ const gallerySlider = new Swiper(".gallery-slider", {
       spaceBetween: 34
     },
 
-    1200: {
+    1025: {
       slidesPerView: 3,
       grid: {
         rows: 2
@@ -333,7 +333,7 @@ function buildEvents() {
   //   countEvents = Infinity;
   // }
 
-  if (ww > 992){
+  if (ww >= 992){
     countEvents = 3;
   }else if (ww < 992 && ww > 767){
     countEvents = 2;
@@ -363,6 +363,7 @@ window.addEventListener('resize', function () {
   buildEvents();
   checkWindowWidth(eventsSliderParams);
   checkWindowWidthEditions(editionsSlidersets);
+  gallerySlider.init();
 })
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -513,6 +514,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var editionsExpand = document.querySelector('.editions-expand');
   editionsExpand.addEventListener("click", function (e) {
+    e.preventDefault();
     this.classList.toggle('is-active');
     document.querySelector('.section-editions__checkboxes').classList.toggle('is-open');
   });
