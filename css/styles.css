@@ -3979,7 +3979,7 @@ form .form-row:not(:last-child) {
 
 @media (max-width: 767px) and (min-width: 481px) {
   .container {
-    width: 100vw;
+    /* width: 100vw; */
     max-width: 100%;
     padding-left: 30px;
     padding-right: 30px;
@@ -3993,6 +3993,19 @@ form .form-row:not(:last-child) {
   .top-nav__container {
     height: 60px;
   }
+  .main-nav__container {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: calc(100% - 45px);
+    /* max-width: 310px; */
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    overflow-y: auto;
+  }
   .main-nav {
     position: fixed;
     flex-direction: column;
@@ -4000,11 +4013,12 @@ form .form-row:not(:last-child) {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 0 50px 40px 50px;
+    padding: 0 0 40px 0;
     background-color: rgba(0, 0, 0, .9);
     visibility: hidden;
     opacity: 0;
     z-index: -1;
+    overflow: unset;
     transform: translateY(-100%);
     transition: transform .3s ease-in-out;
   }
@@ -4015,7 +4029,7 @@ form .form-row:not(:last-child) {
     transform: translateY(60px);
   }
   .main-nav .main-nav__list {
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     width: 100%;
     margin-bottom: 20px;
@@ -4326,8 +4340,19 @@ form .form-row:not(:last-child) {
   .footer {
     padding: 41px 0;
   }
+  .footer__container{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-logo{
+    margin-right: 0;
+  }
   .footer-socials {
+    margin-bottom: 30px;
+    order:-1;
     transform: translate(0, 0);
+
   }
   .footer-socials .footer-socials__item:not(:last-child) {
     margin-right: 30px;

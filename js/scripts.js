@@ -255,7 +255,7 @@ function activateEditionsSlider(sets) {
     a11y: false,
     freeMode: false,
     breakpoints: {
-      567: {
+      481: {
         slidesPerView: 2,
         slidesPerGroup: 2,
         spaceBetween: 34,
@@ -471,8 +471,8 @@ window.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       let href = this.getAttribute('href').substring(1);
       const scrollTarget = document.getElementById(href);
-      const topOffset = document.querySelector('.top-nav').offsetHeight;
-      //const topOffset = 50;
+      //const topOffset = document.querySelector('.top-nav').offsetHeight;
+      const topOffset = 100;
       const elementPosition = scrollTarget.getBoundingClientRect().top;
       const offsetPosition = elementPosition - topOffset;
 
@@ -494,7 +494,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
       document.querySelector('.burger').classList.remove('is-active');
       document.querySelector('.main-nav').classList.remove('is-active');
-      // document.querySelector('.body').classList.remove('body-hidden');
+      document.querySelector('.body').classList.remove('body-hidden');
 
     });
   });
