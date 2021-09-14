@@ -23,6 +23,11 @@
   --offset: 3px;
 }
 
+::selection {
+  color: white;
+  background: var(--primary-purple);
+}
+
 html, body {
   position: relative;
   max-width: 100vw;
@@ -1171,6 +1176,9 @@ sub-nav__link:active svg { */
 
 .gallery-slide__img {
   width: 100%;
+
+  height: 100%;
+
   object-fit: cover;
 }
 
@@ -3045,7 +3053,7 @@ form .form-row:not(:last-child) {
 /*Modal*/
 
 .gallery-modal {
-  display: none;
+  /* display: flex; */
   position: fixed;
   align-items: center;
   justify-content: center;
@@ -3055,7 +3063,10 @@ form .form-row:not(:last-child) {
   bottom: 0;
   overflow-y: auto;
   background: rgba(0, 0, 0, .6);
-  z-index: 1010;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: opacity .3s ease-in-out;
 }
 
 .gallery-modal::before {
@@ -3071,36 +3082,26 @@ form .form-row:not(:last-child) {
 }
 
 .gallery-modal.is-open {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1010;
 }
 
-.modal-block {
-  position: relative;
-  width: 900px;
-  height: 500px;
-  opacity: 0;
-  transform: translateY(-100vh);
-  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
-}
-
-.modal-block.is-open {
+.gallery-modal.is-open .modal-block {
   opacity: 1;
   transform: translateY(0);
 }
 
-.modal-body {
+.modal-block {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.8);
-}
-
-.modal-body__img-block {
-  display: block;
-  width: 44.4%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100%;
+  padding: 50px;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
 }
 
 .modal-close {
@@ -3127,11 +3128,40 @@ form .form-row:not(:last-child) {
   content: " ";
 }
 
+.modal-body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 900px;
+  height: 500px;
+  background-color: white;
+  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.8);
+}
+
+.modal-body__img-block {
+  display: block;
+  width: 44.4%;
+}
+
+.modal-body__content-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56.6%;
+  padding: 121px 50px;
+}
+
 .modal-body__img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.modal-body__picture{
+  width: 100%;
+  height: 100%;
 }
 
 .modal-body__content-block {
@@ -3156,7 +3186,7 @@ form .form-row:not(:last-child) {
   line-height: 22px;
 }
 
-.modal-body__date {
+.modal-body__range {
   margin-bottom: 40px;
   font-weight: normal;
   font-size: 12px;
@@ -3165,6 +3195,113 @@ form .form-row:not(:last-child) {
 }
 
 .modal-body__description {
+  margin: 0;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* MODAL POPUP*/
+
+.popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 1010;
+  opacity: 1;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.popup__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.popup__content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 900px;
+  height: 500px;
+  background-color:white;
+}
+
+.popup__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.popup__close::before{
+  display: block;
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  content: " ";
+}
+
+.popup__img-block {
+  display: flex;
+  flex-wrap: 1 0 44.4%;
+  width: 44.4%;
+}
+
+.popup__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup__info-block {
+  display: flex;
+  align-items: center;
+  flex-wrap: 1 0 56.6%;
+  width: 56.6%;
+}
+
+.popup__info {
+  padding: 121px 50px;
+}
+
+.popup__author {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.popup__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.popup__range {
+  margin-bottom: 40px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #969696;
+}
+
+.popup__description {
   margin: 0;
   font-weight: normal;
   font-size: 16px;
@@ -3689,6 +3826,18 @@ form .form-row:not(:last-child) {
   .tooltip {
     transform: translateY(2px);
   }
+
+  .modal-body {
+    width: 594px;
+    height: 594px;
+  }
+  .modal-body__img-block {
+    width: 45%;
+  }
+  .modal-body__content-block {
+    width: 55%;
+    padding: 122px 50px 90px 50px;
+  }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
@@ -4101,6 +4250,17 @@ form .form-row:not(:last-child) {
   }
   .burger.is-active .burger__line, .toggle-search.is-active .toggle-search__line {
     background-color: rgba(255, 255, 255, .7);
+  }
+  .modal-body {
+    width: 668px;
+    height: 594px;
+  }
+  .modal-body__img-block {
+    width: 45%;
+  }
+  .modal-body__content-block {
+    width: 55%;
+    padding: 122px 36px 90px 50px;
   }
 }
 
@@ -4540,6 +4700,17 @@ form .form-row:not(:last-child) {
   }
   .burger.is-active .burger__line, .toggle-search.is-active .toggle-search__line {
     background-color: rgba(255, 255, 255, .7);
+  }
+  .modal-body {
+    width: 100%;
+    height: 594px;
+  }
+  .modal-body__img-block {
+    width: 50%;
+  }
+  .modal-body__content-block {
+    width: 50%;
+    padding: 122px 36px 90px 50px;
   }
 }
 
@@ -5342,5 +5513,29 @@ form .form-row:not(:last-child) {
   }
   .burger.is-active .burger__line, .toggle-search.is-active .toggle-search__line {
     background-color: rgba(255, 255, 255, 1);
+  }
+  .modal-block {
+    padding: 15px;
+  }
+  .modal-body {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  .modal-body__img-block {
+    width: 100%;
+    height: 200px;
+  }
+  .modal-body__content-block {
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+  }
+  .modal-body__range{
+    margin-bottom: 15px;
+  }
+  .modal-body__description{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 32px;
   }
 }
