@@ -79,7 +79,7 @@
           <input class="search-form__input" type="search" name="query" placeholder="Поиск по сайту"
             aria-label="Введите поисковый запрос" autocomplete="off">
           <button class="search-form__icon" type="submit" aria-label="Искать">
-            <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="23" height="22" viewbox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="6.8678" height="1.71695"
                 transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -294,7 +294,7 @@
           <input class="search-form__input" type="search" name="query" placeholder="Поиск по сайту"
             aria-label="Введите поисковый запрос" autocomplete="off">
           <button class="search-form__icon" type="submit" aria-label="Искать">
-            <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="23" height="22" viewbox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="6.8678" height="1.71695"
                 transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2043,13 +2043,16 @@
             <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="js-form contact-form"
               id="contact-form">
               <div class="form-row">
-                <input type="text" name="name" id="name" class="form-control" placeholder="Имя*" autocomplete="off" data-validate-field="name" aria-label="Введите своё имя">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Имя*" autocomplete="off"
+                  data-validate-field="name" aria-label="Введите своё имя">
               </div>
               <div class="form-row">
-                <input type="tel" name="tel" id="tel" class="form-control" placeholder="Телефон*" autocomplete="off" data-validate-field="tel" data-validate-rules="tel" aria-label="Введите номер телефона">
+                <input type="tel" name="tel" id="tel" class="form-control" placeholder="Телефон*" autocomplete="off"
+                  data-validate-field="tel" data-validate-rules="tel" aria-label="Введите номер телефона">
               </div>
               <div class="form-row">
-                <button type="submit" name="submit" id="submit" class="btn btn-outline-primary form-btn" aria-label="Надаить и заказать обратный звонок">Заказать</button>
+                <button type="submit" name="submit" id="submit" class="btn btn-outline-primary form-btn"
+                  aria-label="Надаить и заказать обратный звонок">Заказать</button>
               </div>
             </form>
             <h3 class="contacts-block__subtitle">Связаться в один клик</h3>
@@ -2115,6 +2118,37 @@
       </ul>
     </div>
   </footer>
+
+  <div class="gallery-modal">
+    <div class="modal-block">
+      <button class="modal-close" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666641 15.3044L15.3333 0.000153846L16 0.695801L1.33331 16L0.666641 15.3044Z" fill="black" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666725 -0.000125032L15.3334 15.3041L14.6667 15.9998L5.76143e-05 0.695522L0.666725 -0.000125032Z"
+            fill="black" />
+        </svg>
+      </button>
+      <div class="modal-body">
+        <div class="modal-body__img-block">
+          <img class="modal-body__img" src="/img/artistframe.jpg" alt="Название картины">
+        </div>
+        <div class="modal-body__content-block">
+          <div class="modal-body__content">
+            <h3 class="modal-body__author">Имя Художника</h3>
+            <h4 class="modal-body__title">«Название картины»</h4>
+            <div class="modal-body__date">1930-1930</div>
+            <div class="modal-body__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur inventore voluptatum ipsam dolorum
+              magnam, dolores minus debitis at suscipit, earum atque provident saepe deserunt maiores culpa perferendis
+              aperiam voluptate dolorem!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <aside class="search-popup">
     <div class="search-block">

@@ -355,6 +355,17 @@ function buildEvents() {
   }
 }
 
+function closeModal(){
+  document.querySelector('.gallery-modal').classList.remove('is-open');
+  document.querySelector('.modal-block').classList.remove('is-open');
+  document.querySelector('.body').classList.remove('body-hidden');
+}
+
+function closeSearch(){
+  document.querySelector('.toggle-search').classList.remove('is-active')
+  document.querySelector('.search-form').classList.remove('is-active');
+  document.querySelector('.body').classList.remove('body-hidden');
+}
 
 window.addEventListener('resize', function () {
   // document.location.reload();
@@ -499,6 +510,36 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /*GALLEY LINKS*/
+  document.querySelectorAll('.gallery-modal-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const modal = document.querySelector('.gallery-modal');
+      const modalBody = document.querySelector('.modal-block');
+
+      modal.classList.add('is-open');
+      modalBody.classList.add('is-open');
+
+      // let href = this.getAttribute('href').substring(1);
+
+      document.querySelector('.body').classList.add('body-hidden');
+    });
+  });
+
+  /* CLOSE MODAL */
+  const closeModalArea = document.querySelector('.gallery-modal');
+  const closeModalBtn = document.querySelector('.modal-close');
+
+  closeModalBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    closeModal();
+  });
+
+  closeModalArea.addEventListener("click", function (e) {
+    if(!e.target.closest('.modal-block')){
+      closeModal(e.target.closest('.gallery-modal'));
+    }
+  });
 
   /* CHECKBOXES */
   var checkboxes = document.querySelectorAll('.custom-checkbox__input');
@@ -575,6 +616,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
     document.querySelector('.search-popup').classList.remove('is-active');
     document.querySelector('.header__search-btn').classList.remove('is-active');
+  });
+
+  document.body.addEventListener("click", function (e) {
+    if(!e.target.closest('.header__search-btn')){
+      closeSearch();
+    }
   });
 
   //Tabs for gellery
