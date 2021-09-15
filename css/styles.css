@@ -3366,11 +3366,21 @@ form .form-row:not(:last-child) {
 }
 
 .toggle-search {
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   width: 30px;
   height: 30px;
+}
+.toggle-search::before{
+  display: block;
+  position: absolute;
+  content: " ";
+  left: -10px;
+  right: -10px;
+  top: -10px;
+  bottom: -10px;
 }
 
 .toggle-search__line {
