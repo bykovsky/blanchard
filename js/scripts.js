@@ -51,7 +51,7 @@ const gallerySlider = new Swiper(".gallery-slider", {
     //   },
     // },
 
-    481: {
+    480: {
       slidesPerView: 2,
       grid: {
         rows: 2
@@ -333,13 +333,13 @@ function buildEvents() {
   //   countEvents = Infinity;
   // }
 
-  if (ww >= 992){
+  if (ww >= 992) {
     countEvents = 3;
-  }else if (ww < 992 && ww > 767){
+  } else if (ww < 992 && ww > 767) {
     countEvents = 2;
-  }else if (ww < 767 && ww >= 481){
+  } else if (ww < 767 && ww >= 481) {
     countEvents = 1;
-  }else if (ww <= 480){
+  } else if (ww <= 480) {
     countEvents = Infinity;
   }
 
@@ -355,14 +355,29 @@ function buildEvents() {
   }
 }
 
-function closeModal(){
+function closeModal() {
   document.querySelector('.gallery-modal').classList.remove('is-open');
   document.querySelector('.modal-block').classList.remove('is-open');
 }
 
-function closeSearch(){
+function closeSearch() {
   document.querySelector('.toggle-search').classList.remove('is-active')
   document.querySelector('.search-form').classList.remove('is-active');
+}
+
+function menuHeight() {
+  const ww = getWindowWidth();
+  const headerHeight = document.querySelector('.header').offsetHeight;
+  const heroHeight = document.querySelector('.site-hero').offsetHeight;
+  const mobileMenu = document.querySelector('.main-nav');
+
+  console.log(headerHeight);
+  console.log(heroHeight);
+
+  if (ww < 1200) {
+    mobileMenu.style.height = heroHeight - headerHeight + "px";
+    // mobileMenu.style.transform = "translateY(" + headerHeight  + "px)";
+  }
 }
 
 window.addEventListener('resize', function () {
@@ -372,12 +387,14 @@ window.addEventListener('resize', function () {
   buildEvents();
   checkWindowWidth(eventsSliderParams);
   checkWindowWidthEditions(editionsSlidersets);
+  // menuHeight();
   gallerySlider.init();
 })
 
 window.addEventListener('DOMContentLoaded', function () {
   fixGallery();
   buildEvents();
+  // menuHeight();
 
   /* EVENTS */
   allevents.addEventListener('click', (e) => {
@@ -387,11 +404,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
     if (eventsrow.classList.contains('fullrow')) {
       allevents.innerHTML = 'Скрыть события';
+      allevents.setAttribute("aria-label", "Скрыть события");
       for (var i = 0; i < eventblock.length; i++) {
         eventblock[i].classList.remove('event-block--hidden');
       }
     } else {
       allevents.innerHTML = 'Все события';
+      allevents.setAttribute("aria-label", "Показать все события");
       for (var i = countEvents; i < eventblock.length; i++) {
         eventblock[i].classList.add('event-block--hidden');
       }
@@ -559,7 +578,7 @@ window.addEventListener('DOMContentLoaded', function () {
     //   closeModal(e.target.closest('.gallery-modal'));
     //   document.body.classList.toggle('body-hidden');
     // }
-    if(!e.target.closest('.modal-body')){
+    if (!e.target.closest('.modal-body')) {
       closeModal(e.target.closest('.gallery-modal'));
       document.body.classList.toggle('body-hidden');
     }
@@ -644,12 +663,12 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   document.body.addEventListener("click", function (e) {
-    if(!e.target.closest('.header__search-btn')){
+    if (!e.target.closest('.header__search-btn')) {
       closeSearch();
     }
   });
 
-  //Tabs for gellery
+  //Tabs for gallery
   var tabNavs = document.querySelectorAll(".catalog-tabs__link");
   var tabPanes = document.querySelectorAll(".catalog-tab__item");
 
@@ -713,6 +732,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// $(document).keyup(function (e) {
+//   if (e.keyCode === 27) {
+//     $('.gallery-modal').removeClass("is-open");
+//     $('.body').removeClass("body-hidden");
+//   }
+// });
 // $(function () {
 //   $.fn.sortList = function () {
 //     var mylist = $(this);

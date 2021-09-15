@@ -5261,6 +5261,7 @@ form .form-row:not(:last-child) {
     margin-bottom: 8px;
   }
   .edition-slide__info-row {
+    flex-direction: column;
     margin-bottom: 12px;
   }
   .edition-slide__info {
@@ -5283,6 +5284,7 @@ form .form-row:not(:last-child) {
   }
   .edition-slide__price {
     font-size: 12px;
+    text-align: left;
   }
   .order-btn {
     display: block;
