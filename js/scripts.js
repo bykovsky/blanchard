@@ -425,6 +425,7 @@ window.addEventListener('DOMContentLoaded', function () {
     itemSelectText: '',
     position: 'bottom',
   });
+  document.querySelector('.choices').setAttribute("aria-label", "Выберите тип искусства");
 
   /* YandexMap */
   ymaps.ready(init);
@@ -499,8 +500,8 @@ window.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       let href = this.getAttribute('href').substring(1);
       const scrollTarget = document.getElementById(href);
-      //const topOffset = document.querySelector('.top-nav').offsetHeight;
-      const topOffset = 100;
+      const topOffset = document.querySelector('.top-nav').offsetHeight;
+      //const topOffset = 100;
       const elementPosition = scrollTarget.getBoundingClientRect().top;
       const offsetPosition = elementPosition - topOffset;
 
@@ -695,6 +696,8 @@ window.addEventListener('DOMContentLoaded', function () {
   //Tabs for artists
   var artistTabNavs = document.querySelectorAll(".artists-list__link");
   var artistTabPanes = document.querySelectorAll(".artist-tab");
+  const ww = getWindowWidth();
+
   console.log('Художников: ' + artistTabNavs.length);
   console.log('Блоков: ' + artistTabPanes.length);
 
@@ -702,6 +705,7 @@ window.addEventListener('DOMContentLoaded', function () {
     artistTabNavs[i].addEventListener("click", function (e) {
       e.preventDefault();
       var activeArtistTabAttr = e.target.getAttribute("data-artist-path");
+
       for (var k = 0; k < artistTabNavs.length; k++) {
         var contentArtistAttr = artistTabPanes[k].getAttribute("data-artist-target");
         //console.log(contentArtistAttr);
@@ -709,6 +713,20 @@ window.addEventListener('DOMContentLoaded', function () {
         if (activeArtistTabAttr === contentArtistAttr) {
           artistTabNavs[k].classList.add("artists-list__link--active");
           artistTabPanes[k].classList.add("artist-block--active");
+
+          /* scroll2artist in mobile*/
+          if (ww < 481) {
+            const scroll2Target = document.querySelector('.artist-block--active');
+            //const top2Offset = document.querySelector('.top-nav').offsetHeight;
+            const top2Offset = 60;
+            const element2Position = scroll2Target.getBoundingClientRect().top;
+            const offset2Position = element2Position - top2Offset;
+
+            window.scrollBy({
+              top: offset2Position,
+              behavior: 'smooth'
+            });
+          }
         } else {
           artistTabNavs[k].classList.remove("artists-list__link--active");
           artistTabPanes[k].classList.remove("artist-block--active");

@@ -1332,7 +1332,9 @@ sub-nav__link:active svg { */
 .catalog-tab__item {
   display: block;
   position: absolute;
-  height: 0;
+
+  /* height: 0; */
+
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -1347,7 +1349,7 @@ sub-nav__link:active svg { */
   position: relative;
   visibility: visible;
   opacity: 1;
-  height: auto;
+  /* height: auto; */
   pointer-events: all;
   transform: translateX(0);
 }
@@ -1428,7 +1430,7 @@ sub-nav__link:active svg { */
 .artist-block {
   position: absolute;
   width: 0;
-  height: 0;
+  /* height: 0; */
   opacity: 0;
   visibility: hidden;
   transform: translateX(-100vw);
@@ -1440,7 +1442,7 @@ sub-nav__link:active svg { */
   opacity: 1;
   visibility: visible;
   width: calc(50% - 50px);
-  height: auto;
+  /* height: auto; */
   transform: translateX(0);
 }
 
@@ -4997,6 +4999,9 @@ form .form-row:not(:last-child) {
     min-height: unset;
     padding-bottom: 51px;
   }
+  .section-catalog__container{
+    overflow-x: unset;
+  }
   .section-catalog__titlebox {
     flex-direction: column;
     align-items: flex-start;
@@ -5033,6 +5038,9 @@ form .form-row:not(:last-child) {
   }
   .artist-block--active, .artist-block--visible {
     width: 100%;
+  }
+  .catalog-wrapper__artist{
+    margin-right: 0;
   }
   .catalog-wrapper__select {
     margin-bottom: 50px;
@@ -5085,6 +5093,9 @@ form .form-row:not(:last-child) {
   .section-events {
     margin-bottom: 46px;
   }
+  .section-events__container{
+    overflow-x: hidden;
+  }
   .events-slider {
     overflow-x: hidden;
   }
@@ -5136,6 +5147,7 @@ form .form-row:not(:last-child) {
   .section-editions__container {
     flex-wrap: nowrap;
     flex-direction: column;
+    overflow-x: hidden;
   }
   .section-editions__filter {
     width: 100%;
