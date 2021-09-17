@@ -144,7 +144,11 @@ const partnerSlider = new Swiper(".partners-slider", {
 const partnerSliderObj = document.querySelector('.partners-slider').swiper;
 
 
+
+/* BIULD EVENS SLIDER */
+
 const MOBILE_WIDTH = 480;
+const START_BREAKPOINT = 480;
 // const MOBILE_WIDTH = 425;
 const eventsrow = document.querySelector('.events-row');
 const allevents = document.querySelector('.allevents');
@@ -178,8 +182,20 @@ function activateEventsSlider(params) {
     slidesPerView: 1,
     spaceBetween: 20,
     pagination: {
-      el: `.${params.cardsContainerName} .${params.paginationClassName}`
+      el: `.${params.cardsContainerName} .${params.paginationClassName}`,
+      clickable: true,
     },
+    // breakpoints: {
+    //   481: {
+    //     slidesPerView: 1,
+    //     spaceBetween: 20,
+    //   },
+    //   1024: {
+    //     slidesPerView: 2,
+    //     spaceBetween: 20,
+    //   }
+    // },
+
     a11y: false,
     freeMode: false,
     on: {
@@ -217,9 +233,9 @@ function checkWindowWidth(params) {
   const currentWidth = getWindowWidth();
   params.cardsContainer = document.querySelector(`.${params.cardsContainerName}`);
   params.cardsWrap = document.querySelector(`.${params.cardsWrapName}`);
-  if (currentWidth <= MOBILE_WIDTH && (!params.eventsCardsSlider || params.eventsCardsSlider.destroyed)) {
+  if (currentWidth <= START_BREAKPOINT && (!params.eventsCardsSlider || params.eventsCardsSlider.destroyed)) {
     activateEventsSlider(params);
-  } else if (currentWidth >= MOBILE_WIDTH && params.eventsCardsSlider) {
+  } else if (currentWidth >= START_BREAKPOINT && params.eventsCardsSlider) {
     destroyEventsSlider(params);
   }
 }
@@ -337,8 +353,9 @@ function buildEvents() {
     countEvents = 3;
   } else if (ww < 992 && ww > 767) {
     countEvents = 2;
-  } else if (ww < 767 && ww >= 481) {
+  } else if (ww <= 767 && ww >= 481) {
     countEvents = 1;
+    // countEvents = Infinity;
   } else if (ww <= 480) {
     countEvents = Infinity;
   }
@@ -603,6 +620,8 @@ window.addEventListener('DOMContentLoaded', function () {
     this.classList.toggle('is-active');
     document.querySelector('.section-editions__checkboxes').classList.toggle('is-open');
   });
+
+
 
   var blockLink = document.querySelectorAll(".false-link");
   for (var i = 0; i < blockLink.length; i++) {
