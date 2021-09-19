@@ -145,7 +145,7 @@ const partnerSliderObj = document.querySelector('.partners-slider').swiper;
 
 
 
-/* BIULD EVENS SLIDER */
+/* BIULD EVENTS SLIDER */
 
 const MOBILE_WIDTH = 480;
 const START_BREAKPOINT = 480;
@@ -162,6 +162,17 @@ function getWindowWidth() {
     document.documentElement.offsetWidth,
     document.body.clientWidth,
     document.documentElement.clientWidth
+  );
+}
+
+function getWindowHeight() {
+  return Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
   );
 }
 
@@ -214,7 +225,7 @@ function activateEventsSlider(params) {
           el.removeAttribute("aria-label");
         });
 
-        this.pagination.el.remove();
+        // this.pagination.el.remove();
       }
     }
   });
@@ -384,34 +395,104 @@ function closeSearch() {
 
 function menuHeight() {
   const ww = getWindowWidth();
+  const wh = getWindowHeight();
   const headerHeight = document.querySelector('.header').offsetHeight;
   const heroHeight = document.querySelector('.site-hero').offsetHeight;
   const mobileMenu = document.querySelector('.main-nav');
 
-  console.log(headerHeight);
-  console.log(heroHeight);
+  console.log('Высота .header: ' + headerHeight + 'px');
+  console.log('Высота секции .hero: ' + heroHeight + 'px');
+  console.log('Высота окна: ' + wh + 'px');
 
   if (ww < 1200) {
-    mobileMenu.style.height = heroHeight - headerHeight + "px";
+    // mobileMenu.style.height = heroHeight - headerHeight + "px";
     // mobileMenu.style.transform = "translateY(" + headerHeight  + "px)";
+    mobileMenu.style.maxHeight = heroHeight - headerHeight + "px";
+  }
+}
+
+/* EDITIONS SPOILER */
+var spolerCheckboxContainer = document.querySelector('.section-editions__checkboxes');
+function setEditionSpoilerHeight() {
+
+  var ww = getWindowWidth();
+  var activeCheckboxItemes = document.querySelectorAll('.custom-checkbox--active').length;
+  var allCheckboxItemes = document.querySelectorAll('.custom-checkbox').length;
+
+  if(activeCheckboxItemes) {
+    var itemCheckboxHeight = document.querySelector('.custom-checkbox--active').offsetHeight;
+  } else {
+    var itemCheckboxHeight = document.querySelector('.custom-checkbox').offsetHeight;
+  }
+
+  console.log('ww = ' + ww + ' MOBILE_WIDTH = ' + MOBILE_WIDTH);
+  console.log('Активных чекбоксов = ' + activeCheckboxItemes);
+  console.log('Всего чекбоксов = ' + allCheckboxItemes);
+  console.log('Высота чекбокса = ' + itemCheckboxHeight);
+
+  if (ww <= MOBILE_WIDTH) {
+    var spoilerHeight = itemCheckboxHeight * activeCheckboxItemes;
+    spolerCheckboxContainer.style.height = spoilerHeight + 'px';
+    console.log('Высота контейнера: ' + spoilerHeight);
+  } else {
+    spolerCheckboxContainer.style.height = null;
+    console.log('NOT MOBILE WIDTH');
+  }
+}
+
+function setEditionSpoilerFullHeight() {
+  var ww = getWindowWidth();
+  var activeCheckboxItemes = document.querySelectorAll('.custom-checkbox--active').length;
+  var allCheckboxItemes = document.querySelectorAll('.custom-checkbox').length;
+  var itemCheckboxHeight = document.querySelector('.custom-checkbox').offsetHeight;
+
+  if(activeCheckboxItemes) {
+    var itemCheckboxHeight = document.querySelector('.custom-checkbox--active').offsetHeight;
+  } else {
+    var itemCheckboxHeight = document.querySelector('.custom-checkbox').offsetHeight;
+  }
+  if (ww <= MOBILE_WIDTH) {
+    spolerCheckboxContainer.style.height = itemCheckboxHeight * allCheckboxItemes + 'px';
+    console.log('ww = ' + ww + ' MOBILE_WIDTH = ' + MOBILE_WIDTH);
+    console.log('setEditionSpoilerFullHeight(): ' + (itemCheckboxHeight * allCheckboxItemes) + 'px');
+
+  }
+  // if (ww <= MOBILE_WIDTH) {
+  //   spolerCheckboxContainer.style.height = itemCheckboxHeight * allCheckboxItemes + 'px';
+  // }
+}
+
+function resetEditionsSpoiler() {
+  var ww = getWindowWidth();
+  if (ww >= MOBILE_WIDTH) {
+    document.querySelector('.editions-expand').classList.remove('is-active');
+    document.querySelector('.section-editions__checkboxes').classList.remove('is-open');
   }
 }
 
 window.addEventListener('resize', function () {
   // document.location.reload();
   // window.location.reload(false);
+  // const ww = document.documentElement.clientHeight;
+
+  setEditionSpoilerHeight();
+  resetEditionsSpoiler();
   fixGallery();
   buildEvents();
   checkWindowWidth(eventsSliderParams);
   checkWindowWidthEditions(editionsSlidersets);
-  // menuHeight();
+  menuHeight();
   gallerySlider.init();
 })
 
 window.addEventListener('DOMContentLoaded', function () {
   fixGallery();
   buildEvents();
-  // menuHeight();
+  menuHeight();
+  setEditionSpoilerHeight();
+  resetEditionsSpoiler();
+
+
 
   /* EVENTS */
   allevents.addEventListener('click', (e) => {
@@ -609,8 +690,22 @@ window.addEventListener('DOMContentLoaded', function () {
       var currentCheckbox = e.target;
       // console.log(currentCheckbox);
       currentCheckbox.parentNode.classList.toggle('custom-checkbox--active');
-      var activeCheckboxes = document.querySelectorAll('.custom-checkbox--active');
-      console.log(activeCheckboxes.length);
+      activeCheckboxItemes = document.querySelectorAll('.custom-checkbox--active').length;
+
+      if (!spolerCheckboxContainer.classList.contains('is-open')) {
+        setEditionSpoilerHeight();
+      } else {
+        setEditionSpoilerFullHeight();
+      }
+      // if (ww <= MOBILE_WIDTH) {
+      //   if (!spolerCheckboxContainer.classList.contains('is-open')) {
+      //     spolerCheckboxContainer.style.height = itemCheckboxHeight * activeCheckboxItemes + 'px';
+      //   }
+      // } else {
+      //   console.log('not mobile');
+      // }
+      // setEditionSpoilerHeight(editionsSpoilerSets.activeItemes);
+      // console.log(editionsSpoilerSets.activeItemes);
     });
   }
 
@@ -618,7 +713,12 @@ window.addEventListener('DOMContentLoaded', function () {
   editionsExpand.addEventListener("click", function (e) {
     e.preventDefault();
     this.classList.toggle('is-active');
-    document.querySelector('.section-editions__checkboxes').classList.toggle('is-open');
+    spolerCheckboxContainer.classList.toggle('is-open');
+    if (spolerCheckboxContainer.classList.contains('is-open')) {
+      setEditionSpoilerFullHeight();
+    } else {
+      setEditionSpoilerHeight();
+    }
   });
 
 
