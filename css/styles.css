@@ -5247,6 +5247,7 @@ form .form-row:not(:last-child) {
   .editions-slider {
     padding-left: 0;
     padding-bottom: 0;
+    overflow: visible;
   }
   .editions-wrapper {
     display: flex;

@@ -1,3 +1,5 @@
+"use strict"
+
 /*Accordion*/
 $(function () {
   $("#accordion")
@@ -350,6 +352,7 @@ function fixGallery() {
 
 function buildEvents() {
   const ww = getWindowWidth();
+  let countEvents = 0;
   // if (ww < 992 && ww > 567) {
 
   // if (ww < 992 && ww > 425) {
@@ -463,11 +466,14 @@ function setEditionSpoilerFullHeight() {
 }
 
 function resetEditionsSpoiler() {
-  var ww = getWindowWidth();
-  if (ww >= MOBILE_WIDTH) {
-    document.querySelector('.editions-expand').classList.remove('is-active');
-    document.querySelector('.section-editions__checkboxes').classList.remove('is-open');
-  }
+  // var ww = getWindowWidth();
+  // if (ww >= MOBILE_WIDTH) {
+  //   document.querySelector('.editions-expand').classList.remove('is-active');
+  //   document.querySelector('.section-editions__checkboxes').classList.remove('is-open');
+  // }
+
+  document.querySelector('.editions-expand').classList.remove('is-active');
+  document.querySelector('.section-editions__checkboxes').classList.remove('is-open');
 }
 
 window.addEventListener('resize', function () {
@@ -690,7 +696,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var currentCheckbox = e.target;
       // console.log(currentCheckbox);
       currentCheckbox.parentNode.classList.toggle('custom-checkbox--active');
-      activeCheckboxItemes = document.querySelectorAll('.custom-checkbox--active').length;
+      // activeCheckboxItemes = document.querySelectorAll('.custom-checkbox--active').length;
 
       if (!spolerCheckboxContainer.classList.contains('is-open')) {
         setEditionSpoilerHeight();
