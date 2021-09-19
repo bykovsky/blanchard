@@ -350,7 +350,7 @@ function fixGallery() {
 
 function buildEvents() {
   const ww = getWindowWidth();
-  let countEvents = 0;
+  // var countEvents = 0;
   // if (ww < 992 && ww > 567) {
 
   // if (ww < 992 && ww > 425) {
