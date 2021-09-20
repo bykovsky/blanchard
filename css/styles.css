@@ -2476,6 +2476,79 @@ form .form-row:not(:last-child) {
   border-width: 2px;
 }
 
+
+/*SWAL*/
+.swal-modal {
+  border-radius: 0;
+}
+
+.swal-button {
+  display: inline-block;
+  position: relative;
+  padding: 10px 34px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  border: 3px solid;
+  border-color: transparent;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.swal-button:focus, .swal-button:active {
+  outline: none;
+}
+
+.swal-button {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+}
+
+.swal-button:hover,
+.swal-button:not([disabled]):hover {
+  background-color: var(--primary-purple);
+  border-color: var(--soft-purple);
+}
+
+.swal-button:focus {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+  box-shadow: none;
+}
+
+.swal-button:focus::before {
+  display: block;
+  position: absolute;
+  top: -9px;
+  left: -9px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  content: " ";
+  border: 3px solid;
+  border-color: var(--light-purple);
+  border-radius: 100px;
+}
+
+.swal-button:active {
+  background-color: var(--dark-purple);
+  border-color: var(--soft-purple);
+}
+
+.swal-button:not([disabled]):hover {
+  background-color: var(--dark-purple);
+}
+
+.swal-footer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px 15px;
+  text-align: center;
+}
+
 /*SELECT*/
 
 .choices__inner {

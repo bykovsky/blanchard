@@ -586,7 +586,12 @@ window.addEventListener('DOMContentLoaded', function () {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             console.log('Отправлено');
-            alert('Ваша заявка успешно отправлена');
+            //alert('Ваша заявка успешно отправлена');
+            swal({
+              title: "Спасибо!",
+              text: "Ваша заявка успешно отправлена",
+              icon: "success",
+            })
           }
         }
       }
