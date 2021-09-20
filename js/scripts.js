@@ -458,27 +458,14 @@ function setEditionSpoilerFullHeight() {
     console.log('setEditionSpoilerFullHeight(): ' + (itemCheckboxHeight * allCheckboxItemes) + 'px');
 
   }
-  // if (ww <= MOBILE_WIDTH) {
-  //   spolerCheckboxContainer.style.height = itemCheckboxHeight * allCheckboxItemes + 'px';
-  // }
 }
 
 function resetEditionsSpoiler() {
-  // var ww = getWindowWidth();
-  // if (ww >= MOBILE_WIDTH) {
-  //   document.querySelector('.editions-expand').classList.remove('is-active');
-  //   document.querySelector('.section-editions__checkboxes').classList.remove('is-open');
-  // }
-
   document.querySelector('.editions-expand').classList.remove('is-active');
   document.querySelector('.section-editions__checkboxes').classList.remove('is-open');
 }
 
 window.addEventListener('resize', function () {
-  // document.location.reload();
-  // window.location.reload(false);
-  // const ww = document.documentElement.clientHeight;
-
   setEditionSpoilerHeight();
   resetEditionsSpoiler();
   fixGallery();
@@ -495,8 +482,6 @@ window.addEventListener('DOMContentLoaded', function () {
   menuHeight();
   setEditionSpoilerHeight();
   resetEditionsSpoiler();
-
-
 
   /* EVENTS */
   allevents.addEventListener('click', (e) => {
@@ -578,7 +563,6 @@ window.addEventListener('DOMContentLoaded', function () {
         required: true,
         function: (name, value) => {
           const phone = selector.inputmask.unmaskedvalue()
-          console.log(phone)
           return Number(phone) && phone.length === 10
         },
       },
@@ -594,6 +578,23 @@ window.addEventListener('DOMContentLoaded', function () {
         function: 'Только 10 цифр номера',
       },
     },
+    submitHandler: function(form) {
+      let formData = new FormData(form);
+      let xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log('Отправлено');
+            alert('Ваша заявка успешно отправлена');
+          }
+        }
+      }
+
+      xhr.open('POST', 'order.php', true);
+      xhr.send(formData);
+      form.reset();
+    }
   })
 
   /*SCROLL LINKS*/

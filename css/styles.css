@@ -2507,7 +2507,7 @@ form .form-row:not(:last-child) {
   color: rgba(255, 255, 255, 1);
 }
 
-..choices__inner:active {
+.choices__inner:active {
   background-color: transparent;
   color: rgba(255, 255, 255, .1);
 }

@@ -2309,20 +2309,18 @@
               <address class="contacts-block__address">Леонтьевский переулок, дом 5/1</address>
             </div>
             <h3 class="contacts-block__subtitle">Заказать обратный звонок</h3>
-            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="js-form contact-form"
-              id="contact-form">
+            <form action="order.php" method="post" class="js-form contact-form" id="contact-form">
               <div class="form-row">
-                <input type="text" name="name" id="name" class="form-control" placeholder="Имя*" autocomplete="off"
-                  data-validate-field="name" aria-label="Введите своё имя">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Имя*" autocomplete="off" data-validate-field="name" aria-label="Введите своё имя">
               </div>
               <div class="form-row">
-                <input type="tel" name="tel" id="tel" class="form-control" placeholder="Телефон*" autocomplete="off"
-                  data-validate-field="tel" data-validate-rules="tel" aria-label="Введите номер телефона">
+                <input type="tel" name="tel" id="tel" class="form-control" placeholder="Телефон*" autocomplete="off" data-validate-field="tel" data-validate-rules="tel" aria-label="Введите номер телефона">
               </div>
               <div class="form-row">
-                <button type="submit" name="submit" id="submit" class="btn btn-outline-primary form-btn"
-                  aria-label="Надаить и заказать обратный звонок">Заказать</button>
+                <button type="submit" name="submit-order" id="submit-order" class="btn btn-outline-primary form-btn" aria-label="Отправить и заказать обратный звонок">Заказать</button>
               </div>
+              <input type="hidden" name="system_email[]" value="a.v.bykovsky@gmail.com">
+		          <input type="hidden" name="form_subject" value="Blanchard. Заказ обратного звонка">
             </form>
             <h3 class="contacts-block__subtitle">Связаться в один клик</h3>
             <ul class="messendgers-list" title="Список мессенджеров">
