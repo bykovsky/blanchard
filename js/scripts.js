@@ -592,6 +592,7 @@ window.addEventListener('DOMContentLoaded', function () {
               text: "Ваша заявка успешно отправлена",
               icon: "success",
             })
+            form.reset();
           } else {
             swal({
               title: "Ошибка!",
@@ -604,7 +605,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
       xhr.open('POST', 'order.php', true);
       xhr.send(formData);
-      form.reset();
+
     }
   })
 
