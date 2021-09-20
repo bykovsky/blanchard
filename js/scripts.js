@@ -592,6 +592,12 @@ window.addEventListener('DOMContentLoaded', function () {
               text: "Ваша заявка успешно отправлена",
               icon: "success",
             })
+          } else {
+            swal({
+              title: "Ошибка!",
+              text: "Заявка не отправлена. Что-то пошло не так",
+              icon: "error",
+            })
           }
         }
       }
