@@ -602,10 +602,8 @@ window.addEventListener('DOMContentLoaded', function () {
           }
         }
       }
-
       xhr.open('POST', 'order.php', true);
       xhr.send(formData);
-
     }
   })
 
