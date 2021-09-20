@@ -5743,4 +5743,14 @@ form .form-row:not(:last-child) {
     font-size: 16px;
     line-height: 32px;
   }
+  .swal-button {
+    min-width: 100px;
+    padding: 9px 16px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .swal-text{
+    text-align: center;
+  }
 }
