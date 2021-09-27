@@ -420,7 +420,7 @@ function setEditionSpoilerHeight() {
   var activeCheckboxItemes = document.querySelectorAll('.custom-checkbox--active').length;
   var allCheckboxItemes = document.querySelectorAll('.custom-checkbox').length;
 
-  if(activeCheckboxItemes) {
+  if (activeCheckboxItemes) {
     var itemCheckboxHeight = document.querySelector('.custom-checkbox--active').offsetHeight;
   } else {
     var itemCheckboxHeight = document.querySelector('.custom-checkbox').offsetHeight;
@@ -447,7 +447,7 @@ function setEditionSpoilerFullHeight() {
   var allCheckboxItemes = document.querySelectorAll('.custom-checkbox').length;
   var itemCheckboxHeight = document.querySelector('.custom-checkbox').offsetHeight;
 
-  if(activeCheckboxItemes) {
+  if (activeCheckboxItemes) {
     var itemCheckboxHeight = document.querySelector('.custom-checkbox--active').offsetHeight;
   } else {
     var itemCheckboxHeight = document.querySelector('.custom-checkbox').offsetHeight;
@@ -578,11 +578,11 @@ window.addEventListener('DOMContentLoaded', function () {
         function: 'Только 10 цифр номера',
       },
     },
-    submitHandler: function(form) {
+    submitHandler: function (form) {
       let formData = new FormData(form);
       let xhr = new XMLHttpRequest();
 
-      xhr.onreadystatechange = function() {
+      xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             console.log('Отправлено');
@@ -669,7 +669,7 @@ window.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('body-hidden');
       modal.classList.add('is-open');
       modalBody.classList.add('is-open');
-
+      closeModalBtn.focus();
 
       // let href = this.getAttribute('href').substring(1);
 
@@ -772,6 +772,18 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+  /* Close dropdown on otheside click */
+  document.addEventListener("click", function (e) {
+    let target = e.target;
+    if (!target.closest(".sub-nav__list")) {
+      dropDownlink.forEach(el => {
+        el.classList.remove("active");
+      })
+      dropDownBlock.forEach(el => {
+        el.classList.remove("active");
+      });
+    }
+  })
 
 
   //Toggle search-popup
@@ -798,7 +810,10 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   document.body.addEventListener("click", function (e) {
-    if (!e.target.closest('.header__search-btn')) {
+    // if (!e.target.closest('.header__search-btn')) {
+    //   closeSearch();
+    // }
+    if (!e.target.closest('.top-nav__container')) {
       closeSearch();
     }
   });

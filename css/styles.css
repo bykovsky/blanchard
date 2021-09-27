@@ -3253,6 +3253,32 @@ form .form-row:not(:last-child) {
   content: " ";
 }
 
+.modal-close:hover svg path{
+  transition: fill .3s ease-in-out;
+}
+
+.modal-close:hover svg path{
+  fill: var(--primary-purple);
+}
+
+.modal-close:focus{
+  outline: 2px solid var(--primary-purple);
+  outline-offset: 5px;
+}
+
+.modal-close:focus svg path{
+  fill: var(--primary-purple);
+}
+
+.modal-close:active{
+  background-color: var(--primary-purple);
+  outline: none;
+}
+
+.modal-close:active svg path{
+  fill: white;
+}
+
 .modal-body {
   position: relative;
   display: flex;
