@@ -810,9 +810,6 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   document.body.addEventListener("click", function (e) {
-    // if (!e.target.closest('.header__search-btn')) {
-    //   closeSearch();
-    // }
     if (!e.target.closest('.top-nav__container')) {
       closeSearch();
     }
